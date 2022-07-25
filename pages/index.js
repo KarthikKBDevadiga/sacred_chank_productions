@@ -317,15 +317,22 @@ export default function Index() {
                   className="object-cover w-full h-full"
                   src="https://mykinoplex.com/assets/images/ucm/card1657267726.jpg"
                 />
-                <div className="absolute bottom-0 w-full p-4 text-white duration-500 bg-black bg-opacity-50 ">
-                  <div>
-                    <div className="text-xl">Shamshera</div>
-                    <div className="text-sm">(Hindi)</div>
+                <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  <div className="text-xl">Shamshera</div>
+                  <div className="text-sm">(Hindi)</div>
+                  <div className="mt-2">
+                    Shamshera is a 2022 Indian Hindi-language period action film
+                    produced by Aditya Chopra under Yash Raj Films and directed
+                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
+                    role with Sanjay Dutt as the antagonist alongside Vaani
+                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
                   </div>
-                  <div className="h-0 duration-500 group-hover:h-20">
-                    The film 'SHAMSHERA' is set in the heartland of India and
-                    will be a high-octane, large...
+                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
+                    WATCH TRAILER
                   </div>
+                </div>
+                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  22 July 2022
                 </div>
               </div>
               <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow group">
@@ -359,6 +366,19 @@ export default function Index() {
                 <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
                   <div className="text-xl">Shamshera</div>
                   <div className="text-sm">(Hindi)</div>
+                  <div className="mt-2">
+                    Shamshera is a 2022 Indian Hindi-language period action film
+                    produced by Aditya Chopra under Yash Raj Films and directed
+                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
+                    role with Sanjay Dutt as the antagonist alongside Vaani
+                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
+                  </div>
+                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
+                    WATCH TRAILER
+                  </div>
+                </div>
+                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  22 July 2022
                 </div>
               </div>
             </div>
@@ -377,15 +397,22 @@ export default function Index() {
                   className="object-cover w-full h-full"
                   src="https://mykinoplex.com/assets/images/ucm/card1657267726.jpg"
                 />
-                <div className="absolute bottom-0 w-full p-4 text-white duration-500 bg-black bg-opacity-50 ">
-                  <div>
-                    <div className="text-xl">Shamshera</div>
-                    <div className="text-sm">(Hindi)</div>
+                <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  <div className="text-xl">Shamshera</div>
+                  <div className="text-sm">(Hindi)</div>
+                  <div className="mt-2">
+                    Shamshera is a 2022 Indian Hindi-language period action film
+                    produced by Aditya Chopra under Yash Raj Films and directed
+                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
+                    role with Sanjay Dutt as the antagonist alongside Vaani
+                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
                   </div>
-                  <div className="h-0 duration-500 group-hover:h-20">
-                    The film 'SHAMSHERA' is set in the heartland of India and
-                    will be a high-octane, large...
+                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
+                    WATCH TRAILER
                   </div>
+                </div>
+                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  22 July 2022
                 </div>
               </div>
               <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow group">
@@ -419,6 +446,19 @@ export default function Index() {
                 <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
                   <div className="text-xl">Shamshera</div>
                   <div className="text-sm">(Hindi)</div>
+                  <div className="mt-2">
+                    Shamshera is a 2022 Indian Hindi-language period action film
+                    produced by Aditya Chopra under Yash Raj Films and directed
+                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
+                    role with Sanjay Dutt as the antagonist alongside Vaani
+                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
+                  </div>
+                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
+                    WATCH TRAILER
+                  </div>
+                </div>
+                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  22 July 2022
                 </div>
               </div>
             </div>
