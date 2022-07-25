@@ -1,17 +1,23 @@
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon } from "@heroicons/react/outline";
 import Link from "next/link";
+import { useEffect } from "react";
 import CloseIcon from "../icons/CloseIcon";
 import MenuIcon from "../icons/MenuIcon";
 import classNames from "../utils/classNames";
 
 const navigation = [
-  { name: "Movie", href: "#", current: true },
-  { name: "News & Events", href: "#", current: false },
-  { name: "Partners", href: "#", current: false },
-  { name: "Impressum", href: "#", current: false },
-  { name: "About Us", href: "/about_us", current: false },
-  { name: "Contact Us", href: "/contact_us", current: false },
+  { id: "home", name: "Movie", href: "#", current: true },
+  {
+    id: "news_and_events",
+    name: "News & Events",
+    href: "/news_and_events",
+    current: false,
+  },
+  { id: "", name: "Partners", href: "#", current: false },
+  { id: "", name: "Impressum", href: "#", current: false },
+  { id: "about_us", name: "About Us", href: "/about_us", current: false },
+  { id: "contact_us", name: "Contact Us", href: "/contact_us", current: false },
 ];
 const user = {
   name: "Whitney Francis",
@@ -20,12 +26,19 @@ const user = {
     "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 
-const Header = ({ className, scrolled }) => {
+const Header = ({ className, scrolled, page }) => {
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    // console.log(window.location.pathname);
+    navigation.map((n) => {
+      n.current = n.href == pathname;
+    });
+  }, [navigation]);
   return (
     <Disclosure
       as="nav"
       className={classNames(
-        "fixed z-20 w-full   duration-1000 bg-black",
+        "fixed z-10 w-full   duration-1000 bg-black",
         scrolled ? "bg-opacity-100" : " bg-opacity-25",
         className
       )}
@@ -58,7 +71,12 @@ const Header = ({ className, scrolled }) => {
                           aria-current={item.current ? "page" : undefined}
                         >
                           <div className="text-base">{item.name}</div>
-                          <div className="h-[2px] mt-1 bg-white rounded-full group-hover:opacity-100 opacity-0 duration-500" />
+                          <div
+                            className={classNames(
+                              "h-[2px] mt-1 bg-white rounded-full group-hover:opacity-100 opacity-0 duration-500",
+                              page == item.id ? "opacity-100" : ""
+                            )}
+                          />
                         </a>
                       </Link>
                     ))}

@@ -54,7 +54,7 @@ export default function ContactUs() {
       */}
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
-        <Header scrolled={scrolled} />
+        <Header scrolled={scrolled} page="contact_us" />
 
         <main className="w-full -z-10 ">
           <div className="relative h-48 bg-black bg-opacity-25 md:h-48">
