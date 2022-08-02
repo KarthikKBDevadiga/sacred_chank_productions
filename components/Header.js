@@ -7,7 +7,13 @@ import MenuIcon from "../icons/MenuIcon";
 import classNames from "../utils/classNames";
 
 const navigation = [
-  { id: "home", name: "Movie", href: "#", current: true },
+  { id: "", name: "Movie", href: "#", current: true },
+  {
+    id: "distribution",
+    name: "Distribution",
+    href: "/distribution",
+    current: false,
+  },
   {
     id: "news_and_events",
     name: "News & Events",
@@ -59,24 +65,25 @@ const Header = ({ className, scrolled, page }) => {
                 </Link>
 
                 {/* Links section */}
+
                 <div className="hidden lg:block lg:ml-10">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <Link href={item.href} key={item.name}>
                         <a
                           className={classNames(
-                            item.current ? "bg-gray-1001" : "",
-                            "px-3 py-2  text-sm  text-white duration-500 cursor-pointer group"
+                            "px-3 py-2 text-white duration-500 cursor-pointer group hover:bg-gray-800 rounded-full ",
+                            page == item.id ? "bg-gray-800 " : ""
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
                           <div className="text-base">{item.name}</div>
-                          <div
+                          {/* <div
                             className={classNames(
                               "h-[2px] mt-1 bg-white rounded-full group-hover:opacity-100 opacity-0 duration-500",
                               page == item.id ? "opacity-100" : ""
                             )}
-                          />
+                          /> */}
                         </a>
                       </Link>
                     ))}

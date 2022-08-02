@@ -13,6 +13,13 @@ body {
   background-color: black;
 }
 
+.pattern{
+  background: radial-gradient(black 10%, transparent 10%);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px, 50px 50px;
+}
+
+
 a {
   color: inherit;
   text-decoration: none;
