@@ -95,33 +95,6 @@ const Header = ({ className, scrolled, page }) => {
                   )}
                 </Disclosure.Button>
               </div>
-
-              {/* Actions section */}
-              <div className="hidden lg:block lg:ml-4">
-                <div className="flex items-center">
-                  <button
-                    type="button"
-                    className="flex-shrink-0 p-1 text-gray-400 rounded-full bg-gray-50 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500"
-                  >
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon className="w-6 h-6" aria-hidden="true" />
-                  </button>
-
-                  {/* Profile dropdown */}
-                  <Menu as="div" className="relative flex-shrink-0 ml-3">
-                    <div>
-                      <Menu.Button className="flex text-sm text-white rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500">
-                        <span className="sr-only">Open user menu</span>
-                        <img
-                          className="w-8 h-8 rounded-full"
-                          src={user.imageUrl}
-                          alt=""
-                        />
-                      </Menu.Button>
-                    </div>
-                  </Menu>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -141,32 +114,6 @@ const Header = ({ className, scrolled, page }) => {
                   {item.name}
                 </Disclosure.Button>
               ))}
-            </div>
-            <div className="pt-4 pb-3 border-t border-gray-200">
-              <div className="flex items-center px-5">
-                <div className="flex-shrink-0">
-                  <img
-                    className="w-10 h-10 rounded-full"
-                    src={user.imageUrl}
-                    alt=""
-                  />
-                </div>
-                <div className="ml-3">
-                  <div className="text-base font-medium text-gray-800">
-                    {user.name}
-                  </div>
-                  <div className="text-sm font-medium text-gray-500">
-                    {user.email}
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  className="flex-shrink-0 p-1 ml-auto text-gray-400 rounded-full bg-gray-50 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-purple-500"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="w-6 h-6" aria-hidden="true" />
-                </button>
-              </div>
             </div>
           </Disclosure.Panel>
         </>

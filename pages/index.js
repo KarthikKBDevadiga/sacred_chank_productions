@@ -23,6 +23,7 @@ import PlayIcon from "../icons/PlayIcon";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import classNames from "../utils/classNames";
+import YoutubeDialog from "../components/YoutubeDialog";
 
 const AdaptiveHeight = (slider) => {
   function updateHeight() {
@@ -35,6 +36,8 @@ const AdaptiveHeight = (slider) => {
 
 export default function Index() {
   const [scrolled, setScrolled] = useState(false);
+  const [openVideoDialog, setOpenVideoDialog] = useState(false);
+  const [youtubeUrl, setYoutubeUrl] = useState();
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -85,35 +88,45 @@ export default function Index() {
                   <div className="relative top-0 w-full h-screen overflow-hidden">
                     <div className="absolute w-full h-full bg-black">
                       <img
-                        className="object-cover w-full h-full opacity-50"
-                        src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
+                        className="hidden object-cover w-full h-full opacity-50 sm:block"
+                        src="https://m.media-amazon.com/images/M/MV5BNjI0ZTY4MzYtMDA5MS00YThhLTgxMGQtZWM2YmUwNTIzNGNhXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg"
+                      />
+                      <img
+                        className="object-cover w-full h-full opacity-50 sm:hidden"
+                        src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
                       />
                     </div>
                     <div className="absolute flex h-full">
                       <div className="self-center px-4 font-light sm:px-16 md:px-20">
                         <div className="text-sm text-white sm:text-xl md:text-3xl">
-                          Action | Drama
+                          Rom-Com
                         </div>
                         <div className="mt-4 text-white">
                           <span className="text-3xl sm:text-4xl md:text-6xl ">
-                            SHAMSHERA{currentSlide}
+                            GAALIPATA 2
                           </span>
                           <span className="self-end text-sm text-gray-300 sm:text-xl md:text-3xl">
-                            (22 JUL 2022)
+                            (12 AUGUST 2022)
                           </span>
                         </div>
                         <div className="flex gap-2 mt-2 text-xs text-white md:text-sm">
                           <div className="px-3 py-1 border border-white rounded-md">
                             KANNADA
                           </div>
+
                           <div className="px-3 py-1 border border-white rounded-md">
-                            ENGLISH
-                          </div>
-                          <div className="px-3 py-1 border border-white rounded-md">
-                            FSK18
+                            UA
                           </div>
                         </div>
-                        <div className="flex gap-2 py-2 pl-2 pr-4 mt-4 text-white duration-500 bg-black bg-opacity-25 rounded-md cursor-pointer w-max hover:bg-opacity-100">
+                        <div
+                          className="flex gap-2 py-2 pl-2 pr-4 mt-4 text-white duration-500 bg-black bg-opacity-25 rounded-md cursor-pointer w-max hover:bg-opacity-100"
+                          onClick={() => {
+                            setYoutubeUrl(
+                              "https://www.youtube.com/watch?v=fnsWt4H619o"
+                            );
+                            setOpenVideoDialog(true);
+                          }}
+                        >
                           <PlayIcon className="self-center w-8 h-8" />
                           <div className="self-center">WATCH TRAILER</div>
                         </div>
@@ -125,115 +138,45 @@ export default function Index() {
                   <div className="relative top-0 w-full h-screen overflow-hidden">
                     <div className="absolute w-full h-full bg-black">
                       <img
-                        className="object-cover w-full h-full opacity-50"
-                        src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
+                        className="hidden object-cover w-full h-full opacity-50 sm:block"
+                        src="https://m.media-amazon.com/images/M/MV5BNjI0ZTY4MzYtMDA5MS00YThhLTgxMGQtZWM2YmUwNTIzNGNhXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg"
                       />
-                    </div>
-                    <div className="absolute flex h-full">
-                      <div className="self-center px-4 font-light sm:px-16 md:px-20">
-                        <div className="text-sm text-white sm:text-xl md:text-3xl">
-                          Action | Drama
-                        </div>
-                        <div className="mt-4 text-white">
-                          <span className="text-3xl sm:text-4xl md:text-6xl ">
-                            SHAMSHERA{currentSlide}
-                          </span>
-                          <span className="self-end text-sm text-gray-300 sm:text-xl md:text-3xl">
-                            (22 JUL 2022)
-                          </span>
-                        </div>
-                        <div className="flex gap-2 mt-2 text-xs text-white md:text-sm">
-                          <div className="px-3 py-1 border border-white rounded-md">
-                            KANNADA
-                          </div>
-                          <div className="px-3 py-1 border border-white rounded-md">
-                            ENGLISH
-                          </div>
-                          <div className="px-3 py-1 border border-white rounded-md">
-                            FSK18
-                          </div>
-                        </div>
-                        <div className="flex gap-2 py-2 pl-2 pr-4 mt-4 text-white duration-500 bg-black bg-opacity-25 rounded-md cursor-pointer w-max hover:bg-opacity-100">
-                          <PlayIcon className="self-center w-8 h-8" />
-                          <div className="self-center">WATCH TRAILER</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="keen-slider__slide">
-                  <div className="relative top-0 w-full h-screen overflow-hidden">
-                    <div className="absolute w-full h-full bg-black">
                       <img
-                        className="object-cover w-full h-full opacity-50"
-                        src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
+                        className="object-cover w-full h-full opacity-50 sm:hidden"
+                        src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
                       />
                     </div>
                     <div className="absolute flex h-full">
                       <div className="self-center px-4 font-light sm:px-16 md:px-20">
                         <div className="text-sm text-white sm:text-xl md:text-3xl">
-                          Action | Drama
+                          Rom-Com
                         </div>
                         <div className="mt-4 text-white">
                           <span className="text-3xl sm:text-4xl md:text-6xl ">
-                            SHAMSHERA{currentSlide}
+                            GAALIPATA 2
                           </span>
                           <span className="self-end text-sm text-gray-300 sm:text-xl md:text-3xl">
-                            (22 JUL 2022)
+                            (12 AUGUST 2022)
                           </span>
                         </div>
                         <div className="flex gap-2 mt-2 text-xs text-white md:text-sm">
                           <div className="px-3 py-1 border border-white rounded-md">
                             KANNADA
                           </div>
+
                           <div className="px-3 py-1 border border-white rounded-md">
-                            ENGLISH
-                          </div>
-                          <div className="px-3 py-1 border border-white rounded-md">
-                            FSK18
+                            UA
                           </div>
                         </div>
-                        <div className="flex gap-2 py-2 pl-2 pr-4 mt-4 text-white duration-500 bg-black bg-opacity-25 rounded-md cursor-pointer w-max hover:bg-opacity-100">
-                          <PlayIcon className="self-center w-8 h-8" />
-                          <div className="self-center">WATCH TRAILER</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="keen-slider__slide">
-                  <div className="relative top-0 w-full h-screen overflow-hidden">
-                    <div className="absolute w-full h-full bg-black">
-                      <img
-                        className="object-cover w-full h-full opacity-50"
-                        src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
-                      />
-                    </div>
-                    <div className="absolute flex h-full">
-                      <div className="self-center px-4 font-light sm:px-16 md:px-20">
-                        <div className="text-sm text-white sm:text-xl md:text-3xl">
-                          Action | Drama
-                        </div>
-                        <div className="mt-4 text-white">
-                          <span className="text-3xl sm:text-4xl md:text-6xl ">
-                            SHAMSHERA{currentSlide}
-                          </span>
-                          <span className="self-end text-sm text-gray-300 sm:text-xl md:text-3xl">
-                            (22 JUL 2022)
-                          </span>
-                        </div>
-                        <div className="flex gap-2 mt-2 text-xs text-white md:text-sm">
-                          <div className="px-3 py-1 border border-white rounded-md">
-                            KANNADA
-                          </div>
-                          <div className="px-3 py-1 border border-white rounded-md">
-                            ENGLISH
-                          </div>
-                          <div className="px-3 py-1 border border-white rounded-md">
-                            FSK18
-                          </div>
-                        </div>
-                        <div className="flex gap-2 py-2 pl-2 pr-4 mt-4 text-white duration-500 bg-black bg-opacity-25 rounded-md cursor-pointer w-max hover:bg-opacity-100">
+                        <div
+                          className="flex gap-2 py-2 pl-2 pr-4 mt-4 text-white duration-500 bg-black bg-opacity-25 rounded-md cursor-pointer w-max hover:bg-opacity-100"
+                          onClick={() => {
+                            setYoutubeUrl(
+                              "https://www.youtube.com/watch?v=fnsWt4H619o"
+                            );
+                            setOpenVideoDialog(true);
+                          }}
+                        >
                           <PlayIcon className="self-center w-8 h-8" />
                           <div className="self-center">WATCH TRAILER</div>
                         </div>
@@ -283,7 +226,6 @@ export default function Index() {
                       instanceRef.current.track.details.slides.length
                     ).keys(),
                   ].map((idx) => {
-                    console.log("Sameple");
                     return (
                       <div
                         key={idx}
@@ -312,73 +254,92 @@ export default function Index() {
             </div>
 
             <div className="grid grid-cols-1 gap-8 p-8 sm:grid-cols-2 lg:grid-cols-3 ">
-              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow group">
+              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
                 <img
-                  className="object-cover w-full h-full"
-                  src="https://mykinoplex.com/assets/images/ucm/card1657267726.jpg"
+                  className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
+                  src="https://www.paramvah.com/images/films/777-charlie/777-CharliePoster2.jpg"
                 />
                 <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  <div className="text-xl">Shamshera</div>
-                  <div className="text-sm">(Hindi)</div>
+                  <div className="text-xl">777 Charlie</div>
+                  <div className="text-sm">(Kannada)</div>
                   <div className="mt-2">
-                    Shamshera is a 2022 Indian Hindi-language period action film
-                    produced by Aditya Chopra under Yash Raj Films and directed
-                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
-                    role with Sanjay Dutt as the antagonist alongside Vaani
-                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
+                    Dharma is stuck in a rut with his negative and lonely
+                    lifestyle and spends each day in the comfort of his
+                    loneliness. A pup named Charlie enters his life and gives
+                    him a new perspective towards it.
                   </div>
-                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
+                  <div
+                    className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
+                    onClick={() => {
+                      setYoutubeUrl(
+                        "https://www.youtube.com/watch?v=REqFOV2A7sI"
+                      );
+                      setOpenVideoDialog(true);
+                    }}
+                  >
                     WATCH TRAILER
                   </div>
                 </div>
                 <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  22 July 2022
+                  10 June 2022
                 </div>
               </div>
-              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow group">
+              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
                 <img
-                  className="object-cover w-full h-full"
-                  src="https://mykinoplex.com/assets/images/ucm/card1657267726.jpg"
+                  className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
+                  src="https://www.deccanherald.com/sites/dh/files/articleimages/2022/06/23/harikathe-alla-girikathe-1120689-1655987339.jpg"
                 />
                 <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  <div className="text-xl">Shamshera</div>
-                  <div className="text-sm">(Hindi)</div>
+                  <div className="text-xl">Harikathe Alla Girikathe</div>
+                  <div className="text-sm">(Kannada)</div>
                   <div className="mt-2">
-                    Shamshera is a 2022 Indian Hindi-language period action film
-                    produced by Aditya Chopra under Yash Raj Films and directed
-                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
-                    role with Sanjay Dutt as the antagonist alongside Vaani
-                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
+                    The hurdles that has to be overcome by three people who came
+                    together to pursue a common goal of making it big in the
+                    movie business.
                   </div>
-                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
+                  <div
+                    className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
+                    onClick={() => {
+                      setYoutubeUrl(
+                        "https://www.youtube.com/watch?v=NDf58vl6FhA"
+                      );
+                      setOpenVideoDialog(true);
+                    }}
+                  >
                     WATCH TRAILER
                   </div>
                 </div>
                 <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  22 July 2022
+                  23 June 2022
                 </div>
               </div>
-              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow group">
+              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
                 <img
-                  className="object-cover w-full h-full"
-                  src="https://mykinoplex.com/assets/images/ucm/card1657267726.jpg"
+                  className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
+                  src="https://www.letsfindmovie.com/wp-content/uploads/2021/12/gQ29E9Qy6z5ExsxnpgUTHfpZFO3.jpg"
                 />
                 <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  <div className="text-xl">Shamshera</div>
-                  <div className="text-sm">(Hindi)</div>
+                  <div className="text-xl">Avatara Purusha</div>
+                  <div className="text-sm">(Kannada)</div>
                   <div className="mt-2">
-                    Shamshera is a 2022 Indian Hindi-language period action film
-                    produced by Aditya Chopra under Yash Raj Films and directed
-                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
-                    role with Sanjay Dutt as the antagonist alongside Vaani
-                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
+                    Siri hires an unsuccessful actor to play her missing brother
+                    in front of her parents to bring the family back together.
+                    Black magic also plays a role.
                   </div>
-                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
+                  <div
+                    className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
+                    onClick={() => {
+                      setYoutubeUrl(
+                        "https://www.youtube.com/watch?v=LqvbogH-Ivc"
+                      );
+                      setOpenVideoDialog(true);
+                    }}
+                  >
                     WATCH TRAILER
                   </div>
                 </div>
                 <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  22 July 2022
+                  6 May 2022
                 </div>
               </div>
             </div>
@@ -392,73 +353,34 @@ export default function Index() {
             </div>
 
             <div className="grid grid-cols-1 gap-8 p-8 sm:grid-cols-2 lg:grid-cols-3 ">
-              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow group">
+              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
                 <img
-                  className="object-cover w-full h-full"
-                  src="https://mykinoplex.com/assets/images/ucm/card1657267726.jpg"
+                  className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
+                  src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
                 />
                 <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  <div className="text-xl">Shamshera</div>
-                  <div className="text-sm">(Hindi)</div>
+                  <div className="text-xl">GAALIPATA 2</div>
+                  <div className="text-sm">(KANNADA)</div>
                   <div className="mt-2">
-                    Shamshera is a 2022 Indian Hindi-language period action film
-                    produced by Aditya Chopra under Yash Raj Films and directed
-                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
-                    role with Sanjay Dutt as the antagonist alongside Vaani
-                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
+                    Three college friends meet teacher Kishore Kumar who offers
+                    them a room to stay because of personal reasons. Years
+                    later, they reunite to help their teacher with his illness
+                    and in turn find a chance to fix their love lives.
                   </div>
-                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
+                  <div
+                    className="px-2 py-1 mx-auto mt-4 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
+                    onClick={() => {
+                      setYoutubeUrl(
+                        "https://www.youtube.com/watch?v=fnsWt4H619o"
+                      );
+                      setOpenVideoDialog(true);
+                    }}
+                  >
                     WATCH TRAILER
                   </div>
                 </div>
                 <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  22 July 2022
-                </div>
-              </div>
-              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow group">
-                <img
-                  className="object-cover w-full h-full"
-                  src="https://mykinoplex.com/assets/images/ucm/card1657267726.jpg"
-                />
-                <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  <div className="text-xl">Shamshera</div>
-                  <div className="text-sm">(Hindi)</div>
-                  <div className="mt-2">
-                    Shamshera is a 2022 Indian Hindi-language period action film
-                    produced by Aditya Chopra under Yash Raj Films and directed
-                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
-                    role with Sanjay Dutt as the antagonist alongside Vaani
-                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
-                  </div>
-                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
-                    WATCH TRAILER
-                  </div>
-                </div>
-                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  22 July 2022
-                </div>
-              </div>
-              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow group">
-                <img
-                  className="object-cover w-full h-full"
-                  src="https://mykinoplex.com/assets/images/ucm/card1657267726.jpg"
-                />
-                <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  <div className="text-xl">Shamshera</div>
-                  <div className="text-sm">(Hindi)</div>
-                  <div className="mt-2">
-                    Shamshera is a 2022 Indian Hindi-language period action film
-                    produced by Aditya Chopra under Yash Raj Films and directed
-                    by Karan Malhotra. The film stars Ranbir Kapoor in a dual
-                    role with Sanjay Dutt as the antagonist alongside Vaani
-                    Kapoor, Ronit Roy, Saurabh Shukla and Ashutosh Rana.
-                  </div>
-                  <div className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black">
-                    WATCH TRAILER
-                  </div>
-                </div>
-                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  22 July 2022
+                  12 August 2022
                 </div>
               </div>
             </div>
@@ -466,6 +388,11 @@ export default function Index() {
         </main>
         <Footer />
       </div>
+      <YoutubeDialog
+        url={youtubeUrl}
+        showDialog={openVideoDialog}
+        setShowDialog={setOpenVideoDialog}
+      />
     </>
   );
 }
