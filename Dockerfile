@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 COPY package.json ./
 
 # Install Dependencies
-RUN npm install -D @swc/cli @swc/core
+RUN npm install
 
 # Copy Source Code
 COPY . .
