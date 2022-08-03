@@ -24,6 +24,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import classNames from "../utils/classNames";
 import YoutubeDialog from "../components/YoutubeDialog";
+import Metatag from "../components/Metatag";
 
 const AdaptiveHeight = (slider) => {
   function updateHeight() {
@@ -76,6 +77,7 @@ export default function Distribution() {
         <body class="h-full">
         ```
       */}
+      <Metatag title="Distribution" description="Distribution" />
       <div className="min-h-full bg-slate-900">
         <div className=" pattern">
           {/* Navbar */}

@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import NProgressContainer from "./next-nprogress/component";
+import NProgressContainer from "./NProgressContainer";
 
 const Metatag = ({ title, description, children }) => {
   return (

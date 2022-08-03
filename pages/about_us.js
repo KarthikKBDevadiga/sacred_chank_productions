@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Metatag from "../components/Metatag";
 
 const AdaptiveHeight = (slider) => {
   function updateHeight() {
@@ -53,6 +54,7 @@ export default function AboutUs() {
         <body class="h-full">
         ```
       */}
+      <Metatag title="About Us" description="About Us" />
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
         <Header scrolled={scrolled} page="about_us" />

@@ -24,6 +24,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import classNames from "../utils/classNames";
 import YoutubeDialog from "../components/YoutubeDialog";
+import Metatag from "../components/Metatag";
+import Movie from "../components/item/Movie";
 
 const AdaptiveHeight = (slider) => {
   function updateHeight() {
@@ -33,6 +35,32 @@ const AdaptiveHeight = (slider) => {
   slider.on("created", updateHeight);
   slider.on("slideChanged", updateHeight);
 };
+
+const UPCOMING_MOVIE = [
+  {
+    title: "Gaalipata 2",
+    description:
+      "Three college friends meet teacher Kishore Kumar who offers them a room to stay because of personal reasons. Years later, they reunite to help their teacher with his illness and in turn find a chance to fix their love lives.",
+    releaseDate: "12 August 2022",
+    languages: ["KANNADA"],
+    genre: ["COMEDY", "ROMANTIC"],
+    poster:
+      "https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg",
+    trailer: "https://www.youtube.com/watch?v=fnsWt4H619o",
+    casts: [
+      {
+        name: "Ganesh",
+        image:
+          "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+      },
+      {
+        name: "Diganth",
+        image:
+          "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+      },
+    ],
+  },
+];
 
 export default function Index() {
   const [scrolled, setScrolled] = useState(false);
@@ -76,6 +104,10 @@ export default function Index() {
         <body class="h-full">
         ```
       */}
+      <Metatag
+        title="Scared Chank Productions"
+        description="Sacred Chank Productions"
+      />
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
         <Header scrolled={scrolled} />
@@ -253,7 +285,7 @@ export default function Index() {
               <div className="flex-1 bg-white h-[2px] self-center rounded-full ml-4" />
             </div>
 
-            <div className="grid grid-cols-1 gap-8 p-8 sm:grid-cols-2 lg:grid-cols-3 ">
+            <div className="grid grid-cols-1 gap-8 p-8 sm:grid-cols-3 lg:grid-cols-4 ">
               <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
                 <img
                   className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
@@ -352,37 +384,22 @@ export default function Index() {
               <div className="flex-1 bg-white h-[2px] self-center rounded-full ml-4" />
             </div>
 
-            <div className="grid grid-cols-1 gap-8 p-8 sm:grid-cols-2 lg:grid-cols-3 ">
-              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
-                <img
-                  className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
-                  src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
-                />
-                <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  <div className="text-xl">GAALIPATA 2</div>
-                  <div className="text-sm">(KANNADA)</div>
-                  <div className="mt-2">
-                    Three college friends meet teacher Kishore Kumar who offers
-                    them a room to stay because of personal reasons. Years
-                    later, they reunite to help their teacher with his illness
-                    and in turn find a chance to fix their love lives.
-                  </div>
-                  <div
-                    className="px-2 py-1 mx-auto mt-4 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
-                    onClick={() => {
+            <div className="grid grid-cols-1 gap-8 p-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+              {UPCOMING_MOVIE.map((movie) => {
+                return (
+                  <Movie
+                    key={movie}
+                    movie={movie}
+                    className="col-span-1"
+                    trailer={() => {
                       setYoutubeUrl(
                         "https://www.youtube.com/watch?v=fnsWt4H619o"
                       );
                       setOpenVideoDialog(true);
                     }}
-                  >
-                    WATCH TRAILER
-                  </div>
-                </div>
-                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                  12 August 2022
-                </div>
-              </div>
+                  />
+                );
+              })}
             </div>
           </div>
         </main>

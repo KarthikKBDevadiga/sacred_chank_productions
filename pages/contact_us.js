@@ -26,6 +26,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import classNames from "../utils/classNames";
+import Metatag from "../components/Metatag";
 
 export default function ContactUs() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,6 +53,7 @@ export default function ContactUs() {
         <body class="h-full">
         ```
       */}
+      <Metatag title="Contact Us" description="Contact Us" />
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
         <Header scrolled={scrolled} page="contact_us" />

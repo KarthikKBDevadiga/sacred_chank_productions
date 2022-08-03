@@ -23,6 +23,7 @@ import PlayIcon from "../icons/PlayIcon";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import classNames from "../utils/classNames";
+import Metatag from "../components/Metatag";
 
 const AdaptiveHeight = (slider) => {
   function updateHeight() {
@@ -73,6 +74,7 @@ export default function Index() {
         <body class="h-full">
         ```
       */}
+      <Metatag title="News And Events" description="News And Events" />
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
         <Header scrolled={scrolled} page="news_and_events" />

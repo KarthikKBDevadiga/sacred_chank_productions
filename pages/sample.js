@@ -4,12 +4,8 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Navbar from "../components/Navbar";
 import Content from "../components/Content";
+import styles from "../styles/Sample.module.css";
 
 export default function Example() {
-  return (
-    <div className="App">
-      <Navbar />
-      <Content />
-    </div>
-  );
+  return <div className={styles.container}>Sample</div>;
 }
