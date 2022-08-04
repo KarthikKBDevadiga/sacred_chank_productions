@@ -97,7 +97,10 @@ export default function AboutUs() {
                 <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-3">
                   {movie.casts.map((cast) => {
                     return (
-                      <div className="flex col-span-1 gap-4 overflow-hidden border border-white rounded-full">
+                      <div
+                        className="flex col-span-1 gap-4 overflow-hidden border border-white rounded-full"
+                        key={cast}
+                      >
                         <img
                           key={cast}
                           className="object-cover w-14 h-14"

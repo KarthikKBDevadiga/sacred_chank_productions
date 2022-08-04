@@ -400,6 +400,7 @@ export default function Index() {
                     //   animateOnce={true}
                     // >
                     <Movie
+                      key={movie}
                       movie={movie}
                       className="col-span-1"
                       trailer={() => {
