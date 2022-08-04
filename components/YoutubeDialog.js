@@ -43,7 +43,7 @@ const YoutubeDialog = ({ url, showDialog, setShowDialog }) => {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="self-center inline-block w-full overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl group sm:my-8 sm:align-middle sm:max-w-3xl">
+            <div className="self-center inline-block w-full overflow-hidden text-left align-bottom transition-all transform bg-black rounded-lg shadow-xl group sm:my-8 sm:align-middle sm:max-w-3xl">
               <div className="text-center">
                 <div
                   className="relative h-0"
@@ -69,7 +69,7 @@ const YoutubeDialog = ({ url, showDialog, setShowDialog }) => {
               <div className="absolute top-0 right-0 w-8 h-8">
                 <button
                   type="button"
-                  className="w-full h-full text-indigo-700 transition duration-500 ease-out translate-x-8 -translate-y-8 bg-white shadow group-hover:translate-x-0 group-hover:translate-y-0 active:shadow-sm bg-lred rounded-bl-2xl focus:outline-none"
+                  className="w-full h-full text-white transition duration-500 ease-out translate-x-8 -translate-y-8 bg-black shadow group-hover:translate-x-0 group-hover:translate-y-0 active:shadow-sm bg-lred rounded-bl-2xl focus:outline-none"
                   onClick={() => setShowDialog(false)}
                 >
                   <svg

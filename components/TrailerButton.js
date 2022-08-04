@@ -20,7 +20,7 @@ const TrailerButton = ({ className, onClick }) => {
         className
       )}
     >
-      <PlayIcon className="items-center duration-500" />
+      <PlayIcon className="items-center p-0.5 duration-500" />
       <div className="w-0 font-medium duration-500 opacity-0 whitespace-nowrap group-hover:opacity-100">
         Trailer
       </div>

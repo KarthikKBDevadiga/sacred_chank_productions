@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import PlayIcon from "../../icons/PlayIcon";
 import classNames from "../../utils/classNames";
 import Language from "../Language";
@@ -5,25 +6,30 @@ import TrailerButton from "../TrailerButton";
 import HoverButton from "../TrailerButton";
 
 const Movie = ({ movie, trailer, className }) => {
+  const router = useRouter();
   return (
     <div
       className={classNames(
         "relative overflow-hidden bg-white rounded-md shadow-md cursor-pointer group",
         className
       )}
+      onClick={() => {
+        router.push("/movie/" + movie.title);
+      }}
     >
       <img
-        className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
+        className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110 group-hover:-translate-y-8"
         src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
       />
       <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-gradient-to-t from-black via-black to-transparent group-hover:translate-y-0">
-        <div className="text-lg">{movie.title}</div>
+        <div className="text-lg font-bold text-black">{movie.title}</div>
+
         <div className="flex gap-2 mt-2">
           {movie.genre.map((genre) => {
             return (
               <di
                 key={genre}
-                className="px-1.5 py-0.5 text-xs bg-red-600 rounded-md"
+                className="px-1.5 py-0.5 text-xs bg-red-600 rounded-md "
               >
                 {genre}
               </di>
@@ -32,13 +38,16 @@ const Movie = ({ movie, trailer, className }) => {
         </div>
         <div className="mt-3 text-sm text-justify">{movie.description}</div>
         <div className="mt-2">
-          <div className="text-base">Cast</div>
+          <div className="flex gap-2 text-base text-white">
+            <div>Cast</div>
+            <div className="self-center flex-1 h-px bg-white rounded-sm" />
+          </div>
           <div className="flex gap-2 mt-2">
             {movie.casts.map((cast) => {
               return (
                 <img
                   key={cast}
-                  className="object-cover w-10 h-10 rounded-full"
+                  className="object-cover w-10 h-10 border-2 border-white border-dashed rounded-full"
                   src={cast.image}
                 />
               );

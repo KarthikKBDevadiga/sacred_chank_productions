@@ -7,7 +7,7 @@ import MenuIcon from "../icons/MenuIcon";
 import classNames from "../utils/classNames";
 
 const navigation = [
-  { id: "", name: "Movie", href: "#", current: true },
+  { id: "", name: "Movie", href: "/", current: true },
   {
     id: "distribution",
     name: "Distribution",
@@ -54,7 +54,7 @@ const Header = ({ className, scrolled, page }) => {
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16 border-gray-200 border-b1">
               <div className="flex items-center">
-                <Link href="./">
+                <Link href="/">
                   <a className="flex-shrink-0">
                     <img
                       className="w-auto h-8"

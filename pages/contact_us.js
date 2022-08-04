@@ -109,7 +109,7 @@ export default function ContactUs() {
                     )}
                   >
                     <input
-                      className="w-full py-2 text-base text-green-900 duration-200 bg-transparent border-b-2 border-gray-200 outline-none placeholder:text-transparent peer focus:border-indigo-500"
+                      className="w-full py-2 pl-4 text-base text-green-900 duration-200 bg-transparent border-2 border-gray-200 rounded-md outline-none placeholder:text-transparent peer focus:border-indigo-500"
                       name={"name"}
                       id={"name"}
                       type="text"
@@ -118,7 +118,23 @@ export default function ContactUs() {
                     />
                     <label
                       htmlFor={"name"}
-                      className="absolute top-0 block text-xs text-gray-300 duration-200 peer-focus:text-indigo-600 peer-focus:top-0 peer-focus:text-xs peer-placeholder-shown:top-6 peer-placeholder-shown:text-base"
+                      className="absolute block px-2 text-xs text-gray-300 duration-200 top-2 left-2 peer-focus:text-indigo-600 peer-focus:top-2 peer-focus:left-4 peer-focus:bg-white peer-focus:text-xs peer-placeholder-shown:top-7 peer-placeholder-shown:text-base"
+                    >
+                      Name
+                    </label>
+                  </div>
+                  <div className={classNames("relative w-full  col-span-2")}>
+                    <input
+                      className="w-full py-2 pl-3 text-base text-green-900 duration-200 bg-transparent border-2 border-gray-200 rounded-md outline-none placeholder:text-transparent peer focus:border-indigo-500"
+                      name={"name"}
+                      id={"name"}
+                      type="text"
+                      placeholder="Name"
+                      onChange={(event) => {}}
+                    />
+                    <label
+                      htmlFor={"name"}
+                      className="absolute block px-2 text-xs text-gray-300 duration-200 top-2 left-1 peer-focus:text-indigo-600 peer-focus:-top-2 peer-focus:left-4 peer-focus:bg-white peer-focus:text-xs peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base"
                     >
                       Name
                     </label>
