@@ -28,6 +28,22 @@ import Header from "../components/Header";
 import classNames from "../utils/classNames";
 import Metatag from "../components/Metatag";
 
+import { motion } from "framer-motion";
+
+import GoogleMapReact from "google-map-react";
+import Script from "next/script";
+import Map from "../components/Map";
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+const defaultProps = {
+  center: {
+    lat: 10.99835602,
+    lng: 77.01502627,
+  },
+  zoom: 11,
+};
+
 export default function ContactUs() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -59,57 +75,143 @@ export default function ContactUs() {
         <Header scrolled={scrolled} page="contact_us" />
 
         <main className="w-full -z-10 ">
-          <div className="relative h-48 bg-black bg-opacity-25 md:h-48">
-            <img
-              className="object-cover w-full h-full opacity-50"
-              src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
-            />
-          </div>
+          <div className="pattern">
+            <motion.div
+              initial={{ opacity: 0, scale: 1, y: -200 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+            >
+              <Map />
+            </motion.div>
 
-          <div className="relative mx-auto -mt-12 max-w-7xl">
-            <div className="mx-6 overflow-hidden bg-white rounded-md">
-              <div className="md:grid md:grid-cols-2 md:items-start">
-                <div className="flex flex-col justify-between h-full p-8 text-sm text-white bg-indigo-700">
+            <motion.div
+              className="relative mx-auto -mt-12 max-w-7xl"
+              initial={{ opacity: 0, scale: 1, y: 200 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+            >
+              <div className="mx-6 overflow-hidden rounded-md md:grid md:grid-cols-2 md:items-start">
+                <div className="flex flex-col justify-between h-full p-8 text-sm text-white bg-black md:bg-gradient-to-l from-gray-700 to-black">
                   <div>
-                    <div className="text-2xl font-medium text-white md:text-2xl ">
+                    <motion.div
+                      className="text-2xl font-medium text-white md:text-2xl "
+                      initial={{ opacity: 0, x: -200 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 0.5,
+                      }}
+                    >
                       Contact Information
-                    </div>
-                    <div className="mt-4 text-base font-thin">
+                    </motion.div>
+                    <motion.div
+                      className="mt-4 text-base font-thin"
+                      initial={{ opacity: 0, x: -200 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 0.75,
+                      }}
+                    >
                       Fill Up The Form And Our Team Will Get Back To You Within
                       24 Hours
-                    </div>
+                    </motion.div>
                   </div>
 
-                  <div className="mt-16 text-base font-light">
-                    <div className="flex gap-2">
+                  <div className="mt-8 text-base font-light">
+                    <motion.div
+                      className="flex gap-2"
+                      initial={{ opacity: 0, x: -200 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ ease: "easeOut", duration: 0.25, delay: 1 }}
+                    >
                       <PhoneIcon className="self-center w-5 h-5" />
                       <div className="self-center">+91 99887 7883</div>
-                    </div>
-                    <div className="flex gap-2 mt-4">
+                    </motion.div>
+                    <motion.div
+                      className="flex gap-2 mt-4"
+                      initial={{ opacity: 0, x: -200 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 1.15,
+                      }}
+                    >
                       <MailIcon className="self-center w-5 h-5" />
                       <div className="self-center">hello@sacredchank.com</div>
-                    </div>
-                    <div className="flex gap-2 mt-4">
+                    </motion.div>
+                    <motion.div
+                      className="flex gap-2 mt-4"
+                      initial={{ opacity: 0, x: -200 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 1.3,
+                      }}
+                    >
                       <LocationIcon className="self-center w-5 h-5" />
                       <div className="self-center">102 Street 2714 Don</div>
-                    </div>
+                    </motion.div>
                   </div>
 
-                  <div className="flex gap-8 mt-16 ">
-                    <FacebookIcon className="w-5 h-5 text-gray-400 duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
-                    <InstagramIcon className="w-5 h-5 text-gray-400 duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
-                    <TwitterIcon className="w-5 h-5 text-gray-400 duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
-                    <div className="flex-1 bg-white h-[2px] self-center rounded-full" />
+                  <div className="flex gap-8 mt-8 ">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 0.5,
+                      }}
+                    >
+                      <FacebookIcon className="w-5 h-5 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 0.65,
+                      }}
+                    >
+                      <InstagramIcon className="w-5 h-5 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 0.8,
+                      }}
+                    >
+                      <TwitterIcon className="w-5 h-5 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
+                    </motion.div>
+
+                    <motion.div
+                      className="flex-1 bg-white h-[2px] self-center rounded-full"
+                      initial={{ opacity: 0, scaleX: 0 }}
+                      animate={{ opacity: 1, scaleX: 1 }}
+                      transition={{ ease: "easeOut", duration: 0.25, delay: 1 }}
+                    />
                   </div>
                 </div>
-                <div className="flex flex-col gap-4 p-4 mt-4 text-green-900 sm:mt-0 md:col-span-1">
-                  <div
-                    className={classNames(
-                      "relative w-full pt-4 mt-1 col-span-2"
-                    )}
+                <div className="flex flex-col h-full gap-4 p-4 mt-4 text-green-900 bg-gray-700 sm:mt-0 md:col-span-1">
+                  <motion.div
+                    className={classNames("relative w-full  col-span-2")}
+                    initial={{ opacity: 0, x: 200 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
                   >
                     <input
-                      className="w-full py-2 pl-4 text-base text-green-900 duration-200 bg-transparent border-2 border-gray-200 rounded-md outline-none placeholder:text-transparent peer focus:border-indigo-500"
+                      className="w-full py-2 pl-3 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
                       name={"name"}
                       id={"name"}
                       type="text"
@@ -118,74 +220,85 @@ export default function ContactUs() {
                     />
                     <label
                       htmlFor={"name"}
-                      className="absolute block px-2 text-xs text-gray-300 duration-200 top-2 left-2 peer-focus:text-indigo-600 peer-focus:top-2 peer-focus:left-4 peer-focus:bg-white peer-focus:text-xs peer-placeholder-shown:top-7 peer-placeholder-shown:text-base"
+                      className={classNames(
+                        "absolute block px-2 text-xs text-gray-500 duration-200 bg-gray-700  -top-2 left-4",
+                        "peer-focus:text-white peer-focus:-top-2 peer-focus:left-4 peer-focus:bg-gray-700 peer-focus:text-xs ",
+                        "peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent"
+                      )}
                     >
                       Name
                     </label>
-                  </div>
-                  <div className={classNames("relative w-full  col-span-2")}>
-                    <input
-                      className="w-full py-2 pl-3 text-base text-green-900 duration-200 bg-transparent border-2 border-gray-200 rounded-md outline-none placeholder:text-transparent peer focus:border-indigo-500"
-                      name={"name"}
-                      id={"name"}
-                      type="text"
-                      placeholder="Name"
-                      onChange={(event) => {}}
-                    />
-                    <label
-                      htmlFor={"name"}
-                      className="absolute block px-2 text-xs text-gray-300 duration-200 top-2 left-1 peer-focus:text-indigo-600 peer-focus:-top-2 peer-focus:left-4 peer-focus:bg-white peer-focus:text-xs peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base"
-                    >
-                      Name
-                    </label>
-                  </div>
-                  <div
-                    className={classNames(
-                      "relative w-full pt-4 mt-1 col-span-2"
-                    )}
+                  </motion.div>
+                  <motion.div
+                    className={classNames("relative w-full  col-span-2")}
+                    initial={{ opacity: 0, x: 200 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.5, delay: 0.75 }}
                   >
                     <input
-                      className="w-full py-2 text-base text-green-900 duration-200 bg-transparent border-b-2 border-gray-200 outline-none placeholder:text-transparent peer focus:border-indigo-500"
+                      className="w-full py-2 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none pl-9 focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
                       name={"email"}
                       id={"email"}
                       type="email"
                       placeholder="Email"
                       onChange={(event) => {}}
                     />
+                    <MailIcon
+                      className={classNames(
+                        "absolute w-5 h-5 text-gray-500 top-2.5 left-3 duration-200",
+                        "peer-focus:text-white"
+                      )}
+                    />
                     <label
                       htmlFor={"email"}
-                      className="absolute top-0 block text-xs text-gray-300 duration-200 peer-focus:text-indigo-600 peer-focus:top-0 peer-focus:text-xs peer-placeholder-shown:top-6 peer-placeholder-shown:text-base"
+                      className={classNames(
+                        "absolute block px-2 text-xs text-gray-500 duration-200 bg-gray-700  -top-2 left-4",
+                        "peer-focus:text-white peer-focus:-top-2 peer-focus:left-4 peer-focus:bg-gray-700 peer-focus:text-xs",
+                        "peer-placeholder-shown:top-2 peer-placeholder-shown:left-8 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent"
+                      )}
                     >
                       Email
                     </label>
-                  </div>
-                  <div
-                    className={classNames(
-                      "relative w-full pt-4 mt-1 col-span-2"
-                    )}
+                  </motion.div>
+                  <motion.div
+                    className={classNames("relative w-full  col-span-2")}
+                    initial={{ opacity: 0, x: 200 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.5, delay: 1 }}
                   >
                     <input
-                      className="w-full py-2 text-base text-green-900 duration-200 bg-transparent border-b-2 border-gray-200 outline-none placeholder:text-transparent peer focus:border-indigo-500"
+                      className="w-full py-2 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none pl-9 focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
                       name={"phone"}
                       id={"phone"}
                       type="tel"
                       placeholder="Phone Number"
                       onChange={(event) => {}}
                     />
+                    <PhoneIcon
+                      className={classNames(
+                        "absolute w-5 h-5 text-gray-500 top-2.5 left-3 duration-200",
+                        "peer-focus:text-white"
+                      )}
+                    />
                     <label
                       htmlFor={"phone"}
-                      className="absolute top-0 block text-xs text-gray-300 duration-200 peer-focus:text-indigo-600 peer-focus:top-0 peer-focus:text-xs peer-placeholder-shown:top-6 peer-placeholder-shown:text-base"
+                      className={classNames(
+                        "absolute block px-2 text-xs text-gray-500 duration-200 bg-gray-700  -top-2 left-4",
+                        "peer-focus:text-white peer-focus:-top-2 peer-focus:left-4 peer-focus:bg-gray-700 peer-focus:text-xs",
+                        "peer-placeholder-shown:top-2 peer-placeholder-shown:left-8 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent"
+                      )}
                     >
                       Phone Number
                     </label>
-                  </div>
-                  <div
-                    className={classNames(
-                      "relative w-full pt-4 mt-1 col-span-2"
-                    )}
+                  </motion.div>
+                  <motion.div
+                    className={classNames("relative w-full  col-span-2")}
+                    initial={{ opacity: 0, x: 200 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.5, delay: 1.25 }}
                   >
                     <input
-                      className="w-full py-2 text-base text-green-900 duration-200 bg-transparent border-b-2 border-gray-200 outline-none placeholder:text-transparent peer focus:border-indigo-500"
+                      className="w-full py-2 pl-3 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
                       name={"country"}
                       id={"country"}
                       type="text"
@@ -194,15 +307,20 @@ export default function ContactUs() {
                     />
                     <label
                       htmlFor={"country"}
-                      className="absolute top-0 block text-xs text-gray-300 duration-200 peer-focus:text-indigo-600 peer-focus:top-0 peer-focus:text-xs peer-placeholder-shown:top-6 peer-placeholder-shown:text-base"
+                      className={classNames(
+                        "absolute block px-2 text-xs text-gray-500 duration-200 bg-gray-700  -top-2 left-4",
+                        "peer-focus:text-white peer-focus:-top-2 peer-focus:left-4 peer-focus:bg-gray-700 peer-focus:text-xs ",
+                        "peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent"
+                      )}
                     >
                       Country
                     </label>
-                  </div>
-                  <div
-                    className={classNames(
-                      "relative w-full pt-4 mt-1 col-span-2"
-                    )}
+                  </motion.div>
+                  <motion.div
+                    className={classNames("relative w-full  col-span-2")}
+                    initial={{ opacity: 0, x: 200 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.5, delay: 1.5 }}
                   >
                     <TextareaAutosize
                       onFocus={() => {
@@ -216,22 +334,32 @@ export default function ContactUs() {
                       type="text"
                       name={"message"}
                       id={"message"}
-                      className="w-full py-2 text-base text-green-900 duration-200 bg-transparent border-b-2 border-gray-200 outline-none placeholder:text-transparent peer focus:border-indigo-500"
+                      className="w-full py-2 pl-3 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none resize-none focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
                       placeholder="Message"
                     />
                     <label
                       htmlFor={"message"}
-                      className="absolute top-0 block text-xs text-gray-300 duration-200 peer-focus:text-indigo-600 peer-focus:top-0 peer-focus:text-xs peer-placeholder-shown:top-6 peer-placeholder-shown:text-base"
+                      className={classNames(
+                        "absolute block px-2 text-xs text-gray-500 duration-200 bg-gray-700  -top-2 left-4",
+                        "peer-focus:text-white peer-focus:-top-2 peer-focus:left-4 peer-focus:bg-gray-700 peer-focus:text-xs ",
+                        "peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent"
+                      )}
                     >
                       Message
                     </label>
-                  </div>
-                  <div className="p-4 text-white bg-indigo-600 rounded-md shadow-md cursor-pointer">
+                  </motion.div>
+
+                  <motion.div
+                    className="px-4 py-3 ml-auto text-white bg-gray-500 rounded-md shadow-md cursor-pointer w-max"
+                    initial={{ opacity: 0, x: 200 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.5, delay: 1.75 }}
+                  >
                     Submit
-                  </div>
+                  </motion.div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </main>
         <Footer className="mt-8" />

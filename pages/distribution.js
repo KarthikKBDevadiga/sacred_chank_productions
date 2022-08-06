@@ -26,6 +26,8 @@ import classNames from "../utils/classNames";
 import YoutubeDialog from "../components/YoutubeDialog";
 import Metatag from "../components/Metatag";
 
+import { motion } from "framer-motion";
+
 const AdaptiveHeight = (slider) => {
   function updateHeight() {
     slider.container.style.height =
@@ -83,7 +85,18 @@ export default function Distribution() {
           {/* Navbar */}
           <Header scrolled={scrolled} page="distribution" />
 
-          <main className="w-full -z-10 ">
+          <motion.main
+            className="w-full -z-10 "
+            variants={{
+              hidden: { opacity: 0, x: -200, y: 0 },
+              enter: { opacity: 1, x: 0, y: 0 },
+              exit: { opacity: 0, x: 0, y: -100 },
+            }} // Pass the variant object into Framer Motion
+            initial="hidden" // Set the initial state to variants.hidden
+            animate="enter" // Animated state to variants.enter
+            exit="exit" // Exit state (used later) to variants.exit
+            transition={{ type: "linear" }} // Set the transition to linear
+          >
             <div className=" justify-center h-screen text-white bg-[length:100px_100px] flex ">
               <div className="self-center text-7xl">Film Distribution</div>
             </div>
@@ -188,7 +201,7 @@ export default function Distribution() {
                 </div>
               </div>
             </div>
-          </main>
+          </motion.main>
           <Footer />
         </div>
       </div>

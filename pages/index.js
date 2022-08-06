@@ -30,6 +30,8 @@ import Movie from "../components/item/Movie";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 
+import { motion } from "framer-motion";
+
 const AdaptiveHeight = (slider) => {
   function updateHeight() {
     slider.container.style.height =
@@ -115,8 +117,13 @@ export default function Index() {
         <div className="pattern">
           <Header scrolled={scrolled} />
 
-          <main className="w-full -z-10 ">
-            <div className="relative h-screen">
+          <main className="w-full -z-10">
+            <motion.div
+              className="relative h-screen"
+              initial={{ opacity: 0, scale: 1, y: -200 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+            >
               <div className="absolute w-full">
                 <div ref={sliderRef} className="keen-slider">
                   <div className="keen-slider__slide">
@@ -277,154 +284,145 @@ export default function Index() {
                   </div>
                 )}
               </div>
+            </motion.div>
+
+            <div className="mx-auto mt-8 max-w-7xl"></div>
+            <div className="flex px-4 mx-auto mt-8 max-w-7xl">
+              <div className="flex-1 bg-white h-[2px] self-center rounded-full mr-4" />
+              <div className="text-lg font-medium text-white md:text-2xl">
+                MOVIES IN THEATER
+              </div>
+              <div className="flex-1 bg-white h-[2px] self-center rounded-full ml-4" />
             </div>
 
-            <div className="mx-auto mt-8 max-w-7xl">
-              <div className="flex px-4">
-                <div className="flex-1 bg-white h-[2px] self-center rounded-full mr-4" />
-                <div className="text-lg font-medium text-white md:text-2xl">
-                  MOVIES IN THEATER
+            <div className="grid grid-cols-1 gap-8 p-8 mx-auto sm:grid-cols-3 lg:grid-cols-4 max-w-7xl">
+              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
+                <img
+                  className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
+                  src="https://www.paramvah.com/images/films/777-charlie/777-CharliePoster2.jpg"
+                />
+                <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  <div className="text-xl">777 Charlie</div>
+                  <div className="text-sm">(Kannada)</div>
+                  <div className="mt-2">
+                    Dharma is stuck in a rut with his negative and lonely
+                    lifestyle and spends each day in the comfort of his
+                    loneliness. A pup named Charlie enters his life and gives
+                    him a new perspective towards it.
+                  </div>
+                  <div
+                    className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
+                    onClick={() => {
+                      setYoutubeUrl(
+                        "https://www.youtube.com/watch?v=REqFOV2A7sI"
+                      );
+                      setOpenVideoDialog(true);
+                    }}
+                  >
+                    WATCH TRAILER
+                  </div>
                 </div>
-                <div className="flex-1 bg-white h-[2px] self-center rounded-full ml-4" />
+                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  10 June 2022
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-8 p-8 sm:grid-cols-3 lg:grid-cols-4 ">
-                <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
-                  <img
-                    className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
-                    src="https://www.paramvah.com/images/films/777-charlie/777-CharliePoster2.jpg"
+              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
+                <img
+                  className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
+                  src="https://www.deccanherald.com/sites/dh/files/articleimages/2022/06/23/harikathe-alla-girikathe-1120689-1655987339.jpg"
+                />
+                <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  <div className="text-xl">Harikathe Alla Girikathe</div>
+                  <div className="text-sm">(Kannada)</div>
+                  <div className="mt-2">
+                    The hurdles that has to be overcome by three people who came
+                    together to pursue a common goal of making it big in the
+                    movie business.
+                  </div>
+                  <div
+                    className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
+                    onClick={() => {
+                      setYoutubeUrl(
+                        "https://www.youtube.com/watch?v=NDf58vl6FhA"
+                      );
+                      setOpenVideoDialog(true);
+                    }}
+                  >
+                    WATCH TRAILER
+                  </div>
+                </div>
+                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  23 June 2022
+                </div>
+              </div>
+              <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
+                <img
+                  className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
+                  src="https://www.letsfindmovie.com/wp-content/uploads/2021/12/gQ29E9Qy6z5ExsxnpgUTHfpZFO3.jpg"
+                />
+                <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  <div className="text-xl">Avatara Purusha</div>
+                  <div className="text-sm">(Kannada)</div>
+                  <div className="mt-2">
+                    Siri hires an unsuccessful actor to play her missing brother
+                    in front of her parents to bring the family back together.
+                    Black magic also plays a role.
+                  </div>
+                  <div
+                    className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
+                    onClick={() => {
+                      setYoutubeUrl(
+                        "https://www.youtube.com/watch?v=LqvbogH-Ivc"
+                      );
+                      setOpenVideoDialog(true);
+                    }}
+                  >
+                    WATCH TRAILER
+                  </div>
+                </div>
+                <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
+                  6 May 2022
+                </div>
+              </div>
+            </div>
+
+            <div className="flex px-4 mx-auto max-w-7xl">
+              <div className="flex-1 bg-white h-[2px] self-center rounded-full mr-4" />
+              <div className="text-lg font-medium text-white md:text-2xl">
+                UPCOMING MOVIES
+              </div>
+              <div className="flex-1 bg-white h-[2px] self-center rounded-full ml-4" />
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 p-8 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl">
+              {UPCOMING_MOVIE.map((movie) => {
+                return (
+                  // <AnimationOnScroll
+                  //   key={movie}
+                  //   animateIn="animate__fadeInRight"
+                  //   initiallyVisible={true}
+                  //   duration={1}
+                  //   // delay={500}
+                  //   animateOnce={true}
+                  // >
+                  <Movie
+                    key={movie}
+                    movie={movie}
+                    className="col-span-1"
+                    trailer={() => {
+                      setYoutubeUrl(
+                        "https://www.youtube.com/watch?v=fnsWt4H619o"
+                      );
+                      setOpenVideoDialog(true);
+                    }}
                   />
-                  <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                    <div className="text-xl">777 Charlie</div>
-                    <div className="text-sm">(Kannada)</div>
-                    <div className="mt-2">
-                      Dharma is stuck in a rut with his negative and lonely
-                      lifestyle and spends each day in the comfort of his
-                      loneliness. A pup named Charlie enters his life and gives
-                      him a new perspective towards it.
-                    </div>
-                    <div
-                      className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
-                      onClick={() => {
-                        setYoutubeUrl(
-                          "https://www.youtube.com/watch?v=REqFOV2A7sI"
-                        );
-                        setOpenVideoDialog(true);
-                      }}
-                    >
-                      WATCH TRAILER
-                    </div>
-                  </div>
-                  <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                    10 June 2022
-                  </div>
-                </div>
-
-                <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
-                  <img
-                    className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
-                    src="https://www.deccanherald.com/sites/dh/files/articleimages/2022/06/23/harikathe-alla-girikathe-1120689-1655987339.jpg"
-                  />
-                  <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                    <div className="text-xl">Harikathe Alla Girikathe</div>
-                    <div className="text-sm">(Kannada)</div>
-                    <div className="mt-2">
-                      The hurdles that has to be overcome by three people who
-                      came together to pursue a common goal of making it big in
-                      the movie business.
-                    </div>
-                    <div
-                      className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
-                      onClick={() => {
-                        setYoutubeUrl(
-                          "https://www.youtube.com/watch?v=NDf58vl6FhA"
-                        );
-                        setOpenVideoDialog(true);
-                      }}
-                    >
-                      WATCH TRAILER
-                    </div>
-                  </div>
-                  <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                    23 June 2022
-                  </div>
-                </div>
-                <div className="relative col-span-1 overflow-hidden bg-white rounded-md shadow cursor-pointer group">
-                  <img
-                    className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110"
-                    src="https://www.letsfindmovie.com/wp-content/uploads/2021/12/gQ29E9Qy6z5ExsxnpgUTHfpZFO3.jpg"
-                  />
-                  <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                    <div className="text-xl">Avatara Purusha</div>
-                    <div className="text-sm">(Kannada)</div>
-                    <div className="mt-2">
-                      Siri hires an unsuccessful actor to play her missing
-                      brother in front of her parents to bring the family back
-                      together. Black magic also plays a role.
-                    </div>
-                    <div
-                      className="px-2 py-1 mx-auto mt-2 text-white duration-500 border border-white rounded-md cursor-pointer w-max hover:bg-white hover:text-black"
-                      onClick={() => {
-                        setYoutubeUrl(
-                          "https://www.youtube.com/watch?v=LqvbogH-Ivc"
-                        );
-                        setOpenVideoDialog(true);
-                      }}
-                    >
-                      WATCH TRAILER
-                    </div>
-                  </div>
-                  <div className="absolute top-0 w-full p-4 text-white duration-500 -translate-y-full bg-black bg-opacity-50 group-hover:translate-y-0">
-                    6 May 2022
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex px-4 mt-">
-                <div className="flex-1 bg-white h-[2px] self-center rounded-full mr-4" />
-                <div className="text-lg font-medium text-white md:text-2xl">
-                  UPCOMING MOVIES
-                </div>
-                <div className="flex-1 bg-white h-[2px] self-center rounded-full ml-4" />
-              </div>
-
-              <div className="grid grid-cols-1 gap-8 p-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
-                {UPCOMING_MOVIE.map((movie) => {
-                  return (
-                    // <AnimationOnScroll
-                    //   key={movie}
-                    //   animateIn="animate__fadeInRight"
-                    //   initiallyVisible={true}
-                    //   duration={1}
-                    //   // delay={500}
-                    //   animateOnce={true}
-                    // >
-                    <Movie
-                      key={movie}
-                      movie={movie}
-                      className="col-span-1"
-                      trailer={() => {
-                        setYoutubeUrl(
-                          "https://www.youtube.com/watch?v=fnsWt4H619o"
-                        );
-                        setOpenVideoDialog(true);
-                      }}
-                    />
-                    // </AnimationOnScroll>
-                  );
-                })}
-              </div>
-
-              {/* <AnimationOnScroll
-                animateIn="animate__fadeInLeft"
-                initiallyVisible={false}
-                // delay={500}
-                // animateOnce={true}
-              >
-                <div className="w-full text-white">Some Text</div>
-              </AnimationOnScroll> */}
+                  // </AnimationOnScroll>
+                );
+              })}
             </div>
           </main>
+
           <Footer />
         </div>
         {/* Navbar */}

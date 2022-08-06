@@ -22,6 +22,8 @@ import Metatag from "../../components/Metatag";
 import Constants from "../../helpers/Constants";
 import PlayIcon from "../../icons/PlayIcon";
 
+import { motion } from "framer-motion";
+
 export default function AboutUs() {
   const movie = Constants.MOVIE;
   const [scrolled, setScrolled] = useState(false);
@@ -50,75 +52,139 @@ export default function AboutUs() {
       */}
       <Metatag title="About Us" description="About Us" />
       <div className="min-h-full bg-slate-900">
-        {/* Navbar */}
-        <Header scrolled={scrolled} page="about_us" />
+        <div className="pattern">
+          {/* Navbar */}
+          <Header scrolled={scrolled} page="about_us" />
 
-        <main className="w-full -z-10 ">
-          <div className="relative bg-black bg-opacity-25 h-96 md:h-96">
-            <img
-              className="object-cover w-full h-full opacity-50"
-              src={movie.poster.landscape}
-            />
-          </div>
-
-          <div className="relative px-4 mx-auto -my-48 md:px-8 max-w-7xl sm:grid sm:grid-cols-4 sm:gap-8 sm:items-start">
-            <div className="relative overflow-hidden bg-black rounded-md shadow-md group">
+          <main className="w-full -z-10 ">
+            <motion.div
+              className="relative bg-black bg-opacity-25 h-96 md:h-96"
+              initial={{ opacity: 0, scale: 1, y: -200 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 0.5 }}
+            >
               <img
-                className="object-cover w-full h-full "
-                src={movie.poster.portrait}
+                className="object-cover w-full h-full opacity-50"
+                src={movie.poster.landscape}
               />
-              <div className="absolute bottom-0 w-full h-full p-4 text-white duration-500 translate-y-full bg-gradient-to-t from-black to-transparent group-hover:translate-y-0">
-                <PlayIcon className="w-24 h-24" />
-              </div>
-            </div>
-            <div className="mt-4 text-white sm:mt-0 sm:col-span-3">
-              <div className="text-3xl">{movie.title}</div>
-              <div className="mt-2 text-lg">({movie.releaseDate})</div>
+            </motion.div>
 
-              <div className="flex gap-2 mt-2">
-                {movie.genre.map((genre) => {
-                  return (
-                    <di
-                      key={genre}
-                      className="px-3 py-1 text-base bg-red-600 rounded-md "
-                    >
-                      {genre}
-                    </di>
-                  );
-                })}
-              </div>
-              <div className="mt-4 text-lg">{movie.description}</div>
+            <div className="relative px-4 mx-auto -my-48 md:px-8 max-w-7xl sm:grid sm:grid-cols-4 sm:gap-8 sm:items-start">
+              <motion.div
+                className="relative overflow-hidden bg-black rounded-md shadow-md group"
+                initial={{ opacity: 0, scale: 1, x: -200, y: 0 }}
+                animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+              >
+                <img
+                  className="object-cover w-full h-full "
+                  src={movie.poster.portrait}
+                />
+                {/* <div className="absolute bottom-0 w-full h-full p-4 text-white duration-500 translate-y-full bg-gradient-to-t from-black to-transparent group-hover:translate-y-0">
+                  <PlayIcon className="w-24 h-24" />
+                </div> */}
+              </motion.div>
+              <div className="mt-4 text-white sm:mt-0 sm:col-span-3">
+                <motion.div
+                  initial={{ opacity: 0, scale: 1 }}
+                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                  transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+                >
+                  <div className="text-3xl">{movie.title}</div>
+                  <div className="mt-2 text-lg">({movie.releaseDate})</div>
+                </motion.div>
 
-              <div className="mt-8">
-                <div className="flex gap-4 text-2xl text-white">
-                  <div>Cast</div>
-                  <div className="self-center flex-1 h-1 bg-white rounded-sm" />
-                </div>
-                <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {movie.casts.map((cast) => {
+                <div className="flex gap-2 mt-2">
+                  {movie.genre.map((genre, index) => {
                     return (
-                      <div
-                        className="flex col-span-1 gap-4 overflow-hidden border border-white rounded-full"
-                        key={cast}
+                      <motion.div
+                        initial={{ opacity: 0, scale: 1, x: 100, y: 0 }}
+                        animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                        transition={{
+                          ease: "easeOut",
+                          duration: 0.5,
+                          delay: 1 + 0.2 * index,
+                        }}
+                        key={genre}
+                        className="px-3 py-1 text-base bg-red-600 rounded-md "
                       >
-                        <img
-                          key={cast}
-                          className="object-cover w-14 h-14"
-                          src={cast.image}
-                        />
-                        <div className="self-center text-xl">
-                          <span>{cast.name}</span>
-                          <span className="text-sm"> as {cast.name}</span>
-                        </div>
-                      </div>
+                        {genre}
+                      </motion.div>
                     );
                   })}
                 </div>
+                <motion.div
+                  className="mt-4 text-lg"
+                  initial={{ opacity: 0, scale: 1 }}
+                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                  transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+                >
+                  <div className="mt-4 text-lg">{movie.description}</div>
+                </motion.div>
+
+                <div className="mt-8">
+                  <div className="flex gap-4 text-2xl text-white">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 1 }}
+                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.5,
+                        delay: 0.5,
+                      }}
+                    >
+                      Cast
+                    </motion.div>
+                    <motion.div
+                      className="self-center flex-1 h-1 bg-white rounded-sm"
+                      initial={{ opacity: 0, scale: 1, scaleX: 0 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        x: 0,
+                        y: 0,
+                        scaleX: 1,
+                      }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.5,
+                        delay: 0.5,
+                      }}
+                    ></motion.div>
+                  </div>
+                  <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {movie.casts.map((cast, index) => {
+                      return (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 1, x: 100, y: 0 }}
+                          animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                          transition={{
+                            ease: "easeOut",
+                            duration: 0.5,
+                            delay: 1 + 0.2 * index,
+                          }}
+                          className="flex col-span-1 gap-4 overflow-hidden border border-white rounded-full"
+                          key={cast}
+                        >
+                          <img
+                            key={cast}
+                            className="object-cover w-14 h-14"
+                            src={cast.image}
+                          />
+                          <div className="self-center text-xl">
+                            <span>{cast.name}</span>
+                            <span className="text-sm"> as {cast.name}</span>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </main>
-        <Footer className="mt-56" />
+          </main>
+          <Footer className="mt-56" />
+        </div>
       </div>
     </>
   );

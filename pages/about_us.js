@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Metatag from "../components/Metatag";
+import { motion } from "framer-motion";
 
 const AdaptiveHeight = (slider) => {
   function updateHeight() {
@@ -59,7 +60,18 @@ export default function AboutUs() {
         {/* Navbar */}
         <Header scrolled={scrolled} page="about_us" />
 
-        <main className="w-full -z-10 ">
+        <motion.main
+          variants={{
+            hidden: { opacity: 0, x: -200, y: 0 },
+            enter: { opacity: 1, x: 0, y: 0 },
+            exit: { opacity: 0, x: 0, y: -100 },
+          }}
+          initial="hidden"
+          animate="enter"
+          exit="exit"
+          transition={{ type: "linear" }}
+          className="w-full -z-10"
+        >
           <div className="relative h-48 bg-black bg-opacity-25 md:h-48">
             <img
               className="object-cover w-full h-full opacity-50"
@@ -114,7 +126,7 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
-        </main>
+        </motion.main>
         <Footer className="mt-8" />
       </div>
     </>
