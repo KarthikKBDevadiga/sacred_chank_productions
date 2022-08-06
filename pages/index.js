@@ -27,9 +27,6 @@ import YoutubeDialog from "../components/YoutubeDialog";
 import Metatag from "../components/Metatag";
 import Movie from "../components/item/Movie";
 
-import { AnimationOnScroll } from "react-animation-on-scroll";
-import "animate.css/animate.min.css";
-
 import { motion } from "framer-motion";
 
 const AdaptiveHeight = (slider) => {

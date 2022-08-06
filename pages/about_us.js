@@ -21,15 +21,6 @@ import Header from "../components/Header";
 import Metatag from "../components/Metatag";
 import { motion } from "framer-motion";
 
-const AdaptiveHeight = (slider) => {
-  function updateHeight() {
-    slider.container.style.height =
-      slider.slides[slider.track.details.rel].offsetHeight + "px";
-  }
-  slider.on("created", updateHeight);
-  slider.on("slideChanged", updateHeight);
-};
-
 export default function AboutUs() {
   const [scrolled, setScrolled] = useState(false);
 

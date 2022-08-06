@@ -30,19 +30,7 @@ import Metatag from "../components/Metatag";
 
 import { motion } from "framer-motion";
 
-import GoogleMapReact from "google-map-react";
-import Script from "next/script";
 import Map from "../components/Map";
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-const defaultProps = {
-  center: {
-    lat: 10.99835602,
-    lng: 77.01502627,
-  },
-  zoom: 11,
-};
 
 export default function ContactUs() {
   const [scrolled, setScrolled] = useState(false);

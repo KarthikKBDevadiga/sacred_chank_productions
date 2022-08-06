@@ -17,25 +17,12 @@
 import { useEffect, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import ArrowBackwardIcon from "../icons/ArrowBackwardIcon";
-import ArrowForwardIcon from "../icons/ArrowForwardIcon";
-import PlayIcon from "../icons/PlayIcon";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import classNames from "../utils/classNames";
 import Metatag from "../components/Metatag";
 
 import { motion } from "framer-motion";
 import Constants from "../helpers/Constants";
-
-const AdaptiveHeight = (slider) => {
-  function updateHeight() {
-    slider.container.style.height =
-      slider.slides[slider.track.details.rel].offsetHeight + "px";
-  }
-  slider.on("created", updateHeight);
-  slider.on("slideChanged", updateHeight);
-};
 
 export default function Index() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,21 +39,6 @@ export default function Index() {
     window.addEventListener("scroll", handleScroll);
   });
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider(
-    {
-      loop: true,
-      initial: 0,
-      slideChanged(s) {
-        setCurrentSlide(s.track.details.rel);
-      },
-      created() {
-        setLoaded(true);
-      },
-    },
-    [AdaptiveHeight]
-  );
   return (
     <>
       {/*
