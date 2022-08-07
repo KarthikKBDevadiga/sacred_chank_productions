@@ -37,6 +37,77 @@ const Constants = {
       ],
     },
   ],
+  IN_THEATER_MOVIES: [
+    {
+      title: "777 Charlie",
+      description:
+        "Dharma is stuck in a rut with his negative and lonely lifestyle and spends each day in the comfort of his loneliness. A pup named Charlie enters his life and gives him a new perspective towards it.",
+      releaseDate: "10 June 2022",
+      languages: ["KANNADA"],
+      genre: ["COMEDY", "ROMANTIC"],
+      poster:
+        "https://www.paramvah.com/images/films/777-charlie/777-CharliePoster2.jpg",
+      trailer: "https://www.youtube.com/watch?v=REqFOV2A7sI",
+      casts: [
+        {
+          name: "Ganesh",
+          image:
+            "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+        },
+        {
+          name: "Diganth",
+          image:
+            "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+        },
+      ],
+    },
+    {
+      title: "Harikathe Alla Girikathe",
+      description:
+        "The hurdles that has to be overcome by three people who came together to pursue a common goal of making it big in the movie business",
+      releaseDate: "23 June 2022",
+      languages: ["KANNADA"],
+      genre: ["COMEDY", "ROMANTIC"],
+      poster:
+        "https://www.deccanherald.com/sites/dh/files/articleimages/2022/06/23/harikathe-alla-girikathe-1120689-1655987339.jpg",
+      trailer: "https://www.youtube.com/watch?v=NDf58vl6FhA",
+      casts: [
+        {
+          name: "Ganesh",
+          image:
+            "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+        },
+        {
+          name: "Diganth",
+          image:
+            "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+        },
+      ],
+    },
+    {
+      title: "Avatara Purusha",
+      description:
+        "Siri hires an unsuccessful actor to play her missing brother in front of her parents to bring the family back together. Black magic also plays a role",
+      releaseDate: "6 May 2022",
+      languages: ["KANNADA"],
+      genre: ["COMEDY", "ROMANTIC"],
+      poster:
+        "https://www.letsfindmovie.com/wp-content/uploads/2021/12/gQ29E9Qy6z5ExsxnpgUTHfpZFO3.jpg",
+      trailer: "https://www.youtube.com/watch?v=LqvbogH-Ivc",
+      casts: [
+        {
+          name: "Ganesh",
+          image:
+            "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+        },
+        {
+          name: "Diganth",
+          image:
+            "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+        },
+      ],
+    },
+  ],
   MOVIE: {
     title: "Gaalipata 2",
     description:

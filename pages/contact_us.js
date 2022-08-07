@@ -65,9 +65,10 @@ export default function ContactUs() {
         <main className="w-full -z-10 ">
           <div className="pattern">
             <motion.div
+              viewport={{ once: true }}
               initial={{ opacity: 0, scale: 1, y: -200 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ ease: "easeOut", duration: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 0.5, once: true }}
             >
               <Map />
             </motion.div>
@@ -75,32 +76,37 @@ export default function ContactUs() {
             <motion.div
               className="relative mx-auto -mt-12 max-w-7xl"
               initial={{ opacity: 0, scale: 1, y: 200 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ ease: "easeOut", duration: 0.5 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 0.5, once: true }}
             >
               <div className="mx-6 overflow-hidden rounded-md md:grid md:grid-cols-2 md:items-start">
                 <div className="flex flex-col justify-between h-full p-8 text-sm text-white bg-black md:bg-gradient-to-l from-gray-700 to-black">
                   <div>
                     <motion.div
                       className="text-2xl font-medium text-white md:text-2xl "
+                      viewport={{ once: true }}
                       initial={{ opacity: 0, x: -200 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.25,
                         delay: 0.5,
+                        once: true,
                       }}
                     >
                       Contact Information
                     </motion.div>
                     <motion.div
+                      viewport={{ once: true }}
                       className="mt-4 text-base font-thin"
                       initial={{ opacity: 0, x: -200 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.25,
                         delay: 0.75,
+                        once: true,
                       }}
                     >
                       Fill Up The Form And Our Team Will Get Back To You Within
@@ -110,22 +116,30 @@ export default function ContactUs() {
 
                   <div className="mt-8 text-base font-light">
                     <motion.div
+                      viewport={{ once: true }}
                       className="flex gap-2"
                       initial={{ opacity: 0, x: -200 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ ease: "easeOut", duration: 0.25, delay: 1 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 1,
+                        once: true,
+                      }}
                     >
                       <PhoneIcon className="self-center w-5 h-5" />
                       <div className="self-center">+91 99887 7883</div>
                     </motion.div>
                     <motion.div
                       className="flex gap-2 mt-4"
+                      viewport={{ once: true }}
                       initial={{ opacity: 0, x: -200 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.25,
                         delay: 1.15,
+                        once: true,
                       }}
                     >
                       <MailIcon className="self-center w-5 h-5" />
@@ -133,12 +147,14 @@ export default function ContactUs() {
                     </motion.div>
                     <motion.div
                       className="flex gap-2 mt-4"
+                      viewport={{ once: true }}
                       initial={{ opacity: 0, x: -200 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.25,
                         delay: 1.3,
+                        once: true,
                       }}
                     >
                       <LocationIcon className="self-center w-5 h-5" />
@@ -146,57 +162,75 @@ export default function ContactUs() {
                     </motion.div>
                   </div>
 
-                  <div className="flex gap-8 mt-8 ">
+                  <div className="flex gap-4 mt-8 ">
                     <motion.div
+                      viewport={{ once: true }}
                       initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.25,
                         delay: 0.5,
+                        once: true,
                       }}
                     >
-                      <FacebookIcon className="w-5 h-5 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
+                      <FacebookIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
                     </motion.div>
 
                     <motion.div
+                      viewport={{ once: true }}
                       initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.25,
                         delay: 0.65,
+                        once: true,
                       }}
                     >
-                      <InstagramIcon className="w-5 h-5 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
+                      <InstagramIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
                     </motion.div>
 
                     <motion.div
+                      viewport={{ once: true }}
                       initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.25,
                         delay: 0.8,
+                        once: true,
                       }}
                     >
-                      <TwitterIcon className="w-5 h-5 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
+                      <TwitterIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
                     </motion.div>
 
                     <motion.div
                       className="flex-1 bg-white h-[2px] self-center rounded-full"
+                      viewport={{ once: true }}
                       initial={{ opacity: 0, scaleX: 0 }}
-                      animate={{ opacity: 1, scaleX: 1 }}
-                      transition={{ ease: "easeOut", duration: 0.25, delay: 1 }}
+                      whileInView={{ opacity: 1, scaleX: 1 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 1,
+                        once: true,
+                      }}
                     />
                   </div>
                 </div>
-                <div className="flex flex-col h-full gap-4 p-4 mt-4 text-green-900 bg-gray-700 sm:mt-0 md:col-span-1">
+                <div className="flex flex-col h-full gap-4 p-4 text-green-900 bg-gray-700 sm:mt-0 md:col-span-1">
                   <motion.div
                     className={classNames("relative w-full  col-span-2")}
+                    viewport={{ once: true }}
                     initial={{ opacity: 0, x: 200 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 0.5,
+                      delay: 0.5,
+                      once: true,
+                    }}
                   >
                     <input
                       className="w-full py-2 pl-3 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
@@ -219,9 +253,15 @@ export default function ContactUs() {
                   </motion.div>
                   <motion.div
                     className={classNames("relative w-full  col-span-2")}
+                    viewport={{ once: true }}
                     initial={{ opacity: 0, x: 200 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.5, delay: 0.75 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 0.5,
+                      delay: 0.75,
+                      once: true,
+                    }}
                   >
                     <input
                       className="w-full py-2 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none pl-9 focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
@@ -250,9 +290,15 @@ export default function ContactUs() {
                   </motion.div>
                   <motion.div
                     className={classNames("relative w-full  col-span-2")}
+                    viewport={{ once: true }}
                     initial={{ opacity: 0, x: 200 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.5, delay: 1 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 0.5,
+                      delay: 1,
+                      once: true,
+                    }}
                   >
                     <input
                       className="w-full py-2 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none pl-9 focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
@@ -281,9 +327,15 @@ export default function ContactUs() {
                   </motion.div>
                   <motion.div
                     className={classNames("relative w-full  col-span-2")}
+                    viewport={{ once: true }}
                     initial={{ opacity: 0, x: 200 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.5, delay: 1.25 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 0.5,
+                      delay: 1.25,
+                      once: true,
+                    }}
                   >
                     <input
                       className="w-full py-2 pl-3 text-sm text-white duration-200 bg-transparent border-2 border-gray-500 rounded-md outline-none focus:border-2 placeholder:text-transparent peer focus:border-gray-100"
@@ -306,9 +358,15 @@ export default function ContactUs() {
                   </motion.div>
                   <motion.div
                     className={classNames("relative w-full  col-span-2")}
+                    viewport={{ once: true }}
                     initial={{ opacity: 0, x: 200 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.5, delay: 1.5 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 0.5,
+                      delay: 1.5,
+                      once: true,
+                    }}
                   >
                     <TextareaAutosize
                       onFocus={() => {
@@ -338,10 +396,16 @@ export default function ContactUs() {
                   </motion.div>
 
                   <motion.div
-                    className="px-4 py-3 ml-auto text-white bg-gray-500 rounded-md shadow-md cursor-pointer w-max"
+                    className="px-4 py-3 text-center text-white bg-gray-500 rounded-md shadow-md cursor-pointer"
+                    viewport={{ once: true }}
                     initial={{ opacity: 0, x: 200 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.5, delay: 1.75 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 0.5,
+                      delay: 1.75,
+                      once: true,
+                    }}
                   >
                     Submit
                   </motion.div>

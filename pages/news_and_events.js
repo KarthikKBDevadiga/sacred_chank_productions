@@ -165,14 +165,16 @@ export default function Index() {
                   {Constants.NEWS.map((news, index) => {
                     return (
                       <motion.div
-                        key={news}
+                        key={index}
                         className="flex p-4 duration-500 cursor-pointer hover:bg-gray-600"
                         initial={{ opacity: 0, x: 200 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         transition={{
                           ease: "easeInOut",
                           duration: 0.25,
                           delay: 0.1 * index,
+                          once: true,
                         }}
                       >
                         <div className="flex-shrink-0 mr-4">

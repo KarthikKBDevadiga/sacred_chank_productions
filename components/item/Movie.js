@@ -10,7 +10,7 @@ const Movie = ({ movie, trailer, className }) => {
   return (
     <div
       className={classNames(
-        "relative overflow-hidden bg-white rounded-md shadow-md cursor-pointer group",
+        "relative overflow-hidden bg-white rounded-md shadow-md cursor-pointer group h-96",
         className
       )}
       onClick={() => {
@@ -19,16 +19,16 @@ const Movie = ({ movie, trailer, className }) => {
     >
       <img
         className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110 group-hover:-translate-y-8"
-        src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
+        src={movie.poster}
       />
       <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-gradient-to-t from-black via-black to-transparent group-hover:translate-y-0">
-        <div className="text-lg font-bold text-black">{movie.title}</div>
+        <div className="text-lg font-bold text-white">{movie.title}</div>
 
         <div className="flex gap-2 mt-2">
-          {movie.genre.map((genre) => {
+          {movie.genre.map((genre, index) => {
             return (
               <di
-                key={genre}
+                key={index}
                 className="px-1.5 py-0.5 text-xs bg-red-600 rounded-md "
               >
                 {genre}
@@ -43,10 +43,10 @@ const Movie = ({ movie, trailer, className }) => {
             <div className="self-center flex-1 h-px bg-white rounded-sm" />
           </div>
           <div className="flex gap-2 mt-2">
-            {movie.casts.map((cast) => {
+            {movie.casts.map((cast, index) => {
               return (
                 <img
-                  key={cast}
+                  key={index}
                   className="object-cover w-10 h-10 border-2 border-white border-dashed rounded-full"
                   src={cast.image}
                 />
@@ -56,11 +56,13 @@ const Movie = ({ movie, trailer, className }) => {
         </div>
       </div>
       <div className="absolute flex gap-2 top-2 right-2">
-        {movie.languages.map((language) => {
-          return <Language key={language} language={language} />;
+        {movie.languages.map((language, index) => {
+          return <Language key={index} language={language} />;
         })}
         <TrailerButton
-          onClick={() => {
+          onClick={(event) => {
+            event.stopPropagation();
+
             trailer();
           }}
         />

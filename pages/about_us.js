@@ -51,18 +51,7 @@ export default function AboutUs() {
         {/* Navbar */}
         <Header scrolled={scrolled} page="about_us" />
 
-        <motion.main
-          variants={{
-            hidden: { opacity: 0, x: -200, y: 0 },
-            enter: { opacity: 1, x: 0, y: 0 },
-            exit: { opacity: 0, x: 0, y: -100 },
-          }}
-          initial="hidden"
-          animate="enter"
-          exit="exit"
-          transition={{ type: "linear" }}
-          className="w-full -z-10"
-        >
+        <main className="w-full -z-10">
           <div className="relative h-48 bg-black bg-opacity-25 md:h-48">
             <img
               className="object-cover w-full h-full opacity-50"
@@ -71,7 +60,17 @@ export default function AboutUs() {
           </div>
 
           <div className="relative mx-auto -mt-12 max-w-7xl">
-            <div className="mx-6 overflow-hidden bg-white rounded-md md:grid md:grid-cols-2 md:items-start">
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ opacity: 0, x: -200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.5,
+                once: true,
+              }}
+              className="mx-6 overflow-hidden bg-white rounded-md md:grid md:grid-cols-2 md:items-start"
+            >
               <div className="block h-full text-sm text-white bg-indigo-700 ">
                 <img
                   className="object-cover w-full h-full "
@@ -95,9 +94,19 @@ export default function AboutUs() {
                   looking forward to extending our family.
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="mx-6 mt-8 overflow-hidden bg-white rounded-md md:grid md:grid-cols-2 md:items-start">
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ opacity: 0, x: 200 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                ease: "easeInOut",
+                duration: 0.5,
+                once: true,
+              }}
+              className="mx-6 mt-8 overflow-hidden bg-white rounded-md md:grid md:grid-cols-2 md:items-start"
+            >
               <div className="flex flex-col h-full gap-4 p-4 text-sm text-green-900">
                 <div className="text-2xl font-medium md:text-2xl ">
                   Our Mission
@@ -115,9 +124,9 @@ export default function AboutUs() {
                   src="https://nrikannadabalaga.com/wp-content/uploads/2021/01/Vastuchitra_Badami-Cave-02.jpg"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
-        </motion.main>
+        </main>
         <Footer className="mt-8" />
       </div>
     </>
