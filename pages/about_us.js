@@ -69,15 +69,15 @@ export default function AboutUs() {
                 duration: 0.5,
                 once: true,
               }}
-              className="mx-6 overflow-hidden bg-white rounded-md md:grid md:grid-cols-2 md:items-start"
+              className="mx-6 overflow-hidden text-red-900 bg-white rounded-3xl md:grid md:grid-cols-2 md:items-start"
             >
-              <div className="block h-full text-sm text-white bg-indigo-700 ">
+              <div className="block h-full text-sm text-white bg-indigo-700">
                 <img
                   className="object-cover w-full h-full "
                   src="	https://nrikannadabalaga.com/wp-content/uploads/2021/01/Bhootanatha-Badami-1.jpg"
                 />
               </div>
-              <div className="flex flex-col gap-4 p-4 mt-4 text-green-900 sm:mt-0 md:col-span-1">
+              <div className="flex flex-col gap-4 p-8 mt-4 text-green-900 sm:mt-0 md:col-span-1">
                 <div className="text-2xl font-medium md:text-2xl ">
                   Our History
                 </div>

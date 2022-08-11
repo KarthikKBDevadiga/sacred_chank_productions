@@ -15,7 +15,10 @@ const Marker = (options) => {
 
   useEffect(() => {
     if (!marker) {
-      setMarker(new google.maps.Marker(<PlayIcon />));
+      setMarker(new google.maps.Marker());
+      // setTimeout(() => {
+      //   marker.setAnimation({ animation: google.maps.Animation.BOUNCE });
+      // }, 500);
     }
 
     return () => {
@@ -27,8 +30,21 @@ const Marker = (options) => {
 
   useEffect(() => {
     if (marker) {
-      marker.setOptions(options);
-      marker.setIcon("/marker.png");
+      setTimeout(() => {
+        marker.setOptions(options);
+        marker.setIcon({
+          url: "/marker.png",
+          labelOrigin: new google.maps.Point(16, 56),
+          // size: new google.maps.Size(32, 32),
+          // anchor: new google.maps.Point(16, 32),
+        });
+        marker.setAnimation(google.maps.Animation.DROP);
+        marker.setLabel({
+          text: "Me",
+          color: "#FFFFFF",
+          fontWeight: "bold",
+        });
+      }, 1000);
     }
   }, [marker, options]);
   return null;
@@ -57,12 +73,15 @@ const GoogleMap = ({ center, zoom, children }) => {
           disableDefaultUI: true,
         })
       );
+      map?.event.addListenerOnce(map, "idle", function () {
+        console.log("Here");
+      });
     }
   });
 
   return (
     <>
-      <div ref={ref} id="map" className="w-full h-64" />
+      <div ref={ref} id="map" className="w-full h-96" />
       {Children.map(children, (child) => {
         if (isValidElement(child)) {
           // set the map prop on the child component

@@ -66,7 +66,7 @@ export default function ContactUs() {
           <div className="pattern">
             <motion.div
               viewport={{ once: true }}
-              initial={{ opacity: 0, scale: 1, y: -200 }}
+              initial={{ opacity: 0, scale: 1, y: 0 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ ease: "easeOut", duration: 0.5, once: true }}
             >

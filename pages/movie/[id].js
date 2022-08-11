@@ -23,6 +23,8 @@ import Constants from "../../helpers/Constants";
 import PlayIcon from "../../icons/PlayIcon";
 
 import { motion } from "framer-motion";
+import classNames from "../../utils/classNames";
+import { getYoutubeVideoId } from "../../components/YoutubeDialog";
 
 export default function AboutUs() {
   const movie = Constants.MOVIE;
@@ -54,76 +56,122 @@ export default function AboutUs() {
       <div className="min-h-full bg-slate-900">
         <div className="pattern">
           {/* Navbar */}
-          <Header scrolled={scrolled} page="about_us" />
+          <Header scrolled={scrolled} page="movie" />
 
           <main className="w-full -z-10 ">
             <motion.div
-              className="relative bg-black bg-opacity-25 h-96 md:h-96"
+              className="bg-black bg-opacity-25 h-96 md:h-96"
               initial={{ opacity: 0, scale: 1, y: -200 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ ease: "easeOut", duration: 0.5 }}
             >
               <img
-                className="object-cover w-full h-full opacity-50"
+                className="object-cover w-full h-full "
                 src={movie.poster.landscape}
               />
+              {/* <div className="absolute top-0 w-full h-full bg-gradient-to-b from-slate-900 to-transparent" /> */}
             </motion.div>
 
-            <div className="relative px-4 mx-auto -my-48 md:px-8 max-w-7xl sm:grid sm:grid-cols-4 sm:gap-8 sm:items-start">
-              <motion.div
-                className="relative overflow-hidden bg-black rounded-md shadow-md group"
-                initial={{ opacity: 0, scale: 1, x: -200, y: 0 }}
-                animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
-              >
-                <img
-                  className="object-cover w-full h-full "
-                  src={movie.poster.portrait}
-                />
-                {/* <div className="absolute bottom-0 w-full h-full p-4 text-white duration-500 translate-y-full bg-gradient-to-t from-black to-transparent group-hover:translate-y-0">
-                  <PlayIcon className="w-24 h-24" />
-                </div> */}
-              </motion.div>
-              <div className="mt-4 text-white sm:mt-0 sm:col-span-3">
+            <div className="relative p-4 -mt-24 xl:mx-auto max-w-7xl">
+              <div className="-mt-24 md:grid md:grid-cols-4 md:gap-4">
                 <motion.div
-                  initial={{ opacity: 0, scale: 1 }}
-                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                  transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+                  className="relative overflow-hidden bg-black rounded-md shadow-md group"
+                  initial={{ opacity: 0, scale: 1, x: -200, y: 0 }}
+                  whileInView={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    ease: "easeOut",
+                    duration: 0.5,
+                    delay: 0.5,
+                    once: true,
+                  }}
                 >
-                  <div className="text-3xl">{movie.title}</div>
-                  <div className="mt-2 text-lg">({movie.releaseDate})</div>
+                  <img
+                    className="object-cover w-full h-full "
+                    src={movie.poster.portrait}
+                  />
+                </motion.div>
+                <motion.div
+                  className="flex mt-4 overflow-hidden bg-black rounded-md shadow-md sm:col-span-2 md:mt-0"
+                  initial={{ opacity: 0, y: -200 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    ease: "easeOut",
+                    duration: 0.5,
+                    delay: 0.5,
+                    once: true,
+                  }}
+                >
+                  <div
+                    className="relative self-center w-full h-0 "
+                    style={{ paddingBottom: "56.25%", paddingTop: "0px" }}
+                  >
+                    <iframe
+                      src={
+                        "https://www.youtube.com/embed/" +
+                        getYoutubeVideoId(movie.trailer)
+                      }
+                      className="absolute top-0 left-0 w-full h-full "
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
                 </motion.div>
 
-                <div className="flex gap-2 mt-2">
-                  {movie.genre.map((genre, index) => {
-                    return (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 1, x: 100, y: 0 }}
-                        animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                        transition={{
-                          ease: "easeOut",
-                          duration: 0.5,
-                          delay: 1 + 0.2 * index,
-                        }}
-                        key={genre}
-                        className="px-3 py-1 text-base bg-red-600 rounded-md "
-                      >
-                        {genre}
-                      </motion.div>
-                    );
-                  })}
-                </div>
                 <motion.div
-                  className="mt-4 text-lg"
-                  initial={{ opacity: 0, scale: 1 }}
-                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-                  transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
-                >
-                  <div className="mt-4 text-lg">{movie.description}</div>
-                </motion.div>
-
-                <div className="mt-8">
-                  <div className="flex gap-4 text-2xl text-white">
+                  className="p-4 mt-4 bg-gray-500 rounded-md shadow-md sm:col-span-1 md:mt-0"
+                  initial={{ opacity: 0, x: 200 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    ease: "easeOut",
+                    duration: 0.5,
+                    delay: 0.5,
+                    once: true,
+                  }}
+                  viewport={{ once: true }}
+                ></motion.div>
+              </div>
+              <div className="mt-4 text-white md:grid md:grid-cols-3 md:gap-4">
+                <div className="col-span-2">
+                  <div className="flex gap-2">
+                    {movie.genre.map((genre, index) => {
+                      return (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 1, x: 100, y: 0 }}
+                          whileInView={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            ease: "easeOut",
+                            duration: 0.5,
+                            delay: 1 + 0.2 * index,
+                            once: true,
+                          }}
+                          key={genre}
+                          className="px-3 py-1 text-sm font-bold duration-500 border rounded-full cursor-pointer boreder-white hover:bg-white hover:text-black"
+                        >
+                          {genre}
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                  <motion.div
+                    className="mt-4"
+                    initial={{ opacity: 0, scale: 1 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      ease: "easeOut",
+                      duration: 0.5,
+                      delay: 1,
+                      once: true,
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-3xl">{movie.title}</div>
+                    <div className="mt-2 text-base">({movie.releaseDate})</div>
+                    <div className="mt-2 text-base">{movie.description}</div>
+                  </motion.div>
+                  <div className="flex gap-4 mt-8 text-xl text-white">
                     <motion.div
                       initial={{ opacity: 0, scale: 1 }}
                       animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
@@ -136,7 +184,7 @@ export default function AboutUs() {
                       Cast
                     </motion.div>
                     <motion.div
-                      className="self-center flex-1 h-1 bg-white rounded-sm"
+                      className="self-center flex-1 h-0.5 bg-white rounded-sm"
                       initial={{ opacity: 0, scale: 1, scaleX: 0 }}
                       animate={{
                         opacity: 1,
@@ -152,8 +200,25 @@ export default function AboutUs() {
                       }}
                     ></motion.div>
                   </div>
-                  <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid grid-cols-4 gap-4 mt-4 sm:grid-cols-3 lg:grid-cols-4">
                     {movie.casts.map((cast, index) => {
+                      return (
+                        <div
+                          className="relative overflow-hidden rounded-md shadow-md aspect-square group"
+                          key={index}
+                        >
+                          <img
+                            key={cast}
+                            className="object-cover w-full h-full duration-500 group-hover:scale-150 group-hover:translate-x-1/4"
+                            src={cast.image}
+                          />
+                          <div className="absolute text-base md:text-lg top-2 left-2">
+                            <div className="duration-500 -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+                              {cast.name}
+                            </div>
+                          </div>
+                        </div>
+                      );
                       return (
                         <motion.div
                           initial={{ opacity: 0, scale: 1, x: 100, y: 0 }}
@@ -179,11 +244,76 @@ export default function AboutUs() {
                       );
                     })}
                   </div>
+                  <div className="flex gap-4 mt-8 text-xl text-white">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 1 }}
+                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.5,
+                        delay: 0.5,
+                      }}
+                    >
+                      Promotion
+                    </motion.div>
+                    <motion.div
+                      className="self-center flex-1 h-0.5 bg-white rounded-sm"
+                      initial={{ opacity: 0, scale: 1, scaleX: 0 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        x: 0,
+                        y: 0,
+                        scaleX: 1,
+                      }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.5,
+                        delay: 0.5,
+                      }}
+                    ></motion.div>
+                  </div>
+                  <div className="mt-4 text-white md:grid md:grid-cols-2 md:gap-4">
+                    <div className="relative cursor-pointer group">
+                      <img
+                        src={
+                          "https://img.youtube.com/vi/" +
+                          getYoutubeVideoId(movie.trailer) +
+                          "/hqdefault.jpg"
+                        }
+                        className="w-full h-full rounded-md shadow-md"
+                        frameBorder="0"
+                        allowFullScreen
+                      />
+                      <div className="absolute top-0 w-full h-full duration-500 group-hover:bg-opacity-50 group-hover:bg-black" />
+                      <div className="absolute text-white duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 top-1/2 left-1/2">
+                        <PlayIcon className="w-20 h-20" />
+                      </div>
+                    </div>
+
+                    <div className="relative cursor-pointer group">
+                      <img
+                        src={
+                          "https://img.youtube.com/vi/" +
+                          getYoutubeVideoId(movie.trailer) +
+                          "/hqdefault.jpg"
+                        }
+                        className="w-full h-full rounded-md shadow-md"
+                        frameBorder="0"
+                        allowFullScreen
+                      />
+                      <div className="absolute top-0 w-full h-full duration-500 group-hover:bg-opacity-50 group-hover:bg-black" />
+                      <div className="absolute text-white duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 top-1/2 left-1/2">
+                        <PlayIcon className="w-20 h-20" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <div></div>
               </div>
             </div>
           </main>
-          <Footer className="mt-56" />
+          <Footer className="mt-4" />
         </div>
       </div>
     </>

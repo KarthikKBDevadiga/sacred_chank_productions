@@ -114,7 +114,7 @@ function getVimeoVideoId(url) {
   }
   return "";
 }
-function getYoutubeVideoId(url) {
+export function getYoutubeVideoId(url) {
   var regExp =
     /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
   var match = url.match(regExp);
