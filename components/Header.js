@@ -8,6 +8,7 @@ import classNames from "../utils/classNames";
 
 const navigation = [
   { id: "", name: "Movie", href: "/", current: true },
+  { id: "", name: "Production", href: "#", current: false },
   {
     id: "distribution",
     name: "Distribution",
@@ -21,7 +22,6 @@ const navigation = [
     current: false,
   },
   { id: "", name: "Partners", href: "#", current: false },
-  { id: "", name: "Impressum", href: "#", current: false },
   { id: "about_us", name: "About Us", href: "/about_us", current: false },
   { id: "contact_us", name: "Contact Us", href: "/contact_us", current: false },
 ];
@@ -53,7 +53,7 @@ const Header = ({ className, scrolled, page }) => {
         <>
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16 border-gray-200 border-b1">
-              <div className="flex items-center">
+              <div className="flex items-center justify-between w-full h-full">
                 <Link href="/">
                   <a className="flex-shrink-0">
                     <img
@@ -66,18 +66,22 @@ const Header = ({ className, scrolled, page }) => {
 
                 {/* Links section */}
 
-                <div className="hidden lg:block lg:ml-10">
-                  <div className="flex space-x-4">
+                <div className="hidden h-full lg:block lg:ml-10">
+                  <div className="flex h-full space-x-4">
                     {navigation.map((item) => (
                       <Link href={item.href} key={item.name}>
                         <a
                           className={classNames(
-                            "px-3 py-2 text-white duration-500 cursor-pointer group hover:bg-gray-800 rounded-full ",
-                            page == item.id ? "bg-gray-800 " : ""
+                            "px-3 py-2 text-white duration-500 cursor-pointer group self-center h-full flex  border-b-2  hover:border-white",
+                            page == item.id
+                              ? "border-white"
+                              : "border-transparent"
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
-                          <div className="text-base">{item.name}</div>
+                          <div className="self-center text-base">
+                            {item.name}
+                          </div>
                           {/* <div
                             className={classNames(
                               "h-[2px] mt-1 bg-white rounded-full group-hover:opacity-100 opacity-0 duration-500",
@@ -105,7 +109,7 @@ const Header = ({ className, scrolled, page }) => {
             </div>
           </div>
 
-          <Disclosure.Panel className=" lg:hidden">
+          <Disclosure.Panel className="bg-black lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Disclosure.Button

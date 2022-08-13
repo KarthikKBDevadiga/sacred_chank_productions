@@ -12,102 +12,326 @@ const Constants = {
     { id: "FREE", title: "Free", disabled: true },
   ],
   WEEK_DAYS: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
-  UPCOMING_MOVIE: [
+
+  MOVIES: [
     {
+      id: "gaalipata2",
       title: "Gaalipata 2",
+      status: "UPCOMING_MOVIE",
       description:
         "Three college friends meet teacher Kishore Kumar who offers them a room to stay because of personal reasons. Years later, they reunite to help their teacher with his illness and in turn find a chance to fix their love lives.",
       releaseDate: "12 August 2022",
       languages: ["KANNADA"],
       genre: ["COMEDY", "ROMANTIC"],
-      poster:
-        "https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg",
+      poster: {
+        landscape:
+          "https://m.media-amazon.com/images/M/MV5BNjI0ZTY4MzYtMDA5MS00YThhLTgxMGQtZWM2YmUwNTIzNGNhXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg",
+        portrait:
+          "https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg",
+      },
       trailer: "https://www.youtube.com/watch?v=fnsWt4H619o",
       casts: [
         {
           name: "Ganesh",
           image:
             "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+          link: {
+            wikipedia: "",
+          },
         },
         {
           name: "Diganth",
           image:
             "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Pawan Kumar",
+          image: "/headshots/PawanKumar.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+      ],
+    },
+    {
+      id: "777Charlie",
+      title: "777 Charlie",
+      status: "IN_THEATER_MOVIES",
+      description:
+        "Dharma is stuck in a rut with his negative and lonely lifestyle and spends each day in the comfort of his loneliness. A pup named Charlie enters his life and gives him a new perspective towards it.",
+      releaseDate: "10 June 2022",
+      languages: ["KANNADA"],
+      genre: ["COMEDY", "ROMANTIC"],
+      poster: {
+        landscape:
+          "https://rskg.in/wp-content/uploads/2022/07/IMG_20220619_132832-2.jpg",
+        portrait:
+          "https://www.paramvah.com/images/films/777-charlie/777-CharliePoster2.jpg",
+      },
+      trailer: "https://www.youtube.com/watch?v=REqFOV2A7sI",
+      casts: [
+        {
+          name: "Rakshit Shetty",
+          image: "/headshots/RakshitShetty.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Sangeetha Sringeri",
+          image: "/headshots/SangeethaSringeri.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Raj B Shetty",
+          image: "/headshots/RajBShetty.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Danish Sait",
+          image: "/headshots/DanishSait.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+      ],
+    },
+    {
+      id: "HarikatheAllaGirikathe",
+      title: "Harikathe Alla Girikathe",
+      status: "IN_THEATER_MOVIES",
+      description:
+        "The hurdles that has to be overcome by three people who came together to pursue a common goal of making it big in the movie business",
+      releaseDate: "23 June 2022",
+      languages: ["KANNADA"],
+      genre: ["COMEDY", "ROMANTIC"],
+      poster: {
+        landscape: "https://i.ytimg.com/vi/NDf58vl6FhA/maxresdefault.jpg",
+        portrait:
+          "https://www.deccanherald.com/sites/dh/files/articleimages/2022/06/23/harikathe-alla-girikathe-1120689-1655987339.jpg",
+      },
+      trailer: "https://www.youtube.com/watch?v=NDf58vl6FhA",
+      casts: [
+        {
+          name: "Rishab Shetty",
+          image: "/headshots/RishabShetty.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Rachana Inder",
+          image: "/headshots/RachanaInder.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Thapaswini Poonacha",
+          image: "/headshots/ThapaswiniPoonacha.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Pramod Shetty",
+          image: "/headshots/PramodShetty.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+      ],
+    },
+    {
+      id: "AvataraPurusha",
+      title: "Avatara Purusha",
+      status: "IN_THEATER_MOVIES",
+      description:
+        "Siri hires an unsuccessful actor to play her missing brother in front of her parents to bring the family back together. Black magic also plays a role",
+      releaseDate: "6 May 2022",
+      languages: ["KANNADA"],
+      genre: ["COMEDY", "ROMANTIC"],
+      poster: {
+        landscape:
+          "https://m.media-amazon.com/images/M/MV5BOWE3OTVmZjgtZTFhNC00ZDNjLWJkNjctYTU2M2JmOTA3NTQwXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg",
+        portrait:
+          "https://www.letsfindmovie.com/wp-content/uploads/2021/12/gQ29E9Qy6z5ExsxnpgUTHfpZFO3.jpg",
+      },
+      trailer: "https://www.youtube.com/watch?v=LqvbogH-Ivc",
+      casts: [
+        {
+          name: "Sharan",
+          image: "/headshots/Sharan.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Ashika Ranganath",
+          image: "/headshots/AshikaRanganath.png",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Sai Kumar",
+          image: "/headshots/SaiKumar.png",
+          link: {
+            wikipedia: "",
+          },
         },
       ],
     },
   ],
+
+  UPCOMING_MOVIE: [
+    {
+      id: "gaalipata2",
+      title: "Gaalipata 2",
+      description:
+        "Three college friends meet teacher Kishore Kumar who offers them a room to stay because of personal reasons. Years later, they reunite to help their teacher with his illness and in turn find a chance to fix their love lives.",
+      releaseDate: "12 August 2022",
+      languages: ["KANNADA"],
+      genre: ["COMEDY", "ROMANTIC"],
+      poster: {
+        landscape:
+          "https://m.media-amazon.com/images/M/MV5BNjI0ZTY4MzYtMDA5MS00YThhLTgxMGQtZWM2YmUwNTIzNGNhXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg",
+        portrait:
+          "https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg",
+      },
+      trailer: "https://www.youtube.com/watch?v=fnsWt4H619o",
+      casts: [
+        {
+          name: "Ganesh",
+          image:
+            "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+          link: {
+            wikipedia: "",
+          },
+        },
+        {
+          name: "Diganth",
+          image:
+            "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+          link: {
+            wikipedia: "",
+          },
+        },
+      ],
+    },
+  ],
+
   IN_THEATER_MOVIES: [
     {
+      id: "777Charlie",
       title: "777 Charlie",
       description:
         "Dharma is stuck in a rut with his negative and lonely lifestyle and spends each day in the comfort of his loneliness. A pup named Charlie enters his life and gives him a new perspective towards it.",
       releaseDate: "10 June 2022",
       languages: ["KANNADA"],
       genre: ["COMEDY", "ROMANTIC"],
-      poster:
-        "https://www.paramvah.com/images/films/777-charlie/777-CharliePoster2.jpg",
+      poster: {
+        landscape:
+          "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJ9NGT0im0YunMDisqpoZmzmjx0UF6-fMaGPU0SKbhvOkT11RS-BY4eA2HAWGcuz11Dk-NBKBYYdhKxoBZVry1oBf09tfndpDVZIacZL_jA6gfoswkppb_HK4nqcIj21rZI1ZE-eJM3rNYFE_-dEisJgUh_B2ZECtLUl_SAy95Qe4i63UhnF38XQ/w0/images%20(30).jpeg",
+        portrait:
+          "https://www.paramvah.com/images/films/777-charlie/777-CharliePoster2.jpg",
+      },
       trailer: "https://www.youtube.com/watch?v=REqFOV2A7sI",
       casts: [
         {
           name: "Ganesh",
           image:
             "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+          link: {
+            wikipedia: "",
+          },
         },
         {
           name: "Diganth",
           image:
             "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+          link: {
+            wikipedia: "",
+          },
         },
       ],
     },
     {
+      id: "HarikatheAllaGirikathe",
       title: "Harikathe Alla Girikathe",
       description:
         "The hurdles that has to be overcome by three people who came together to pursue a common goal of making it big in the movie business",
       releaseDate: "23 June 2022",
       languages: ["KANNADA"],
       genre: ["COMEDY", "ROMANTIC"],
-      poster:
-        "https://www.deccanherald.com/sites/dh/files/articleimages/2022/06/23/harikathe-alla-girikathe-1120689-1655987339.jpg",
+      poster: {
+        landscape: "https://i.ytimg.com/vi/NDf58vl6FhA/maxresdefault.jpg",
+        portrait:
+          "https://www.deccanherald.com/sites/dh/files/articleimages/2022/06/23/harikathe-alla-girikathe-1120689-1655987339.jpg",
+      },
       trailer: "https://www.youtube.com/watch?v=NDf58vl6FhA",
       casts: [
         {
           name: "Ganesh",
           image:
             "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+          link: {
+            wikipedia: "",
+          },
         },
         {
           name: "Diganth",
           image:
             "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+          link: {
+            wikipedia: "",
+          },
         },
       ],
     },
     {
+      id: "AvataraPurusha",
       title: "Avatara Purusha",
       description:
         "Siri hires an unsuccessful actor to play her missing brother in front of her parents to bring the family back together. Black magic also plays a role",
       releaseDate: "6 May 2022",
       languages: ["KANNADA"],
       genre: ["COMEDY", "ROMANTIC"],
-      poster:
-        "https://www.letsfindmovie.com/wp-content/uploads/2021/12/gQ29E9Qy6z5ExsxnpgUTHfpZFO3.jpg",
+      poster: {
+        landscape:
+          "https://m.media-amazon.com/images/M/MV5BOWE3OTVmZjgtZTFhNC00ZDNjLWJkNjctYTU2M2JmOTA3NTQwXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg",
+        portrait:
+          "https://www.letsfindmovie.com/wp-content/uploads/2021/12/gQ29E9Qy6z5ExsxnpgUTHfpZFO3.jpg",
+      },
       trailer: "https://www.youtube.com/watch?v=LqvbogH-Ivc",
       casts: [
         {
           name: "Ganesh",
           image:
             "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
+          link: {
+            wikipedia: "",
+          },
         },
         {
           name: "Diganth",
           image:
             "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
+          link: {
+            wikipedia: "",
+          },
         },
       ],
     },
   ],
+
   MOVIE: {
     title: "Gaalipata 2",
     description:
@@ -127,13 +351,17 @@ const Constants = {
         name: "Ganesh",
         image:
           "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
-        link: {},
+        link: {
+          wikipedia: "",
+        },
       },
       {
         name: "Diganth",
         image:
           "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
-        link: {},
+        link: {
+          wikipedia: "",
+        },
       },
     ],
   },

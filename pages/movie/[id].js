@@ -25,9 +25,11 @@ import PlayIcon from "../../icons/PlayIcon";
 import { motion } from "framer-motion";
 import classNames from "../../utils/classNames";
 import { getYoutubeVideoId } from "../../components/YoutubeDialog";
+import InstagramIcon from "../../icons/InstagramIcon";
+import BookTicketButton from "../../components/BookTicketButton";
 
-export default function AboutUs() {
-  const movie = Constants.MOVIE;
+export default function AboutUs({ movie }) {
+  // const movie = Constants.MOVIE;
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = () => {
@@ -120,7 +122,7 @@ export default function AboutUs() {
                 </motion.div>
 
                 <motion.div
-                  className="p-4 mt-4 bg-gray-500 rounded-md shadow-md sm:col-span-1 md:mt-0"
+                  className="mt-4 sm:col-span-1 md:mt-0 h-max"
                   initial={{ opacity: 0, x: 200 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{
@@ -130,7 +132,40 @@ export default function AboutUs() {
                     once: true,
                   }}
                   viewport={{ once: true }}
-                ></motion.div>
+                >
+                  <div className="">
+                    <div className="p-4 bg-yellow-400 rounded-t-md rounded-b-2xl">
+                      <div className="flex justify-between w-full">
+                        <div>
+                          <div className="self-center text-xl text-yellow-900">
+                            {movie.title}
+                          </div>
+                          <div className="text-sm text-yellow-600">Movie</div>
+
+                          <div className="self-center mt-2 text-xl text-yellow-900">
+                            {movie.releaseDate}
+                          </div>
+                          <div className="text-sm text-yellow-600">
+                            Release Date
+                          </div>
+                        </div>
+
+                        <div className="px-2 py-1 text-base font-bold text-red-500 border-2 border-red-500 rounded-md w-max h-max">
+                          U/A
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mx-4 bg-transparent border-b-2 border-yellow-400 border-dashed"></div>
+                    <div className="duration-500 bg-yellow-400 rounded-t-2xl rounded-b-md hover:bg-yellow-300">
+                      <div className="text-xs text-center text-yellow-500">
+                        SCARED CHANK PRODUCTION
+                      </div>
+                      <div className="p-4 text-xl text-center text-yellow-900">
+                        Book Now
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
               <div className="mt-4 text-white md:grid md:grid-cols-3 md:gap-4">
                 <div className="col-span-2">
@@ -204,12 +239,12 @@ export default function AboutUs() {
                     {movie.casts.map((cast, index) => {
                       return (
                         <div
-                          className="relative overflow-hidden rounded-md shadow-md aspect-square group"
+                          className="relative overflow-hidden rounded-md shadow-md cursor-pointer aspect-square group"
                           key={index}
                         >
                           <img
                             key={cast}
-                            className="object-cover w-full h-full duration-500 group-hover:scale-150 group-hover:translate-x-1/4"
+                            className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-150 group-hover:translate-x-1/4"
                             src={cast.image}
                           />
                           <div className="absolute text-base md:text-lg top-2 left-2">
@@ -217,6 +252,11 @@ export default function AboutUs() {
                               {cast.name}
                             </div>
                           </div>
+                          {/* <div className="absolute text-base md:text-lg bottom-2 left-2">
+                            <div className="p-1 text-gray-500 duration-500 scale-0 bg-white rounded-full shadow-md opacity-0 group-hover:scale-100 group-hover:opacity-100">
+                              <InstagramIcon className="w-6 h-6" />
+                            </div>
+                          </div> */}
                         </div>
                       );
                       return (
@@ -309,7 +349,81 @@ export default function AboutUs() {
                     </div>
                   </div>
                 </div>
-                <div></div>
+                <div>
+                  <div className="flex flex-col overflow-hidden bg-gray-700 rounded-md shadow-md">
+                    {/* <div className="p-4 mx-auto text-3xl">News</div> */}
+                    <div className="flex w-full gap-4 px-4 pt-4 pb-2 mx-auto">
+                      <motion.div
+                        viewport={{ once: true }}
+                        initial={{ opacity: 0, scaleX: 0 }}
+                        whileInView={{ opacity: 1, scaleX: 1 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 0.5,
+                          once: true,
+                        }}
+                        className="flex-1 bg-white h-[2px] self-center rounded-full"
+                      />
+                      <motion.div
+                        className="text-lg font-medium text-white md:text-2xl"
+                        viewport={{ once: true }}
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 0.5,
+                          once: true,
+                        }}
+                      >
+                        NEWS
+                      </motion.div>
+                      <motion.div
+                        viewport={{ once: true }}
+                        initial={{ opacity: 0, scaleX: 0 }}
+                        whileInView={{ opacity: 1, scaleX: 1 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 0.5,
+                          once: true,
+                        }}
+                        className="flex-1 bg-white h-[2px] self-center rounded-full"
+                      />
+                    </div>
+                    {Constants.NEWS.map((news, index) => {
+                      return (
+                        <motion.div
+                          key={index}
+                          className="flex px-4 py-2 duration-500 cursor-pointer hover:bg-gray-600"
+                          initial={{ opacity: 0, x: 200 }}
+                          viewport={{ once: true }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{
+                            ease: "easeInOut",
+                            duration: 0.25,
+                            delay: 0.1 * index,
+                            once: true,
+                          }}
+                        >
+                          <div className="flex-shrink-0 mr-4">
+                            <img
+                              className="object-cover w-24 h-24 rounded-md"
+                              src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
+                            />
+                          </div>
+                          <div className="text-white ">
+                            <h4 className="text-base">
+                              ಜೇನಿನ ಧ್ವನಿಯ ಗಾಯಕ ಶ್ರೀ ರಾಜೇಶ್ ಕೃಷ್ಣನ್ ಅವರಿಗೆ
+                              ಜನ್ಮದಿನದ ಶುಭಾಶಯಗಳು..
+                            </h4>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                    <div className="px-4 py-2 text-center text-white duration-500 cursor-pointer hover:bg-gray-600">
+                      View All
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </main>
@@ -318,4 +432,12 @@ export default function AboutUs() {
       </div>
     </>
   );
+}
+export async function getServerSideProps(context) {
+  const movie = Constants.MOVIES.find((movie) => movie.id == context.params.id);
+  return {
+    props: {
+      movie,
+    },
+  };
 }

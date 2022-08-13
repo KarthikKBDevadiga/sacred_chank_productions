@@ -40,7 +40,7 @@ const Marker = (options) => {
         });
         marker.setAnimation(google.maps.Animation.DROP);
         marker.setLabel({
-          text: "Me",
+          text: "Sacred Chank Productions",
           color: "#FFFFFF",
           fontWeight: "bold",
         });
@@ -93,8 +93,8 @@ const GoogleMap = ({ center, zoom, children }) => {
 };
 
 const Map = () => {
-  const center = { lat: -34.397, lng: 150.644 };
-  const zoom = 11;
+  const center = { lat: 52.3559766, lng: -7.7276328 };
+  const zoom = 16;
   return (
     <Wrapper apiKey={process.env.GOOGLE_MAPS_API_KEY}>
       <GoogleMap center={center} zoom={zoom}>

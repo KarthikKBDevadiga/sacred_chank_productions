@@ -39,33 +39,7 @@ const AdaptiveHeight = (slider) => {
   slider.on("slideChanged", updateHeight);
 };
 
-const UPCOMING_MOVIE = [
-  {
-    title: "Gaalipata 2",
-    description:
-      "Three college friends meet teacher Kishore Kumar who offers them a room to stay because of personal reasons. Years later, they reunite to help their teacher with his illness and in turn find a chance to fix their love lives.",
-    releaseDate: "12 August 2022",
-    languages: ["KANNADA"],
-    genre: ["COMEDY", "ROMANTIC"],
-    poster:
-      "https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg",
-    trailer: "https://www.youtube.com/watch?v=fnsWt4H619o",
-    casts: [
-      {
-        name: "Ganesh",
-        image:
-          "https://www.filmibeat.com/img/popcorn/profile_photos/ganesh-20190726101918-2789.jpg",
-      },
-      {
-        name: "Diganth",
-        image:
-          "https://starsunfolded.com/wp-content/uploads/2017/06/Diganth.jpg",
-      },
-    ],
-  },
-];
-
-export default function Index() {
+export default function Index({ upcomingMovies, inTheaterMovies }) {
   const [scrolled, setScrolled] = useState(false);
   const [openVideoDialog, setOpenVideoDialog] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState();
@@ -403,7 +377,7 @@ export default function Index() {
             </div>
 
             <div className="grid grid-cols-1 gap-8 p-8 mx-auto sm:grid-cols-3 lg:grid-cols-4 max-w-7xl">
-              {Constants.IN_THEATER_MOVIES.map((movie, index) => {
+              {inTheaterMovies.map((movie, index) => {
                 return (
                   <motion.div
                     key={index}
@@ -472,7 +446,7 @@ export default function Index() {
             </div>
 
             <div className="grid grid-cols-1 gap-8 p-8 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl">
-              {Constants.UPCOMING_MOVIE.map((movie, index) => {
+              {upcomingMovies.map((movie, index) => {
                 return (
                   <motion.div
                     key={movie}
@@ -514,4 +488,13 @@ export default function Index() {
       />
     </>
   );
+}
+export async function getServerSideProps(context) {
+  const upcomingMovies = Constants.MOVIES.filter(
+    (movie) => movie.status == "UPCOMING_MOVIE"
+  );
+  const inTheaterMovies = Constants.MOVIES.filter(
+    (movie) => movie.status == "IN_THEATER_MOVIES"
+  );
+  return { props: { upcomingMovies, inTheaterMovies } };
 }

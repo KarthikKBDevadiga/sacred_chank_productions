@@ -128,7 +128,7 @@ export default function ContactUs() {
                       }}
                     >
                       <PhoneIcon className="self-center w-5 h-5" />
-                      <div className="self-center">+91 99887 7883</div>
+                      <div className="self-center">+353 89 249 0255</div>
                     </motion.div>
                     <motion.div
                       className="flex gap-2 mt-4"
@@ -158,7 +158,7 @@ export default function ContactUs() {
                       }}
                     >
                       <LocationIcon className="self-center w-5 h-5" />
-                      <div className="self-center">102 Street 2714 Don</div>
+                      <div className="self-center">92 Glenoaks Cl</div>
                     </motion.div>
                   </div>
 

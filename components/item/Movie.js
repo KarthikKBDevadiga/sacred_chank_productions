@@ -14,12 +14,12 @@ const Movie = ({ movie, trailer, className }) => {
         className
       )}
       onClick={() => {
-        router.push("/movie/" + movie.title);
+        router.push("/movie/" + movie.id);
       }}
     >
       <img
         className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110 group-hover:-translate-y-8"
-        src={movie.poster}
+        src={movie.poster.portrait}
       />
       <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-gradient-to-t from-black via-black to-transparent group-hover:translate-y-0">
         <div className="text-lg font-bold text-white">{movie.title}</div>
