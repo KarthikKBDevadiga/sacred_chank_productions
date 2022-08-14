@@ -76,7 +76,7 @@ export default function AboutUs({ movie }) {
             </motion.div>
 
             <div className="relative p-4 -mt-24 xl:mx-auto max-w-7xl">
-              <div className="-mt-24 md:grid md:grid-cols-4 md:gap-4">
+              <div className="-mt-24 overflow-hidden md:grid md:grid-cols-4 md:gap-4">
                 <motion.div
                   className="relative overflow-hidden bg-black rounded-md shadow-md group aspect-[2/3]"
                   initial={{ opacity: 0, scale: 1, x: -200, y: 0 }}
