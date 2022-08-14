@@ -116,7 +116,7 @@ export default function Distribution() {
               </div>
 
               <div className="grid grid-cols-1 gap-8 p-8 mx-auto sm:grid-cols-3 lg:grid-cols-4 max-w-7xl">
-                {Constants.IN_THEATER_MOVIES.map((movie, index) => {
+                {Constants.MOVIES.map((movie, index) => {
                   return (
                     <motion.div
                       key={index}

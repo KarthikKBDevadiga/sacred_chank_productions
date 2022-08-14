@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 
-const BookTicketButton = ({ name }) => {
+const BookTicketButton = ({ name, rating, theater, timing }) => {
   const router = useRouter();
   return (
     <>
       <div
-        className="flex w-full h-32 cursor-pointer group"
+        className="flex w-full h-32 cursor-pointer group "
         onClick={() => {
           router.push("/redirect_page");
         }}
@@ -37,12 +37,14 @@ const BookTicketButton = ({ name }) => {
         <div className="relative flex-1 px-1 py-2 duration-500 bg-amber-400 group-hover:bg-amber-500">
           <div className="flex flex-col h-full border rounded-md border-amber-900">
             <div className="w-full p-1 text-sm font-semibold text-center text-amber-900">
-              Saturday at 17:00
+              {timing}
             </div>
             <div className="h-px bg-amber-700" />
             <div className="flex flex-1">
               <div className="flex h-full px-2 text-xl border-r border-amber-700 w-max">
-                <div className="self-center font-bold text-amber-900">12A</div>
+                <div className="self-center font-bold text-amber-900">
+                  {rating}
+                </div>
               </div>
               <div className="self-center px-2 font-bold text-amber-900 line-2">
                 {name}
@@ -50,7 +52,7 @@ const BookTicketButton = ({ name }) => {
             </div>
             <div className="h-px bg-amber-700" />
             <div className="p-1 text-sm font-semibold text-center text-amber-900">
-              Odeon-Dublin
+              {theater}
             </div>
           </div>
           <div className="absolute top-0 w-full ">

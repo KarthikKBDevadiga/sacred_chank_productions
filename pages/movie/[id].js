@@ -172,7 +172,7 @@ export default function AboutUs({ movie }) {
                       />
                     </div> */}
 
-                    <BookTicketButton name={movie.title} />
+                    {/* <BookTicketButton name={movie.title} /> */}
                     {/* <BookTicketButton name={movie.title} />
                     <BookTicketButton name={movie.title} /> */}
                   </div>
@@ -194,7 +194,12 @@ export default function AboutUs({ movie }) {
                           once: true,
                         }}
                       >
-                        <BookTicketButton name={movie.title} />
+                        <BookTicketButton
+                          name={ticket.name}
+                          rating={ticket.rating}
+                          theater={ticket.theater}
+                          timing={ticket.timing}
+                        />
                       </motion.div>
                     );
                   })}
@@ -217,9 +222,11 @@ export default function AboutUs({ movie }) {
                             once: true,
                           }}
                           key={genre}
-                          className="px-3 py-1 text-sm font-bold duration-500 border rounded-full cursor-pointer boreder-white hover:bg-white hover:text-black"
+                          className="text-sm font-bold cursor-pointer "
                         >
-                          {genre}
+                          <div className="px-3 py-1 duration-500 border border-white rounded-full hover:bg-white hover:text-black">
+                            {genre}
+                          </div>
                         </motion.div>
                       );
                     })}
@@ -242,8 +249,8 @@ export default function AboutUs({ movie }) {
                   </motion.div>
                   <div className="flex gap-4 mt-8 text-xl text-white">
                     <motion.div
-                      initial={{ opacity: 0, scale: 1 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{
                         ease: "easeOut",
@@ -276,7 +283,7 @@ export default function AboutUs({ movie }) {
                         <motion.div
                           key={index}
                           viewport={{ once: true }}
-                          initial={{ opacity: 0, x: 200 }}
+                          initial={{ opacity: 0, x: 50 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{
                             ease: "easeInOut",
@@ -285,10 +292,7 @@ export default function AboutUs({ movie }) {
                             once: true,
                           }}
                         >
-                          <div
-                            className="relative overflow-hidden rounded-md shadow-md cursor-pointer aspect-square group"
-                            key={index}
-                          >
+                          <div className="relative overflow-hidden rounded-md shadow-md cursor-pointer aspect-square group">
                             <img
                               key={cast}
                               className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-150 group-hover:translate-x-1/4"

@@ -56,7 +56,50 @@ const Constants = {
           },
         },
       ],
-      tickets: [{ name: "" }, { name: "" }, { name: "" }, { name: "" }],
+      tickets: [
+        {
+          name: "Gaalipata 2",
+          rating: "12A",
+          timing: "Saturday at 20:15",
+          theater: "Odeon Limerick",
+        },
+        {
+          name: "Gaalipata 2",
+          rating: "12A",
+          timing: "Saturday at 11:00",
+          theater: "Odeon Cork",
+        },
+        {
+          name: "Gaalipata 2",
+          rating: "12A",
+          timing: "Friday at 19:10",
+          theater: "Odeon Dublin",
+        },
+        {
+          name: "Gaalipata 2",
+          rating: "12A",
+          timing: "Saturday at 19:10",
+          theater: "Odeon Dublin",
+        },
+        {
+          name: "Gaalipata 2",
+          rating: "12A",
+          timing: "Sunday at 19:10",
+          theater: "Odeon Dublin",
+        },
+        {
+          name: "Gaalipata 2",
+          rating: "12A",
+          timing: "Monday at 12:45",
+          theater: "Odeon Dublin",
+        },
+        {
+          name: "Gaalipata 2",
+          rating: "12A",
+          timing: "Tuesday at 12:45",
+          theater: "Odeon Dublin",
+        },
+      ],
     },
     {
       id: "777Charlie",
