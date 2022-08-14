@@ -103,11 +103,11 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
                       <div className="absolute w-full h-full">
                         <img
                           className="hidden object-cover w-full h-full sm:block"
-                          src="https://m.media-amazon.com/images/M/MV5BNjI0ZTY4MzYtMDA5MS00YThhLTgxMGQtZWM2YmUwNTIzNGNhXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg"
+                          src="https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/landscape.png"
                         />
                         <img
                           className="object-cover w-full h-full opacity-50 sm:hidden"
-                          src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
+                          src="https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/portrait.png"
                         />
                       </div>
                       <div
@@ -171,12 +171,12 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
                     <div className="relative top-0 w-full h-screen overflow-hidden">
                       <div className="absolute w-full h-full bg-black">
                         <img
-                          className="hidden object-cover w-full h-full opacity-50 sm:block"
-                          src="https://m.media-amazon.com/images/M/MV5BNjI0ZTY4MzYtMDA5MS00YThhLTgxMGQtZWM2YmUwNTIzNGNhXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg"
+                          className="hidden object-cover w-full h-full sm:block"
+                          src="https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/landscape.png"
                         />
                         <img
                           className="object-cover w-full h-full opacity-50 sm:hidden"
-                          src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
+                          src="https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/portrait.png"
                         />
                       </div>
                       <div className="absolute flex h-full">
@@ -230,12 +230,12 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
                     <div className="relative top-0 w-full h-screen overflow-hidden">
                       <div className="absolute w-full h-full bg-black">
                         <img
-                          className="hidden object-cover w-full h-full opacity-50 sm:block"
-                          src="https://m.media-amazon.com/images/M/MV5BNjI0ZTY4MzYtMDA5MS00YThhLTgxMGQtZWM2YmUwNTIzNGNhXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg"
+                          className="hidden object-cover w-full h-full sm:block"
+                          src="https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/landscape.png"
                         />
                         <img
                           className="object-cover w-full h-full opacity-50 sm:hidden"
-                          src="https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg"
+                          src="https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/portrait.png"
                         />
                       </div>
                       <div className="absolute flex h-full">

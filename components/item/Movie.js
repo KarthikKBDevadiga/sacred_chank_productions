@@ -10,7 +10,7 @@ const Movie = ({ movie, trailer, className }) => {
   return (
     <div
       className={classNames(
-        "relative overflow-hidden bg-white rounded-md shadow-md cursor-pointer group h-96",
+        "relative overflow-hidden aspect-[2/3] rounded-md shadow-md cursor-pointer group ",
         className
       )}
       onClick={() => {
@@ -18,7 +18,7 @@ const Movie = ({ movie, trailer, className }) => {
       }}
     >
       <img
-        className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-110 group-hover:-translate-y-8"
+        className="object-cover w-full h-full duration-500 group-hover:grayscale-0 grayscale group-hover:scale-110 group-hover:-translate-y-8"
         src={movie.poster.portrait}
       />
       <div className="absolute bottom-0 w-full p-4 text-white duration-500 translate-y-full bg-gradient-to-t from-black via-black to-transparent group-hover:translate-y-0">
@@ -47,7 +47,7 @@ const Movie = ({ movie, trailer, className }) => {
               return (
                 <img
                   key={index}
-                  className="object-cover w-10 h-10 border-2 border-white border-dashed rounded-full"
+                  className="object-cover w-10 h-10 rounded-full"
                   src={cast.image}
                 />
               );

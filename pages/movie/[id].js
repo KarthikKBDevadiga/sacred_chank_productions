@@ -27,6 +27,7 @@ import classNames from "../../utils/classNames";
 import { getYoutubeVideoId } from "../../components/YoutubeDialog";
 import InstagramIcon from "../../icons/InstagramIcon";
 import BookTicketButton from "../../components/BookTicketButton";
+import dynamic from "next/dynamic";
 
 export default function AboutUs({ movie }) {
   // const movie = Constants.MOVIE;
@@ -77,7 +78,7 @@ export default function AboutUs({ movie }) {
             <div className="relative p-4 -mt-24 xl:mx-auto max-w-7xl">
               <div className="-mt-24 md:grid md:grid-cols-4 md:gap-4">
                 <motion.div
-                  className="relative overflow-hidden bg-black rounded-md shadow-md group"
+                  className="relative overflow-hidden bg-black rounded-md shadow-md group aspect-[2/3]"
                   initial={{ opacity: 0, scale: 1, x: -200, y: 0 }}
                   whileInView={{ opacity: 1, scale: 1, x: 0, y: 0 }}
                   viewport={{ once: true }}
@@ -94,7 +95,7 @@ export default function AboutUs({ movie }) {
                   />
                 </motion.div>
                 <motion.div
-                  className="flex mt-4 overflow-hidden bg-black rounded-md shadow-md sm:col-span-2 md:mt-0"
+                  className="flex mt-4 overflow-hidden bg-black rounded-md shadow-md sm:col-span-2 md:mt-0 "
                   initial={{ opacity: 0, y: -200 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -134,7 +135,7 @@ export default function AboutUs({ movie }) {
                   viewport={{ once: true }}
                 >
                   <div className="">
-                    <div className="p-4 bg-yellow-400 rounded-t-md rounded-b-2xl">
+                    {/* <div className="p-4 bg-yellow-400 rounded-t-md rounded-b-2xl">
                       <div className="flex justify-between w-full">
                         <div>
                           <div className="self-center text-xl text-yellow-900">
@@ -163,10 +164,43 @@ export default function AboutUs({ movie }) {
                       <div className="p-4 text-xl text-center text-yellow-900">
                         Book Now
                       </div>
-                    </div>
+                    </div> */}
+                    {/* <div className="h-24 mt-4 overflow-hidden">
+                      <img
+                        src={movie.poster.landscape}
+                        className="object-cover bg-center"
+                      />
+                    </div> */}
+
+                    <BookTicketButton name={movie.title} />
+                    {/* <BookTicketButton name={movie.title} />
+                    <BookTicketButton name={movie.title} /> */}
                   </div>
                 </motion.div>
               </div>
+              {movie.tickets?.length > 0 && (
+                <div className="grid grid-cols-1 mt-4 text-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                  {movie.tickets?.map((ticket, index) => {
+                    return (
+                      <motion.div
+                        key={index}
+                        viewport={{ once: true }}
+                        initial={{ opacity: 0, x: 200 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 0.5,
+                          delay: 0.25 * index,
+                          once: true,
+                        }}
+                      >
+                        <BookTicketButton name={movie.title} />
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              )}
+
               <div className="mt-4 text-white md:grid md:grid-cols-3 md:gap-4">
                 <div className="col-span-2">
                   <div className="flex gap-2">
@@ -209,55 +243,69 @@ export default function AboutUs({ movie }) {
                   <div className="flex gap-4 mt-8 text-xl text-white">
                     <motion.div
                       initial={{ opacity: 0, scale: 1 }}
-                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.5,
                         delay: 0.5,
+                        once: true,
                       }}
                     >
                       Cast
                     </motion.div>
                     <motion.div
                       className="self-center flex-1 h-0.5 bg-white rounded-sm"
-                      initial={{ opacity: 0, scale: 1, scaleX: 0 }}
-                      animate={{
+                      initial={{ opacity: 0, scaleX: 0 }}
+                      viewport={{ once: true }}
+                      whileInView={{
                         opacity: 1,
-                        scale: 1,
-                        x: 0,
-                        y: 0,
                         scaleX: 1,
                       }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.5,
                         delay: 0.5,
+                        once: true,
                       }}
                     ></motion.div>
                   </div>
                   <div className="grid grid-cols-4 gap-4 mt-4 sm:grid-cols-3 lg:grid-cols-4">
                     {movie.casts.map((cast, index) => {
                       return (
-                        <div
-                          className="relative overflow-hidden rounded-md shadow-md cursor-pointer aspect-square group"
+                        <motion.div
                           key={index}
+                          viewport={{ once: true }}
+                          initial={{ opacity: 0, x: 200 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{
+                            ease: "easeInOut",
+                            duration: 0.5,
+                            delay: 0.25 * index,
+                            once: true,
+                          }}
                         >
-                          <img
-                            key={cast}
-                            className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-150 group-hover:translate-x-1/4"
-                            src={cast.image}
-                          />
-                          <div className="absolute text-base md:text-lg top-2 left-2">
-                            <div className="duration-500 -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
-                              {cast.name}
+                          <div
+                            className="relative overflow-hidden rounded-md shadow-md cursor-pointer aspect-square group"
+                            key={index}
+                          >
+                            <img
+                              key={cast}
+                              className="object-cover w-full h-full duration-500 group-hover:grayscale group-hover:scale-150 group-hover:translate-x-1/4"
+                              src={cast.image}
+                            />
+                            <div className="absolute text-base md:text-lg top-2 left-2">
+                              <div className="duration-500 -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+                                {cast.name}
+                              </div>
                             </div>
-                          </div>
-                          {/* <div className="absolute text-base md:text-lg bottom-2 left-2">
+                            {/* <div className="absolute text-base md:text-lg bottom-2 left-2">
                             <div className="p-1 text-gray-500 duration-500 scale-0 bg-white rounded-full shadow-md opacity-0 group-hover:scale-100 group-hover:opacity-100">
                               <InstagramIcon className="w-6 h-6" />
                             </div>
                           </div> */}
-                        </div>
+                          </div>
+                        </motion.div>
                       );
                       return (
                         <motion.div
@@ -287,29 +335,30 @@ export default function AboutUs({ movie }) {
                   <div className="flex gap-4 mt-8 text-xl text-white">
                     <motion.div
                       initial={{ opacity: 0, scale: 1 }}
-                      animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.5,
                         delay: 0.5,
+                        once: true,
                       }}
                     >
                       Promotion
                     </motion.div>
                     <motion.div
                       className="self-center flex-1 h-0.5 bg-white rounded-sm"
-                      initial={{ opacity: 0, scale: 1, scaleX: 0 }}
-                      animate={{
+                      initial={{ opacity: 0, scaleX: 0 }}
+                      viewport={{ once: true }}
+                      whileInView={{
                         opacity: 1,
-                        scale: 1,
-                        x: 0,
-                        y: 0,
                         scaleX: 1,
                       }}
                       transition={{
                         ease: "easeOut",
                         duration: 0.5,
                         delay: 0.5,
+                        once: true,
                       }}
                     ></motion.div>
                   </div>

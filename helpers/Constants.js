@@ -25,9 +25,9 @@ const Constants = {
       genre: ["COMEDY", "ROMANTIC"],
       poster: {
         landscape:
-          "https://m.media-amazon.com/images/M/MV5BNjI0ZTY4MzYtMDA5MS00YThhLTgxMGQtZWM2YmUwNTIzNGNhXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg",
+          "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/landscape.png",
         portrait:
-          "https://www.filmibeat.com/fanimg/movie/17945/gaalipata-2-photos-images-64053.jpg",
+          "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/portrait.png",
       },
       trailer: "https://www.youtube.com/watch?v=fnsWt4H619o",
       casts: [
@@ -49,12 +49,14 @@ const Constants = {
         },
         {
           name: "Pawan Kumar",
-          image: "/headshots/PawanKumar.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/PawanKumar.png",
           link: {
             wikipedia: "",
           },
         },
       ],
+      tickets: [{ name: "" }, { name: "" }, { name: "" }, { name: "" }],
     },
     {
       id: "777Charlie",
@@ -75,28 +77,32 @@ const Constants = {
       casts: [
         {
           name: "Rakshit Shetty",
-          image: "/headshots/RakshitShetty.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/RakshitShetty.png",
           link: {
             wikipedia: "",
           },
         },
         {
           name: "Sangeetha Sringeri",
-          image: "/headshots/SangeethaSringeri.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/SangeethaSringeri.png",
           link: {
             wikipedia: "",
           },
         },
         {
           name: "Raj B Shetty",
-          image: "/headshots/RajBShetty.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/RajBShetty.png",
           link: {
             wikipedia: "",
           },
         },
         {
           name: "Danish Sait",
-          image: "/headshots/DanishSait.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/DanishSait.png",
           link: {
             wikipedia: "",
           },
@@ -121,28 +127,32 @@ const Constants = {
       casts: [
         {
           name: "Rishab Shetty",
-          image: "/headshots/RishabShetty.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/RishabShetty.png",
           link: {
             wikipedia: "",
           },
         },
         {
           name: "Rachana Inder",
-          image: "/headshots/RachanaInder.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/RachanaInder.png",
           link: {
             wikipedia: "",
           },
         },
         {
           name: "Thapaswini Poonacha",
-          image: "/headshots/ThapaswiniPoonacha.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/ThapaswiniPoonacha.png",
           link: {
             wikipedia: "",
           },
         },
         {
           name: "Pramod Shetty",
-          image: "/headshots/PramodShetty.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/PramodShetty.png",
           link: {
             wikipedia: "",
           },
@@ -168,21 +178,24 @@ const Constants = {
       casts: [
         {
           name: "Sharan",
-          image: "/headshots/Sharan.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/Sharan.png",
           link: {
             wikipedia: "",
           },
         },
         {
           name: "Ashika Ranganath",
-          image: "/headshots/AshikaRanganath.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/AshikaRanganath.png",
           link: {
             wikipedia: "",
           },
         },
         {
           name: "Sai Kumar",
-          image: "/headshots/SaiKumar.png",
+          image:
+            "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/headshots/SaiKumar.png",
           link: {
             wikipedia: "",
           },

@@ -58,7 +58,7 @@ const Header = ({ className, scrolled, page }) => {
                   <a className="flex-shrink-0">
                     <img
                       className="w-auto h-8"
-                      src="https://tailwindui.com/img/logos/workflow-mark.svg?color=violet&shade=500"
+                      src="/sacred_chank_production.png"
                       alt="Workflow"
                     />
                   </a>
