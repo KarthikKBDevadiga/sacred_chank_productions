@@ -179,7 +179,7 @@ export default function AboutUs({ movie }) {
                 </motion.div>
               </div>
               {movie.tickets?.length > 0 && (
-                <div className="grid grid-cols-1 mt-4 text-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="grid grid-cols-1 mt-4 overflow-hidden text-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {movie.tickets?.map((ticket, index) => {
                     return (
                       <motion.div
@@ -270,7 +270,7 @@ export default function AboutUs({ movie }) {
                       }}
                     ></motion.div>
                   </div>
-                  <div className="grid grid-cols-4 gap-4 mt-4 sm:grid-cols-3 lg:grid-cols-4">
+                  <div className="grid grid-cols-4 gap-4 mt-4 overflow-hidden sm:grid-cols-3 lg:grid-cols-4">
                     {movie.casts.map((cast, index) => {
                       return (
                         <motion.div
