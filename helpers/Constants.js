@@ -62,42 +62,63 @@ const Constants = {
           rating: "12A",
           timing: "Saturday at 20:15",
           theater: "Odeon Limerick",
+          url: "https://www.odeoncinemas.ie/cinemas/limerick/",
         },
         {
           name: "Gaalipata 2",
           rating: "12A",
           timing: "Saturday at 11:00",
           theater: "Odeon Cork",
+          url: "https://www.odeoncinemas.ie/cinemas/limerick/",
         },
         {
           name: "Gaalipata 2",
           rating: "12A",
           timing: "Friday at 19:10",
           theater: "Odeon Dublin",
+          url: "https://www.odeoncinemas.ie/cinemas/limerick/",
         },
         {
           name: "Gaalipata 2",
           rating: "12A",
           timing: "Saturday at 19:10",
           theater: "Odeon Dublin",
+          url: "https://www.odeoncinemas.ie/cinemas/limerick/",
         },
         {
           name: "Gaalipata 2",
           rating: "12A",
           timing: "Sunday at 19:10",
           theater: "Odeon Dublin",
+          url: "https://www.odeoncinemas.ie/cinemas/limerick/",
         },
         {
           name: "Gaalipata 2",
           rating: "12A",
           timing: "Monday at 12:45",
           theater: "Odeon Dublin",
+          url: "https://www.odeoncinemas.ie/cinemas/limerick/",
         },
         {
           name: "Gaalipata 2",
           rating: "12A",
           timing: "Tuesday at 12:45",
           theater: "Odeon Dublin",
+          url: "https://www.odeoncinemas.ie/cinemas/limerick/",
+        },
+      ],
+      promotions: [
+        {
+          title: "Yograj Bhat",
+          url: "https://www.youtube.com/watch?v=7CKlL-hOiMY",
+        },
+        {
+          title: "Ganesh",
+          url: "https://www.youtube.com/watch?v=6KwKmKhOQ7Y",
+        },
+        {
+          title: "Pawan",
+          url: "https://www.youtube.com/watch?v=hTLgpCrJTjI",
         },
       ],
     },
@@ -242,6 +263,20 @@ const Constants = {
           link: {
             wikipedia: "",
           },
+        },
+      ],
+      promotions: [
+        {
+          title: "Sai Kumar",
+          url: "https://www.youtube.com/watch?v=VfN9k--ocZk",
+        },
+        {
+          title: "Sharan",
+          url: "https://www.youtube.com/watch?v=P-vcQi5ODAk",
+        },
+        {
+          title: "Ashika Ranganath",
+          url: "https://www.youtube.com/watch?v=ZVcsvXs4SpY",
         },
       ],
     },

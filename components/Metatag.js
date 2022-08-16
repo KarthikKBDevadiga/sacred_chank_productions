@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import NProgressContainer from "./NProgressContainer";
 
-const Metatag = ({ title, description, children }) => {
+const Metatag = ({ title, description, children, url }) => {
   return (
     <>
       <Head>
@@ -12,11 +12,8 @@ const Metatag = ({ title, description, children }) => {
         <title>{title}</title>
         <meta name="description" content={description}></meta>
         <meta property="og:url" content="https://www.l4o.in" key="ogurl" />
-        <meta
-          property="og:image"
-          content="https://l4o.in/assets/images/l4o_icon.png"
-          key="ogimage"
-        />
+        {url && <meta property="og:image" content={url} key="ogimage" />}
+
         <meta property="og:site_name" content="Lifology" key="ogsitename" />
         <meta property="og:title" content={title} key="ogtitle" />
         <meta property="og:description" content={description} key="ogdesc" />

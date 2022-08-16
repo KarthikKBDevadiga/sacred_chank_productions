@@ -24,14 +24,18 @@ import PlayIcon from "../../icons/PlayIcon";
 
 import { motion } from "framer-motion";
 import classNames from "../../utils/classNames";
-import { getYoutubeVideoId } from "../../components/YoutubeDialog";
+import YoutubeDialog, {
+  getYoutubeVideoId,
+} from "../../components/YoutubeDialog";
 import InstagramIcon from "../../icons/InstagramIcon";
 import BookTicketButton from "../../components/BookTicketButton";
-import dynamic from "next/dynamic";
 
-export default function AboutUs({ movie }) {
+export default function MovieInd({ movie }) {
   // const movie = Constants.MOVIE;
   const [scrolled, setScrolled] = useState(false);
+
+  const [openVideoDialog, setOpenVideoDialog] = useState(false);
+  const [youtubeUrl, setYoutubeUrl] = useState();
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -55,7 +59,11 @@ export default function AboutUs({ movie }) {
         <body class="h-full">
         ```
       */}
-      <Metatag title="About Us" description="About Us" />
+      <Metatag
+        title={movie.title}
+        description={movie.title}
+        url={movie.poster.portrait}
+      />
       <div className="min-h-full bg-slate-900">
         <div className="pattern">
           {/* Navbar */}
@@ -199,6 +207,7 @@ export default function AboutUs({ movie }) {
                           rating={ticket.rating}
                           theater={ticket.theater}
                           timing={ticket.timing}
+                          url={ticket.url}
                         />
                       </motion.div>
                     );
@@ -336,71 +345,78 @@ export default function AboutUs({ movie }) {
                       );
                     })}
                   </div>
-                  <div className="flex gap-4 mt-8 text-xl text-white">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 1 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        ease: "easeOut",
-                        duration: 0.5,
-                        delay: 0.5,
-                        once: true,
-                      }}
-                    >
-                      Promotion
-                    </motion.div>
-                    <motion.div
-                      className="self-center flex-1 h-0.5 bg-white rounded-sm"
-                      initial={{ opacity: 0, scaleX: 0 }}
-                      viewport={{ once: true }}
-                      whileInView={{
-                        opacity: 1,
-                        scaleX: 1,
-                      }}
-                      transition={{
-                        ease: "easeOut",
-                        duration: 0.5,
-                        delay: 0.5,
-                        once: true,
-                      }}
-                    ></motion.div>
-                  </div>
-                  <div className="mt-4 text-white md:grid md:grid-cols-2 md:gap-4">
-                    <div className="relative cursor-pointer group">
-                      <img
-                        src={
-                          "https://img.youtube.com/vi/" +
-                          getYoutubeVideoId(movie.trailer) +
-                          "/hqdefault.jpg"
-                        }
-                        className="w-full h-full rounded-md shadow-md"
-                        frameBorder="0"
-                        allowFullScreen
-                      />
-                      <div className="absolute top-0 w-full h-full duration-500 group-hover:bg-opacity-50 group-hover:bg-black" />
-                      <div className="absolute text-white duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 top-1/2 left-1/2">
-                        <PlayIcon className="w-20 h-20" />
+                  {movie.promotions?.length > 0 && (
+                    <>
+                      <div className="flex gap-4 mt-8 text-xl text-white">
+                        <motion.div
+                          initial={{ opacity: 0, scale: 1 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            ease: "easeOut",
+                            duration: 0.5,
+                            delay: 0.5,
+                            once: true,
+                          }}
+                        >
+                          Promotion
+                        </motion.div>
+                        <motion.div
+                          className="self-center flex-1 h-0.5 bg-white rounded-sm"
+                          initial={{ opacity: 0, scaleX: 0 }}
+                          viewport={{ once: true }}
+                          whileInView={{
+                            opacity: 1,
+                            scaleX: 1,
+                          }}
+                          transition={{
+                            ease: "easeOut",
+                            duration: 0.5,
+                            delay: 0.5,
+                            once: true,
+                          }}
+                        ></motion.div>
                       </div>
-                    </div>
-
-                    <div className="relative cursor-pointer group">
-                      <img
-                        src={
-                          "https://img.youtube.com/vi/" +
-                          getYoutubeVideoId(movie.trailer) +
-                          "/hqdefault.jpg"
-                        }
-                        className="w-full h-full rounded-md shadow-md"
-                        frameBorder="0"
-                        allowFullScreen
-                      />
-                      <div className="absolute top-0 w-full h-full duration-500 group-hover:bg-opacity-50 group-hover:bg-black" />
-                      <div className="absolute text-white duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 top-1/2 left-1/2">
-                        <PlayIcon className="w-20 h-20" />
+                      <div className="grid grid-cols-2 gap-4 mt-4 text-white md:grid-cols-3">
+                        {movie.promotions.map((promotion, index) => {
+                          return (
+                            <motion.div
+                              key={index}
+                              className="relative cursor-pointer group"
+                              onClick={() => {
+                                setYoutubeUrl(promotion.url);
+                                setOpenVideoDialog(true);
+                              }}
+                              viewport={{ once: true }}
+                              initial={{ opacity: 0, x: 50 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{
+                                ease: "easeInOut",
+                                duration: 0.5,
+                                delay: 0.25 * index,
+                                once: true,
+                              }}
+                            >
+                              <img
+                                src={
+                                  "https://img.youtube.com/vi/" +
+                                  getYoutubeVideoId(promotion.url) +
+                                  "/hqdefault.jpg"
+                                }
+                                className="w-full h-full rounded-md shadow-md"
+                                frameBorder="0"
+                                allowFullScreen
+                              />
+                              <div className="absolute top-0 w-full h-full duration-500 group-hover:bg-opacity-50 group-hover:bg-black" />
+                              <div className="absolute text-white duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 top-1/2 left-1/2">
+                                <PlayIcon className="w-20 h-20" />
+                              </div>
+                            </motion.div>
+                          );
+                        })}
                       </div>
-                    </div>
-                  </div>
+                    </>
+                  )}
                 </div>
                 <div>
                   <div className="flex flex-col overflow-hidden bg-gray-700 rounded-md shadow-md">
@@ -483,6 +499,11 @@ export default function AboutUs({ movie }) {
           <Footer className="mt-4" />
         </div>
       </div>
+      <YoutubeDialog
+        url={youtubeUrl}
+        showDialog={openVideoDialog}
+        setShowDialog={setOpenVideoDialog}
+      />
     </>
   );
 }

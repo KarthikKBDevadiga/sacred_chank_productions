@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
 
-const BookTicketButton = ({ name, rating, theater, timing }) => {
+const BookTicketButton = ({ name, rating, theater, timing, url }) => {
   const router = useRouter();
   return (
     <>
       <div
         className="flex w-full h-32 cursor-pointer group "
         onClick={() => {
-          router.push("/redirect_page");
+          window.open(url, "_blank");
         }}
       >
         <div className="flex flex-col">

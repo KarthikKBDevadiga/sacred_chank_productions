@@ -7,7 +7,7 @@ import MenuIcon from "../icons/MenuIcon";
 import classNames from "../utils/classNames";
 
 const navigation = [
-  { id: "", name: "Movie", href: "/", current: true },
+  { id: "movie", name: "Movie", href: "/movie", current: true },
   { id: "", name: "Production", href: "#", current: false },
   {
     id: "distribution",
