@@ -15,7 +15,7 @@ const Constants = {
 
   MOVIES: [
     {
-      id: "gaalipata2",
+      id: "Gaalipata2",
       title: "Gaalipata 2",
       status: "UPCOMING_MOVIE",
       description:

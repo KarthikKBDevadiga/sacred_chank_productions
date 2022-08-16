@@ -173,6 +173,12 @@ export default function ContactUs() {
                         delay: 0.5,
                         once: true,
                       }}
+                      onClick={() => {
+                        window.open(
+                          "https://www.facebook.com/NRI-Kannada-Balaga-111255714079808/?ti=as",
+                          "_blank"
+                        );
+                      }}
                     >
                       <FacebookIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
                     </motion.div>
@@ -187,6 +193,12 @@ export default function ContactUs() {
                         delay: 0.65,
                         once: true,
                       }}
+                      onClick={() => {
+                        window.open(
+                          "https://www.instagram.com/p/CKPin5UloX9/?igshid=1nh3ipb0rt6sa",
+                          "_blank"
+                        );
+                      }}
                     >
                       <InstagramIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
                     </motion.div>
@@ -200,6 +212,9 @@ export default function ContactUs() {
                         duration: 0.25,
                         delay: 0.8,
                         once: true,
+                      }}
+                      onClick={() => {
+                        window.open("https://twitter.com/BalagaNri", "_blank");
                       }}
                     >
                       <TwitterIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />

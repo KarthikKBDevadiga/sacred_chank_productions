@@ -14,7 +14,7 @@ const Movie = ({ movie, trailer, className }) => {
         className
       )}
       onClick={() => {
-        router.push("/movie/" + movie.id);
+        router.push("/movies/" + movie.id);
       }}
     >
       <img
