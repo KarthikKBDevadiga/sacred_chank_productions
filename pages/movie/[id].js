@@ -377,7 +377,7 @@ export default function MovieInd({ movie }) {
                           }}
                         ></motion.div>
                       </div>
-                      <div className="grid grid-cols-2 gap-4 mt-4 text-white md:grid-cols-3">
+                      <div className="grid grid-cols-2 gap-4 mt-4 overflow-hidden text-white md:grid-cols-3">
                         {movie.promotions.map((promotion, index) => {
                           return (
                             <motion.div
