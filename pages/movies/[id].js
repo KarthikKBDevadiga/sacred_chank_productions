@@ -401,7 +401,7 @@ export default function MovieInd({ movie }) {
                           return (
                             <motion.div
                               key={index}
-                              className="relative cursor-pointer group"
+                              className="relative overflow-hidden cursor-pointer group"
                               onClick={() => {
                                 setYoutubeUrl(promotion.url);
                                 setOpenVideoDialog(true);
@@ -426,9 +426,13 @@ export default function MovieInd({ movie }) {
                                 frameBorder="0"
                                 allowFullScreen
                               />
-                              <div className="absolute top-0 w-full h-full duration-500 group-hover:bg-opacity-50 group-hover:bg-black" />
-                              <div className="absolute text-white duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 top-1/2 left-1/2">
+                              <div className="absolute left-0 w-full duration-500 bg-black bg-opacity-50 h-1/2 -top-full group-hover:top-0"></div>
+                              <div className="absolute left-0 w-full duration-500 bg-black bg-opacity-50 h-1/2 -bottom-full group-hover:bottom-0"></div>
+                              <div className="absolute text-white duration-500 scale-0 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:scale-100 top-1/2 left-1/2">
                                 <PlayIcon className="w-20 h-20" />
+                              </div>
+                              <div className="absolute text-xl text-white duration-500 -left-full top-4 group-hover:left-4">
+                                {promotion.title}
                               </div>
                             </motion.div>
                           );
@@ -473,7 +477,7 @@ export default function MovieInd({ movie }) {
                           return (
                             <motion.div
                               key={index}
-                              className="relative cursor-pointer group"
+                              className="relative overflow-hidden cursor-pointer group"
                               onClick={() => {
                                 setYoutubeUrl(review.url);
                                 setOpenVideoDialog(true);
@@ -498,9 +502,14 @@ export default function MovieInd({ movie }) {
                                 frameBorder="0"
                                 allowFullScreen
                               />
-                              <div className="absolute top-0 w-full h-full duration-500 group-hover:bg-opacity-50 group-hover:bg-black" />
-                              <div className="absolute text-white duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 top-1/2 left-1/2">
+
+                              <div className="absolute left-0 w-full duration-500 bg-black bg-opacity-50 h-1/2 -top-full group-hover:top-0"></div>
+                              <div className="absolute left-0 w-full duration-500 bg-black bg-opacity-50 h-1/2 -bottom-full group-hover:bottom-0"></div>
+                              <div className="absolute text-white duration-500 scale-0 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:scale-100 top-1/2 left-1/2">
                                 <PlayIcon className="w-20 h-20" />
+                              </div>
+                              <div className="absolute text-xl text-white duration-500 -left-full top-4 group-hover:left-4">
+                                {review.title}
                               </div>
                             </motion.div>
                           );
