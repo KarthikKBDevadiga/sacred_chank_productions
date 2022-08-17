@@ -21,6 +21,7 @@ import Header from "../../components/Header";
 import Metatag from "../../components/Metatag";
 import Constants from "../../helpers/Constants";
 import PlayIcon from "../../icons/PlayIcon";
+import FacebookIcon from "../../icons/FacebookIcon";
 
 import { motion } from "framer-motion";
 import classNames from "../../utils/classNames";
@@ -29,6 +30,13 @@ import YoutubeDialog, {
 } from "../../components/YoutubeDialog";
 import InstagramIcon from "../../icons/InstagramIcon";
 import BookTicketButton from "../../components/BookTicketButton";
+import {
+  FacebookShareButton,
+  InstapaperShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "next-share";
+import TwitterIcon from "../../icons/TwitterIcon";
 
 export default function MovieInd({ movie }) {
   // const movie = Constants.MOVIE;
@@ -39,7 +47,7 @@ export default function MovieInd({ movie }) {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 200) {
+    if (offset > 100) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -67,9 +75,9 @@ export default function MovieInd({ movie }) {
       <div className="min-h-full bg-slate-900">
         <div className="pattern">
           {/* Navbar */}
-          <Header scrolled={scrolled} page="movie" />
+          <Header scrolled={scrolled} page="movies" />
 
-          <main className="w-full -z-10 ">
+          <main className="w-full overflow-hidden -z-10">
             <motion.div
               className="bg-black bg-opacity-25 h-96 md:h-96"
               initial={{ opacity: 0, scale: 1, y: -200 }}
@@ -84,7 +92,7 @@ export default function MovieInd({ movie }) {
             </motion.div>
 
             <div className="relative p-4 -mt-24 xl:mx-auto max-w-7xl">
-              <div className="-mt-24 overflow-hidden md:grid md:grid-cols-4 md:gap-4">
+              <div className="-mt-24 md:grid md:grid-cols-4 md:gap-4">
                 <motion.div
                   className="relative overflow-hidden bg-black rounded-md shadow-md group aspect-[2/3]"
                   initial={{ opacity: 0, scale: 1, x: -200, y: 0 }}
@@ -142,48 +150,59 @@ export default function MovieInd({ movie }) {
                   }}
                   viewport={{ once: true }}
                 >
-                  <div className="">
-                    {/* <div className="p-4 bg-yellow-400 rounded-t-md rounded-b-2xl">
-                      <div className="flex justify-between w-full">
-                        <div>
-                          <div className="self-center text-xl text-yellow-900">
-                            {movie.title}
-                          </div>
-                          <div className="text-sm text-yellow-600">Movie</div>
-
-                          <div className="self-center mt-2 text-xl text-yellow-900">
-                            {movie.releaseDate}
-                          </div>
-                          <div className="text-sm text-yellow-600">
-                            Release Date
-                          </div>
-                        </div>
-
-                        <div className="px-2 py-1 text-base font-bold text-red-500 border-2 border-red-500 rounded-md w-max h-max">
-                          U/A
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mx-4 bg-transparent border-b-2 border-yellow-400 border-dashed"></div>
-                    <div className="duration-500 bg-yellow-400 rounded-t-2xl rounded-b-md hover:bg-yellow-300">
-                      <div className="text-xs text-center text-yellow-500">
-                        SCARED CHANK PRODUCTION
-                      </div>
-                      <div className="p-4 text-xl text-center text-yellow-900">
-                        Book Now
-                      </div>
-                    </div> */}
-                    {/* <div className="h-24 mt-4 overflow-hidden">
-                      <img
-                        src={movie.poster.landscape}
-                        className="object-cover bg-center"
+                  {/* <div className="overflow-hidden bg-gray-700 rounded-md shadow-md">
+                    <div className="flex w-full gap-4 px-4 pt-4 pb-2 mx-auto">
+                      <motion.div
+                        className="text-lg font-medium text-white md:text-xl"
+                        viewport={{ once: true }}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 0.5,
+                          once: true,
+                          delay: 1,
+                        }}
+                      >
+                        Share
+                      </motion.div>
+                      <motion.div
+                        viewport={{ once: true }}
+                        initial={{ opacity: 0, scaleX: 0 }}
+                        whileInView={{ opacity: 1, scaleX: 1 }}
+                        transition={{
+                          ease: "easeInOut",
+                          duration: 0.5,
+                          once: true,
+                          delay: 1,
+                        }}
+                        className="flex-1 bg-white h-[2px] self-center rounded-full"
                       />
-                    </div> */}
-
-                    {/* <BookTicketButton name={movie.title} /> */}
-                    {/* <BookTicketButton name={movie.title} />
-                    <BookTicketButton name={movie.title} /> */}
-                  </div>
+                    </div>
+                    <div className="flex gap-4 px-4 py-4 ">
+                      <FacebookShareButton
+                        url={"http://localhost:3000/movies/" + movie.id}
+                        quote={movie.title}
+                        hashtag={"#SacredChankProductions"}
+                      >
+                        <FacebookIcon className="w-6 h-6 text-white duration-500 hover:scale-110" />
+                      </FacebookShareButton>
+                      <TwitterShareButton
+                        url={"http://localhost:3000/movies/" + movie.id}
+                        quote={movie.title}
+                        hashtag={"#SacredChankProductions"}
+                      >
+                        <TwitterIcon className="w-6 h-6 text-white duration-500 hover:scale-110" />
+                      </TwitterShareButton>
+                      <WhatsappShareButton
+                        url={"http://localhost:3000/movies/" + movie.id}
+                        quote={movie.title}
+                        hashtag={"#SacredChankProductions"}
+                      >
+                        <TwitterIcon className="w-6 h-6 text-white duration-500 hover:scale-110" />
+                      </WhatsappShareButton>
+                    </div>
+                  </div> */}
                 </motion.div>
               </div>
               {movie.tickets?.length > 0 && (
@@ -401,6 +420,78 @@ export default function MovieInd({ movie }) {
                                 src={
                                   "https://img.youtube.com/vi/" +
                                   getYoutubeVideoId(promotion.url) +
+                                  "/hqdefault.jpg"
+                                }
+                                className="w-full h-full rounded-md shadow-md"
+                                frameBorder="0"
+                                allowFullScreen
+                              />
+                              <div className="absolute top-0 w-full h-full duration-500 group-hover:bg-opacity-50 group-hover:bg-black" />
+                              <div className="absolute text-white duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:scale-125 top-1/2 left-1/2">
+                                <PlayIcon className="w-20 h-20" />
+                              </div>
+                            </motion.div>
+                          );
+                        })}
+                      </div>
+                    </>
+                  )}
+                  {movie.reviews?.length > 0 && (
+                    <>
+                      <div className="flex gap-4 mt-8 text-xl text-white">
+                        <motion.div
+                          initial={{ opacity: 0, scale: 1 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            ease: "easeOut",
+                            duration: 0.5,
+                            delay: 0.5,
+                            once: true,
+                          }}
+                        >
+                          Review
+                        </motion.div>
+                        <motion.div
+                          className="self-center flex-1 h-0.5 bg-white rounded-sm"
+                          initial={{ opacity: 0, scaleX: 0 }}
+                          viewport={{ once: true }}
+                          whileInView={{
+                            opacity: 1,
+                            scaleX: 1,
+                          }}
+                          transition={{
+                            ease: "easeOut",
+                            duration: 0.5,
+                            delay: 0.5,
+                            once: true,
+                          }}
+                        ></motion.div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 mt-4 overflow-hidden text-white md:grid-cols-3">
+                        {movie.reviews.map((review, index) => {
+                          return (
+                            <motion.div
+                              key={index}
+                              className="relative cursor-pointer group"
+                              onClick={() => {
+                                setYoutubeUrl(review.url);
+                                setOpenVideoDialog(true);
+                              }}
+                              viewport={{ once: true }}
+                              initial={{ opacity: 0, x: 50 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{
+                                ease: "easeInOut",
+                                duration: 0.5,
+                                delay: 0.25 * index,
+                                once: true,
+                              }}
+                            >
+                              <img
+                                src={
+                                  "https://img.youtube.com/vi/" +
+                                  getYoutubeVideoId(review.url) +
                                   "/hqdefault.jpg"
                                 }
                                 className="w-full h-full rounded-md shadow-md"

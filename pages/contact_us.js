@@ -37,7 +37,7 @@ export default function ContactUs() {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 200) {
+    if (offset > 100) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -81,10 +81,24 @@ export default function ContactUs() {
               transition={{ ease: "easeOut", duration: 0.5, once: true }}
             >
               <div className="mx-6 overflow-hidden rounded-md md:grid md:grid-cols-2 md:items-start">
-                <div className="flex flex-col justify-between h-full p-8 text-sm text-white bg-black md:bg-gradient-to-l from-gray-700 to-black">
+                <div className="flex flex-col justify-between h-full p-8 text-sm text-white bg-gradient-to-t md:bg-gradient-to-l from-gray-700 to-black">
                   <div>
                     <motion.div
-                      className="text-2xl font-medium text-white md:text-2xl "
+                      className="w-full text-2xl font-medium text-white md:w-1/2 sm:w-2/3 md:text-2xl"
+                      viewport={{ once: true }}
+                      initial={{ opacity: 0, x: -200 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut",
+                        duration: 0.25,
+                        delay: 0.5,
+                        once: true,
+                      }}
+                    >
+                      <img src="/sacred_chank_production.png" />
+                    </motion.div>
+                    <motion.div
+                      className="mt-8 text-2xl font-medium text-white md:text-2xl "
                       viewport={{ once: true }}
                       initial={{ opacity: 0, x: -200 }}
                       whileInView={{ opacity: 1, x: 0 }}

@@ -40,7 +40,7 @@ export default function MoviesList({ movie, movies }) {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 200) {
+    if (offset > 100) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -64,7 +64,7 @@ export default function MoviesList({ movie, movies }) {
       <div className="min-h-full bg-slate-900">
         <div className="pattern">
           {/* Navbar */}
-          <Header scrolled={scrolled} page="movie" />
+          <Header scrolled={scrolled} page="movies" />
 
           <main className="w-full -z-10 ">
             <motion.div
@@ -78,7 +78,7 @@ export default function MoviesList({ movie, movies }) {
 
             <div className="relative p-4 -mt-64 xl:mx-auto max-w-7xl">
               <motion.div
-                className={classNames("relative w-full px-8 py-4 col-span-2")}
+                className={classNames("relative w-full py-4 px-4 col-span-2")}
                 viewport={{ once: true }}
                 initial={{ opacity: 0, y: -200 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -98,11 +98,11 @@ export default function MoviesList({ movie, movies }) {
                   onChange={(event) => {}}
                 />
               </motion.div>
-              <div className="grid grid-cols-1 gap-8 px-8 py-4 mx-auto text-white sm:grid-cols-3 lg:grid-cols-4">
+              <div className="grid grid-cols-1 gap-8 px-4 py-4 mx-auto text-white sm:grid-cols-3 lg:grid-cols-4">
                 {movies?.map((movie, index) => {
                   return (
                     <motion.div
-                      key={movie}
+                      key={index}
                       viewport={{ once: true }}
                       initial={{ opacity: 0, x: -200 }}
                       whileInView={{ opacity: 1, x: 0 }}

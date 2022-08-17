@@ -130,7 +130,7 @@ const Constants = {
         "Dharma is stuck in a rut with his negative and lonely lifestyle and spends each day in the comfort of his loneliness. A pup named Charlie enters his life and gives him a new perspective towards it.",
       releaseDate: "10 June 2022",
       languages: ["KANNADA"],
-      genre: ["COMEDY", "ROMANTIC"],
+      genre: ["COMEDY", "DRAMA", "ADVENTURE"],
       poster: {
         landscape:
           "https://rskg.in/wp-content/uploads/2022/07/IMG_20220619_132832-2.jpg",
@@ -170,6 +170,18 @@ const Constants = {
           link: {
             wikipedia: "",
           },
+        },
+      ],
+      promotions: [
+        {
+          title: "Kiranraj",
+          url: "https://www.youtube.com/watch?v=k3U2ARvVh0o",
+        },
+      ],
+      reviews: [
+        {
+          title: "Kevin",
+          url: "https://www.youtube.com/watch?v=SfloHTQle70",
         },
       ],
     },
@@ -231,7 +243,7 @@ const Constants = {
         "Siri hires an unsuccessful actor to play her missing brother in front of her parents to bring the family back together. Black magic also plays a role",
       releaseDate: "6 May 2022",
       languages: ["KANNADA"],
-      genre: ["COMEDY", "ROMANTIC"],
+      genre: ["COMEDY", "MYSTERY"],
       poster: {
         landscape:
           "https://m.media-amazon.com/images/M/MV5BOWE3OTVmZjgtZTFhNC00ZDNjLWJkNjctYTU2M2JmOTA3NTQwXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg",

@@ -46,7 +46,7 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 200) {
+    if (offset > 100) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -106,7 +106,7 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
                           src="https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/landscape.png"
                         />
                         <img
-                          className="object-cover w-full h-full opacity-50 sm:hidden"
+                          className="object-cover w-full h-full sm:hidden"
                           src="https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/portrait.png"
                         />
                       </div>
@@ -376,13 +376,13 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
               />
             </div>
 
-            <div className="grid grid-cols-1 gap-8 p-8 mx-auto sm:grid-cols-3 lg:grid-cols-4 max-w-7xl">
+            <div className="grid grid-cols-1 gap-8 p-8 mx-auto overflow-hidden sm:grid-cols-3 lg:grid-cols-4 max-w-7xl">
               {inTheaterMovies.map((movie, index) => {
                 return (
                   <motion.div
                     key={index}
                     viewport={{ once: true }}
-                    initial={{ opacity: 0, x: -200 }}
+                    initial={{ opacity: 0, x: 200 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{
                       ease: "easeInOut",
@@ -445,13 +445,13 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
               />
             </div>
 
-            <div className="grid grid-cols-1 gap-8 p-8 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl">
+            <div className="grid grid-cols-1 gap-8 p-8 mx-auto overflow-hidden sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl">
               {upcomingMovies.map((movie, index) => {
                 return (
                   <motion.div
                     key={movie}
                     viewport={{ once: true }}
-                    initial={{ opacity: 0, x: -200 }}
+                    initial={{ opacity: 0, x: 200 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{
                       ease: "easeInOut",
