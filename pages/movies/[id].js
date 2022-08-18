@@ -422,7 +422,7 @@ export default function MovieInd({ movie }) {
                                   getYoutubeVideoId(promotion.url) +
                                   "/hqdefault.jpg"
                                 }
-                                className="w-full h-full rounded-md shadow-md"
+                                className="w-full h-full duration-500 rounded-md shadow-md group-hover:blur-sm"
                                 frameBorder="0"
                                 allowFullScreen
                               />

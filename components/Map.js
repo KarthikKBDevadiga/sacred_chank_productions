@@ -33,17 +33,17 @@ const Marker = (options) => {
       setTimeout(() => {
         marker.setOptions(options);
         marker.setIcon({
-          url: "/marker.png",
-          labelOrigin: new google.maps.Point(16, 56),
+          url: "/marker1.png",
+          // labelOrigin: new google.maps.Point(16, 56),
           // size: new google.maps.Size(32, 32),
           // anchor: new google.maps.Point(16, 32),
         });
         marker.setAnimation(google.maps.Animation.DROP);
-        marker.setLabel({
-          text: "Sacred Chank Productions",
-          color: "#FFFFFF",
-          fontWeight: "bold",
-        });
+        // marker.setLabel({
+        //   text: "Sacred Chank Productions",
+        //   color: "#FFFFFF",
+        //   fontWeight: "bold",
+        // });
       }, 1000);
     }
   }, [marker, options]);
