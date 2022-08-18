@@ -392,7 +392,6 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
                     }}
                   >
                     <Movie
-                      key={movie}
                       movie={movie}
                       className="col-span-1"
                       trailer={() => {
@@ -449,7 +448,7 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
               {upcomingMovies.map((movie, index) => {
                 return (
                   <motion.div
-                    key={movie}
+                    key={index}
                     viewport={{ once: true }}
                     initial={{ opacity: 0, x: 200 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -461,7 +460,6 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
                     }}
                   >
                     <Movie
-                      key={movie}
                       movie={movie}
                       className="col-span-1"
                       trailer={() => {

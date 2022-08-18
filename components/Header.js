@@ -8,7 +8,7 @@ import classNames from "../utils/classNames";
 
 const navigation = [
   { id: "movies", name: "Movies", href: "/movies", current: true },
-  { id: "", name: "Production", href: "#", current: false },
+  { id: "production", name: "Production", href: "#", current: false },
   {
     id: "distribution",
     name: "Distribution",
@@ -21,7 +21,7 @@ const navigation = [
     href: "/news_and_events",
     current: false,
   },
-  { id: "", name: "Partners", href: "#", current: false },
+  { id: "partners", name: "Partners", href: "#", current: false },
   { id: "about_us", name: "About Us", href: "/about_us", current: false },
   { id: "contact_us", name: "Contact Us", href: "/contact_us", current: false },
 ];
@@ -69,7 +69,7 @@ const Header = ({ className, scrolled, page }) => {
                 <div className="hidden h-full lg:block lg:ml-10">
                   <div className="flex h-full space-x-4">
                     {navigation.map((item) => (
-                      <Link href={item.href} key={item.name}>
+                      <Link href={item.href} key={item.id}>
                         <a
                           className={classNames(
                             "px-3 py-2 text-white duration-500 cursor-pointer group self-center h-full flex  border-b-2  hover:border-white",
@@ -113,7 +113,7 @@ const Header = ({ className, scrolled, page }) => {
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Disclosure.Button
-                  key={item.name}
+                  key={item.id}
                   as="a"
                   href={item.href}
                   className={classNames(
