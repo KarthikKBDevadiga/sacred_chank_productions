@@ -31,7 +31,7 @@ import InstagramIcon from "../../icons/InstagramIcon";
 import BookTicketButton from "../../components/BookTicketButton";
 import Movie from "../../components/item/Movie";
 
-export default function MoviesList({ movie, movies }) {
+export default function MoviesList({ movies }) {
   // const movie = Constants.MOVIE;
   const [scrolled, setScrolled] = useState(false);
 
@@ -142,11 +142,12 @@ export default function MoviesList({ movie, movies }) {
   );
 }
 export async function getServerSideProps(context) {
-  const movie = Constants.MOVIES[0];
-  const movies = Constants.MOVIES;
+  // const movies = Constants.MOVIES;
+  const movies = await fetch("http://localhost:3000/api/movies")
+    .then((res) => res.json())
+    .then((json) => json);
   return {
     props: {
-      movie,
       movies,
     },
   };

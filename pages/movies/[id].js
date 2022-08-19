@@ -608,7 +608,11 @@ export default function MovieInd({ movie }) {
   );
 }
 export async function getServerSideProps(context) {
-  const movie = Constants.MOVIES.find((movie) => movie.id == context.params.id);
+  const movie = await fetch(
+    "http://localhost:3000/api/movies/" + context.params.id
+  )
+    .then((res) => res.json())
+    .then((json) => json);
   return {
     props: {
       movie,

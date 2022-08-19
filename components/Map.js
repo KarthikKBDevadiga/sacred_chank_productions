@@ -77,7 +77,7 @@ const GoogleMap = ({ center, zoom, children }) => {
         console.log("Here");
       });
     }
-  });
+  }, [map]);
 
   return (
     <>
