@@ -68,10 +68,7 @@ export default function Index() {
         >
           <div className="px-4 mx-auto max-w-7xl">
             <div className="grid max-w-3xl grid-cols-1 gap-4 mx-auto lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
-              <section
-                className="lg:col-start-1 lg:col-span-2"
-                aria-labelledby="order-details"
-              >
+              <section className="lg:col-start-1 lg:col-span-2">
                 <motion.div
                   initial={{ opacity: 0, y: -200 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -157,10 +154,7 @@ export default function Index() {
                   </div>
                 </motion.div>
               </section>
-              <section
-                aria-labelledby="timeline-title"
-                className="lg:col-start-3 lg:col-span-1"
-              >
+              <section className="lg:col-start-3 lg:col-span-1">
                 <div className="flex flex-col overflow-hidden bg-gray-700 rounded-md gap-">
                   {Constants.NEWS.map((news, index) => {
                     return (

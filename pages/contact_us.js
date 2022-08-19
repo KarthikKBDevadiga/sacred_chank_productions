@@ -39,6 +39,7 @@ import {
   phoneNumberValidator,
 } from "../helpers/validator";
 import SuccessDialog from "../components/dialogs/SuccessDialog";
+import Link from "next/link";
 
 export default function ContactUs() {
   const [loadingDialog, setLoadingDialog] = useState(false);
@@ -220,7 +221,6 @@ export default function ContactUs() {
                   <div className="mt-8 text-base font-light">
                     <motion.div
                       viewport={{ once: true }}
-                      className="flex gap-2"
                       initial={{ opacity: 0, x: -200 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{
@@ -230,8 +230,12 @@ export default function ContactUs() {
                         once: true,
                       }}
                     >
-                      <PhoneIcon className="self-center w-5 h-5" />
-                      <div className="self-center">+353 89 249 0255</div>
+                      <Link href="tel:+353892490255">
+                        <a className="flex gap-2">
+                          <PhoneIcon className="self-center w-5 h-5" />
+                          <div className="self-center">+353 89 249 0255</div>
+                        </a>
+                      </Link>
                     </motion.div>
                     <motion.div
                       className="flex gap-2 mt-4"
@@ -245,8 +249,14 @@ export default function ContactUs() {
                         once: true,
                       }}
                     >
-                      <MailIcon className="self-center w-5 h-5" />
-                      <div className="self-center">hello@sacredchank.com</div>
+                      <Link href="mailto:hello@sacredchank.com">
+                        <a className="flex gap-2">
+                          <MailIcon className="self-center w-5 h-5" />
+                          <div className="self-center">
+                            hello@sacredchank.com
+                          </div>
+                        </a>
+                      </Link>
                     </motion.div>
                     <motion.div
                       className="flex gap-2 mt-4"

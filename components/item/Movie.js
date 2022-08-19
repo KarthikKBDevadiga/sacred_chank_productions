@@ -27,12 +27,12 @@ const Movie = ({ movie, trailer, className }) => {
         <div className="flex gap-2 mt-2">
           {movie.genre.map((genre, index) => {
             return (
-              <di
+              <div
                 key={index}
                 className="px-1.5 py-0.5 text-xs bg-red-600 rounded-md "
               >
                 {genre}
-              </di>
+              </div>
             );
           })}
         </div>

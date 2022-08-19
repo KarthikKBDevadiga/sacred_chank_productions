@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <AnimatePresence>
       <Component {...pageProps} />
-      <CookieConsentDialog />
+      <CookieConsentDialog key="cookie" />
     </AnimatePresence>
   );
   return <Component {...pageProps} />;
