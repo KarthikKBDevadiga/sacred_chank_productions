@@ -27,7 +27,7 @@ import { motion } from "framer-motion";
 import Constants from "../helpers/Constants";
 import Movie from "../components/item/Movie";
 
-export default function Distribution() {
+export default function Distribution({ movies }) {
   const [scrolled, setScrolled] = useState(false);
   const [openVideoDialog, setOpenVideoDialog] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState();
@@ -116,12 +116,12 @@ export default function Distribution() {
               </div>
 
               <div className="grid grid-cols-1 gap-8 p-8 mx-auto sm:grid-cols-3 lg:grid-cols-4 max-w-7xl">
-                {Constants.MOVIES.map((movie, index) => {
+                {movies?.map((movie, index) => {
                   return (
                     <motion.div
                       key={index}
                       viewport={{ once: true }}
-                      initial={{ opacity: 0, x: -200 }}
+                      initial={{ opacity: 0, x: 200 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{
                         ease: "easeInOut",
@@ -158,4 +158,17 @@ export default function Distribution() {
       />
     </>
   );
+}
+export async function getServerSideProps(context) {
+  // const movies = Constants.MOVIES;
+
+  const movies = await fetch(process.env.BASE_URL + "/movies")
+    .then((res) => res.json())
+    .then((json) => json.movies);
+  console.log(movies);
+  return {
+    props: {
+      movies,
+    },
+  };
 }
