@@ -609,7 +609,7 @@ export default function MovieInd({ movie }) {
 }
 export async function getServerSideProps(context) {
   const movie = await fetch(
-    "http://localhost:3000/movies/canonical/" + context.params.id
+    process.env.BASE_URL + "/movies/canonical/" + context.params.id
   )
     .then((res) => res.json())
     .then((json) => json.movie);

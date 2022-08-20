@@ -144,7 +144,7 @@ export default function MoviesList({ movies }) {
 export async function getServerSideProps(context) {
   // const movies = Constants.MOVIES;
 
-  const movies = await fetch("http://localhost:3000/movies")
+  const movies = await fetch(process.env.BASE_URL + "/movies")
     .then((res) => res.json())
     .then((json) => json.movies);
   return {

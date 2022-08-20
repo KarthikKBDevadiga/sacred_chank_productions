@@ -488,7 +488,7 @@ export default function Index({ data }) {
   );
 }
 export async function getServerSideProps(context) {
-  const data = await fetch("http://localhost:3000/movies/home")
+  const data = await fetch(process.env.BASE_URL + "/movies/home")
     .then((res) => res.json())
     .then((json) => json);
 
