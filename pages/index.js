@@ -39,7 +39,7 @@ const AdaptiveHeight = (slider) => {
   slider.on("slideChanged", updateHeight);
 };
 
-export default function Index({ upcomingMovies, inTheaterMovies }) {
+export default function Index({ data }) {
   const [scrolled, setScrolled] = useState(false);
   const [openVideoDialog, setOpenVideoDialog] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState();
@@ -377,7 +377,7 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
             </div>
 
             <div className="grid grid-cols-1 gap-8 p-8 mx-auto overflow-hidden sm:grid-cols-3 lg:grid-cols-4 max-w-7xl">
-              {inTheaterMovies.map((movie, index) => {
+              {data.inTheater.map((movie, index) => {
                 return (
                   <motion.div
                     key={index}
@@ -445,7 +445,7 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
             </div>
 
             <div className="grid grid-cols-1 gap-8 p-8 mx-auto overflow-hidden sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl">
-              {upcomingMovies.map((movie, index) => {
+              {data.upcoming.map((movie, index) => {
                 return (
                   <motion.div
                     key={index}
@@ -488,11 +488,9 @@ export default function Index({ upcomingMovies, inTheaterMovies }) {
   );
 }
 export async function getServerSideProps(context) {
-  const upcomingMovies = Constants.MOVIES.filter(
-    (movie) => movie.status == "UPCOMING_MOVIE"
-  );
-  const inTheaterMovies = Constants.MOVIES.filter(
-    (movie) => movie.status == "IN_THEATER_MOVIES"
-  );
-  return { props: { upcomingMovies, inTheaterMovies } };
+  const data = await fetch("http://localhost:3000/movies/home")
+    .then((res) => res.json())
+    .then((json) => json);
+
+  return { props: { data } };
 }

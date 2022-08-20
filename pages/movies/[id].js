@@ -237,7 +237,7 @@ export default function MovieInd({ movie }) {
               <div className="mt-4 text-white md:grid md:grid-cols-3 md:gap-4">
                 <div className="col-span-2">
                   <div className="flex gap-2">
-                    {movie.genre.map((genre, index) => {
+                    {movie.genres.map((genre, index) => {
                       return (
                         <motion.div
                           initial={{ opacity: 0, scale: 1, x: 100, y: 0 }}
@@ -609,10 +609,10 @@ export default function MovieInd({ movie }) {
 }
 export async function getServerSideProps(context) {
   const movie = await fetch(
-    "http://localhost:3000/api/movies/" + context.params.id
+    "http://localhost:3000/movies/canonical/" + context.params.id
   )
     .then((res) => res.json())
-    .then((json) => json);
+    .then((json) => json.movie);
   return {
     props: {
       movie,

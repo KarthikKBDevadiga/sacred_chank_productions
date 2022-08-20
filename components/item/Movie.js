@@ -14,7 +14,7 @@ const Movie = ({ movie, trailer, className }) => {
         className
       )}
       onClick={() => {
-        router.push("/movies/" + movie.id);
+        router.push("/movies/" + movie.canonical);
       }}
     >
       <img
@@ -25,7 +25,7 @@ const Movie = ({ movie, trailer, className }) => {
         <div className="text-lg font-bold text-white">{movie.title}</div>
 
         <div className="flex gap-2 mt-2">
-          {movie.genre.map((genre, index) => {
+          {movie.genres.map((genre, index) => {
             return (
               <div
                 key={index}

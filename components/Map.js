@@ -73,9 +73,7 @@ const GoogleMap = ({ center, zoom, children }) => {
           disableDefaultUI: true,
         })
       );
-      map?.event.addListenerOnce(map, "idle", function () {
-        console.log("Here");
-      });
+      map?.event.addListenerOnce(map, "idle", function () {});
     }
   }, [map]);
 

@@ -35,7 +35,6 @@ const user = {
 const Header = ({ className, scrolled, page }) => {
   useEffect(() => {
     const pathname = window.location.pathname;
-    // console.log(window.location.pathname);
     navigation.map((n) => {
       n.current = n.href == pathname;
     });
