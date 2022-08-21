@@ -107,7 +107,7 @@ export default function ContactUs() {
       messageRef.current.value = "";
 
       let status = 200;
-      fetch(process.env.BASE_URL + "/contactUs", {
+      fetch(process.env.BASE_API_URL + "/contactUs", {
         method: "post",
         body: JSON.stringify(body),
         headers: { "Content-Type": "application/json" },

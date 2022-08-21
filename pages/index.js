@@ -489,7 +489,7 @@ export default function Index({ data }) {
   );
 }
 export async function getServerSideProps(context) {
-  const data = await fetch(process.env.BASE_URL + "/movies/home")
+  const data = await fetch(process.env.BASE_API_URL + "/movies/home")
     .then((res) => res.json())
     .then((json) => json);
 
