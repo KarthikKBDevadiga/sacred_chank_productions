@@ -11,9 +11,12 @@ const Metatag = ({ title, description, children, url, keywords }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> */}
         <meta charSet="utf-8" />
-        <title>{title}</title>
+        <title>{title + " - Sacred Chank Productions"}</title>
 
-        <meta name="title" content={title}></meta>
+        <meta
+          name="title"
+          content={title + " - Sacred Chank Productions"}
+        ></meta>
         <meta name="description" content={description}></meta>
         <meta name="keywords" content={keywords} />
         <meta name="robots" content="index, follow" />
@@ -30,7 +33,11 @@ const Metatag = ({ title, description, children, url, keywords }) => {
           content={"https://sacredchankproductions.com" + asPath}
           key="ogurl"
         />
-        <meta property="og:title" content={title} key="ogtitle" />
+        <meta
+          property="og:title"
+          content={title + " - Sacred Chank Productions"}
+          key="ogtitle"
+        />
         <meta property="og:description" content={description} key="ogdesc" />
         <meta
           property="og:image"
@@ -48,7 +55,10 @@ const Metatag = ({ title, description, children, url, keywords }) => {
           property="twitter:url"
           content={url ? url : "https://sacredchankproductions.com/" + asPath}
         />
-        <meta property="twitter:title" content={title} />
+        <meta
+          property="twitter:title"
+          content={title + " - Sacred Chank Productions"}
+        />
         <meta property="twitter:description" content={description} />
         <meta
           property="twitter:image"

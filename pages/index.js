@@ -82,7 +82,7 @@ export default function Index({ data }) {
         ```
       */}
       <Metatag
-        title="Scared Chank Productions"
+        title="Home"
         description="Sacred Chank Productions"
         keywords="Sacred Chank Productions"
       />
