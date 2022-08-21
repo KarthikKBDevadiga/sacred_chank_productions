@@ -80,16 +80,24 @@ export default function MovieInd({ movie }) {
 
           <main className="w-full overflow-hidden -z-10">
             <motion.div
-              className="bg-black bg-opacity-25 h-96 md:h-96"
+              className="overflow-hidden bg-black bg-opacity-25 h-96 md:h-96"
               initial={{ opacity: 0, scale: 1, y: -200 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ ease: "easeOut", duration: 0.5 }}
             >
-              <img
-                className="object-cover w-full h-full "
+              {/* <img
+                className="absolute w-full h-full"
                 src={movie.poster.landscape}
+              /> */}
+              <div
+                className={classNames(
+                  "w-full h-full bg-center bg-no-repeat bg-cover bg-fixed ",
+                  "bg-[url:('" + movie.poster.landscape + "')]"
+                )}
+                style={{
+                  backgroundImage: 'url("' + movie.poster.landscape + '")',
+                }}
               />
-              {/* <div className="absolute top-0 w-full h-full bg-gradient-to-b from-slate-900 to-transparent" /> */}
             </motion.div>
 
             <div className="relative p-4 -mt-24 xl:mx-auto max-w-7xl">
