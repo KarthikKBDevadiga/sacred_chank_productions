@@ -1,8 +1,10 @@
 import React from "react";
 import Head from "next/head";
 import NProgressContainer from "./NProgressContainer";
+import { useRouter } from "next/router";
 
 const Metatag = ({ title, description, children, url, keywords }) => {
+  const { asPath } = useRouter();
   return (
     <>
       <Head>
@@ -23,12 +25,20 @@ const Metatag = ({ title, description, children, url, keywords }) => {
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:site_name" content={title} key="ogsitename" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" key="ogurl" />
+        <meta
+          property="og:url"
+          content={"https://sacredchankproductions.com" + asPath}
+          key="ogurl"
+        />
         <meta property="og:title" content={title} key="ogtitle" />
         <meta property="og:description" content={description} key="ogdesc" />
         <meta
           property="og:image"
-          content={url ? url : "/sacred_chank_productions.png"}
+          content={
+            url
+              ? url
+              : "https://sacredchankproductions.com/sacred_chank_production.png"
+          }
           key="ogimage"
         />
 
@@ -36,13 +46,17 @@ const Metatag = ({ title, description, children, url, keywords }) => {
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:url"
-          content={url ? url : "/sacred_chank_productions.png"}
+          content={url ? url : "https://sacredchankproductions.com/" + asPath}
         />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta
           property="twitter:image"
-          content={url ? url : "/sacred_chank_productions.png"}
+          content={
+            url
+              ? url
+              : "https://sacredchankproductions.com/sacred_chank_production.png"
+          }
         />
 
         <link
