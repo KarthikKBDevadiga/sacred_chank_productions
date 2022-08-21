@@ -15,7 +15,7 @@ const Metatag = ({ title, description, children, url, keywords }) => {
         <meta name="description" content={description}></meta>
         <meta name="keywords" content={keywords} />
         <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         {/* <meta name="language" content="English" /> */}
         <meta name="revisit-after" content="7 days" />
         <meta name="author" content="Karthik K B Devadiga" />
