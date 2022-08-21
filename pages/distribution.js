@@ -54,7 +54,11 @@ export default function Distribution({ movies }) {
         <body class="h-full">
         ```
       */}
-      <Metatag title="Distribution" description="Distribution" />
+      <Metatag
+        title="Distribution"
+        description="Distribution"
+        keywords="Sacred Chank Productions,Distribution"
+      />
       <div className="min-h-full bg-slate-900">
         <div className=" pattern">
           {/* Navbar */}

@@ -22,7 +22,7 @@ const Constants = {
         "Three college friends meet teacher Kishore Kumar who offers them a room to stay because of personal reasons. Years later, they reunite to help their teacher with his illness and in turn find a chance to fix their love lives.",
       releaseDate: "12 August 2022",
       languages: ["KANNADA"],
-      genre: ["COMEDY", "ROMANTIC"],
+      genres: ["COMEDY", "ROMANTIC"],
       poster: {
         landscape:
           "https://sacred-chank-productions.s3.eu-west-2.amazonaws.com/films/Gaalipata2/banner/landscape.png",
@@ -193,7 +193,7 @@ const Constants = {
         "The hurdles that has to be overcome by three people who came together to pursue a common goal of making it big in the movie business",
       releaseDate: "23 June 2022",
       languages: ["KANNADA"],
-      genre: ["COMEDY", "ROMANTIC"],
+      genres: ["COMEDY", "ROMANTIC"],
       poster: {
         landscape: "https://i.ytimg.com/vi/NDf58vl6FhA/maxresdefault.jpg",
         portrait:
@@ -243,7 +243,7 @@ const Constants = {
         "Siri hires an unsuccessful actor to play her missing brother in front of her parents to bring the family back together. Black magic also plays a role",
       releaseDate: "6 May 2022",
       languages: ["KANNADA"],
-      genre: ["COMEDY", "MYSTERY"],
+      genres: ["COMEDY", "MYSTERY"],
       poster: {
         landscape:
           "https://m.media-amazon.com/images/M/MV5BOWE3OTVmZjgtZTFhNC00ZDNjLWJkNjctYTU2M2JmOTA3NTQwXkEyXkFqcGdeQXVyMTA1NzEzOTU1._V1_.jpg",

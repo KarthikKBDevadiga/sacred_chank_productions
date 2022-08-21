@@ -13,7 +13,6 @@ function MyApp({ Component, pageProps }) {
       <CookieConsentDialog key="cookie" />
     </AnimatePresence>
   );
-  return <Component {...pageProps} />;
 }
 
 export default MyApp;

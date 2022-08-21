@@ -46,7 +46,11 @@ export default function AboutUs() {
         <body class="h-full">
         ```
       */}
-      <Metatag title="About Us" description="About Us" />
+      <Metatag
+        title="About Us"
+        description="About Us"
+        keywords="Sacred Chank Productions,About Us"
+      />
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
         <Header scrolled={scrolled} page="about_us" />

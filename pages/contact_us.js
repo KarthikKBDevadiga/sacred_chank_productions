@@ -147,7 +147,11 @@ export default function ContactUs() {
         <body class="h-full">
         ```
       */}
-      <Metatag title="Contact Us" description="Contact Us" />
+      <Metatag
+        title="Contact Us"
+        description="Contact Us"
+        keywords="Sacred Chank Productions,Contact Us"
+      />
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
         <Header scrolled={scrolled} page="contact_us" />

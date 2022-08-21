@@ -60,7 +60,11 @@ export default function MoviesList({ movies }) {
         <body class="h-full">
         ```
       */}
-      <Metatag title="Movies" description="Movies" />
+      <Metatag
+        title="Movies"
+        description="Movies"
+        keywords="Sacred Chank Productions,Movies"
+      />
       <div className="min-h-full bg-slate-900">
         <div className="pattern">
           {/* Navbar */}

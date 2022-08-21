@@ -84,6 +84,7 @@ export default function Index({ data }) {
       <Metatag
         title="Scared Chank Productions"
         description="Sacred Chank Productions"
+        keywords="Sacred Chank Productions"
       />
       <div className="min-h-full bg-slate-900">
         <div className="pattern">

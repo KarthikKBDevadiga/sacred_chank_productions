@@ -49,7 +49,11 @@ export default function Index() {
         <body class="h-full">
         ```
       */}
-      <Metatag title="News And Events" description="News And Events" />
+      <Metatag
+        title="News And Events"
+        description="News And Events"
+        keywords="Sacared Chank Productions,News,Events"
+      />
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
         <Header scrolled={scrolled} page="news_and_events" />

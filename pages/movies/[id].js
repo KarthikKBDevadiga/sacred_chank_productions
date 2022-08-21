@@ -70,7 +70,8 @@ export default function MovieInd({ movie }) {
       <Metatag
         title={movie.title}
         description={movie.title}
-        url={movie.poster.portrait}
+        url={movie.poster.landscape}
+        keywords={"Sacred Chank Productions,Movie," + movie.title}
       />
       <div className="min-h-full bg-slate-900">
         <div className="pattern">
