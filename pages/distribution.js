@@ -166,7 +166,7 @@ export default function Distribution({ movies }) {
 export async function getServerSideProps(context) {
   // const movies = Constants.MOVIES;
 
-  const movies = await fetch(process.env.BASE_API_URL + "/movies")
+  const movies = await fetch(process.env.BASE_API_URL + "movies")
     .then((res) => res.json())
     .then((json) => json.movies);
   console.log(movies);
