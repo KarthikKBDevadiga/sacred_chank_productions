@@ -44,7 +44,7 @@ const Header = ({ className, scrolled, page }) => {
       as="nav"
       className={classNames(
         "fixed z-10 w-full   duration-1000 bg-black",
-        scrolled ? "bg-opacity-100" : " bg-opacity-25",
+        scrolled ? "bg-opacity-100" : " bg-opacity-60",
         className
       )}
     >

@@ -37,6 +37,7 @@ import {
   WhatsappShareButton,
 } from "next-share";
 import TwitterIcon from "../../icons/TwitterIcon";
+import { Parallax } from "react-parallax";
 
 export default function MovieInd({ movie }) {
   // const movie = Constants.MOVIE;
@@ -80,25 +81,35 @@ export default function MovieInd({ movie }) {
 
           <main className="w-full overflow-hidden -z-10">
             <motion.div
-              className="overflow-hidden bg-black bg-opacity-25 h-96 md:h-96"
-              initial={{ opacity: 0, scale: 1, y: -200 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ ease: "easeOut", duration: 0.5 }}
+              className="h-96"
+              // initial={{ opacity: 0, scale: 1, y: -200 }}
+              // animate={{ opacity: 1, scale: 1, y: 0 }}
+              // transition={{ ease: "easeOut", duration: 0.5 }}
             >
-              {/* <img
-                className="absolute w-full h-full"
-                src={movie.poster.landscape}
-              /> */}
+              <Parallax
+                blur={0}
+                bgImage={movie.poster.landscape}
+                bgImageAlt={movie.title + " Banner"}
+                strength={-200}
+                renderLayer={(percentage) => (
+                  <div
+                    className="w-full h-96"
+                    style={{ backgroundColor: "black" }}
+                  ></div>
+                )}
+              />
+            </motion.div>
+            {/* <motion.div className="bg-black bg-opacity-25 h-96 md:h-96">
               <div
                 className={classNames(
-                  "w-full h-full bg-center bg-no-repeat bg-cover bg-fixed ",
+                  "w-full h-96 bg-center bg-no-repeat bg-fixed bg-cover align-top origin-center",
                   "bg-[url:('" + movie.poster.landscape + "')]"
                 )}
                 style={{
                   backgroundImage: 'url("' + movie.poster.landscape + '")',
                 }}
               />
-            </motion.div>
+            </motion.div> */}
 
             <div className="relative p-4 -mt-24 xl:mx-auto max-w-7xl">
               <div className="-mt-24 md:grid md:grid-cols-4 md:gap-4">
