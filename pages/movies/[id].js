@@ -23,7 +23,13 @@ import Constants from "../../helpers/Constants";
 import PlayIcon from "../../icons/PlayIcon";
 import FacebookIcon from "../../icons/FacebookIcon";
 
-import { motion } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useViewportScroll,
+} from "framer-motion";
 import classNames from "../../utils/classNames";
 import YoutubeDialog, {
   getYoutubeVideoId,
@@ -58,6 +64,13 @@ export default function MovieInd({ movie }) {
     window.addEventListener("scroll", handleScroll);
   });
 
+  const { scrollYProgress } = useScroll();
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
     <>
       {/*
@@ -74,11 +87,17 @@ export default function MovieInd({ movie }) {
         url={movie.poster.landscape}
         keywords={"Sacred Chank Productions,Movie," + movie.title}
       />
+
       <div className="min-h-full bg-slate-900">
         <div className="pattern">
           {/* Navbar */}
           <Header scrolled={scrolled} page="movies" />
 
+          {/* <div className="fixed p-4 text-white bg-red-600"> Hell</div> */}
+          <motion.div
+            style={{ scaleY }}
+            className="fixed bottom-0 left-0 right-0 z-50 h-px origin-top-left bg-white"
+          />
           <main className="w-full overflow-hidden -z-10">
             <motion.div
               className="h-96"

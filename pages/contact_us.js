@@ -40,6 +40,7 @@ import {
 } from "../helpers/validator";
 import SuccessDialog from "../components/dialogs/SuccessDialog";
 import Link from "next/link";
+import { Parallax } from "react-parallax";
 
 export default function ContactUs() {
   const [loadingDialog, setLoadingDialog] = useState(false);
@@ -154,18 +155,32 @@ export default function ContactUs() {
       />
       <div className="min-h-full bg-slate-900">
         {/* Navbar */}
-        <Header scrolled={scrolled} page="contact_us" />
+        <div className="pattern">
+          <Header scrolled={scrolled} page="contact_us" />
 
-        <main className="w-full -z-10 ">
-          <div className="pattern">
-            <motion.div
-              viewport={{ once: true }}
-              initial={{ opacity: 0, scale: 1, y: 0 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ ease: "easeOut", duration: 0.5, once: true }}
-            >
+          <main className="w-full -z-10 ">
+            {/* <Parallax
+              blur={0}
+              // bgImage={movie.poster.landscape}
+              // bgImageAlt={movie.title + " Banner"}
+              strength={-200}
+              renderLayer={(percentage) => (
+                <div
+                  style={{
+                    // position: "absolute",
+                    // background: `rgba(255, 125, 0, ${percentage * 1})`,
+                    // left: "50%",
+                    // top: "50%",
+                    height: percentage * 384,
+                  }}
+                >
+                  <Map />
+                </div>
+              )}
+            /> */}
+            <div>
               <Map />
-            </motion.div>
+            </div>
 
             <motion.div
               className="relative mx-auto -mt-12 max-w-7xl"
@@ -189,7 +204,7 @@ export default function ContactUs() {
                         once: true,
                       }}
                     >
-                      <img src="/sacred_chank_production.png" />
+                      <img src="/sacred_chank_productions.png" />
                     </motion.div>
                     <motion.div
                       className="mt-8 text-2xl font-medium text-white md:text-2xl "
@@ -621,9 +636,9 @@ export default function ContactUs() {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </main>
-        <Footer className="mt-8" />
+          </main>
+          <Footer className="mt-8" />
+        </div>
       </div>
       <LoadingDialog showDialog={loadingDialog} />
       <SuccessDialog

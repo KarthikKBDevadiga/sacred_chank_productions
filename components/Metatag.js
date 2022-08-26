@@ -44,7 +44,7 @@ const Metatag = ({ title, description, children, url, keywords }) => {
           content={
             url
               ? url
-              : "https://sacredchankproductions.com/sacred_chank_production.png"
+              : "https://sacredchankproductions.com/sacred_chank_productions.png"
           }
           key="ogimage"
         />
@@ -65,7 +65,7 @@ const Metatag = ({ title, description, children, url, keywords }) => {
           content={
             url
               ? url
-              : "https://sacredchankproductions.com/sacred_chank_production.png"
+              : "https://sacredchankproductions.com/sacred_chank_productions.png"
           }
         />
 

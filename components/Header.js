@@ -57,7 +57,7 @@ const Header = ({ className, scrolled, page }) => {
                   <a className="flex-shrink-0">
                     <img
                       className="w-auto h-8"
-                      src="/sacred_chank_production.png"
+                      src="/sacred_chank_productions.png"
                       alt="Workflow"
                     />
                   </a>
