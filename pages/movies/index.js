@@ -151,6 +151,7 @@ export async function getServerSideProps(context) {
   const movies = await fetch(process.env.BASE_API_URL + "movies")
     .then((res) => res.json())
     .then((json) => json.movies);
+
   return {
     props: {
       movies,

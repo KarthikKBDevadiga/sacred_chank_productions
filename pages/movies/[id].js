@@ -261,7 +261,7 @@ export default function MovieInd({ movie }) {
                         }}
                       >
                         <BookTicketButton
-                          name={ticket.name}
+                          name={movie.title}
                           rating={ticket.rating}
                           theater={ticket.theater}
                           timing={ticket.timing}
