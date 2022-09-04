@@ -27,7 +27,7 @@ import { motion } from "framer-motion";
 import Constants from "../helpers/Constants";
 import Movie from "../components/item/Movie";
 
-export default function Distribution({ movies }) {
+export default function Distribution({ movies, settings }) {
   const [scrolled, setScrolled] = useState(false);
   const [openVideoDialog, setOpenVideoDialog] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState();
@@ -151,7 +151,7 @@ export default function Distribution({ movies }) {
               </div>
             </div>
           </motion.main>
-          <Footer />
+          <Footer socialMedia={settings.socialMedia} />
         </div>
       </div>
 
@@ -169,10 +169,14 @@ export async function getServerSideProps(context) {
   const movies = await fetch(process.env.BASE_API_URL + "movies")
     .then((res) => res.json())
     .then((json) => json.movies);
+  const settings = await fetch(process.env.BASE_API_URL + "settings")
+    .then((res) => res.json())
+    .then((json) => json.settings);
   console.log(movies);
   return {
     props: {
       movies,
+      settings,
     },
   };
 }

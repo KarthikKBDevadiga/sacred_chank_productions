@@ -45,7 +45,7 @@ import {
 import TwitterIcon from "../../icons/TwitterIcon";
 import { Parallax } from "react-parallax";
 
-export default function MovieInd({ movie }) {
+export default function MovieInd({ movie, settings }) {
   // const movie = Constants.MOVIE;
   const [scrolled, setScrolled] = useState(false);
 
@@ -635,7 +635,7 @@ export default function MovieInd({ movie }) {
               </div>
             </div>
           </main>
-          <Footer className="mt-4" />
+          <Footer className="mt-4" socialMedia={settings.socialMedia} />
         </div>
       </div>
       <YoutubeDialog
@@ -652,9 +652,14 @@ export async function getServerSideProps(context) {
   )
     .then((res) => res.json())
     .then((json) => json.movie);
+
+  const settings = await fetch(process.env.BASE_API_URL + "settings")
+    .then((res) => res.json())
+    .then((json) => json.settings);
   return {
     props: {
       movie,
+      settings,
     },
   };
 }

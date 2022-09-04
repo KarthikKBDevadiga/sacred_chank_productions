@@ -42,7 +42,7 @@ import SuccessDialog from "../components/dialogs/SuccessDialog";
 import Link from "next/link";
 import { Parallax } from "react-parallax";
 
-export default function ContactUs() {
+export default function ContactUs({ settings }) {
   const [loadingDialog, setLoadingDialog] = useState(false);
   const [successDialog, setSuccessDialog] = useState(false);
 
@@ -249,10 +249,12 @@ export default function ContactUs() {
                         once: true,
                       }}
                     >
-                      <Link href="tel:+353892490255">
+                      <Link href={"tel:" + settings.contact.phoneNumber}>
                         <a className="flex gap-2">
                           <PhoneIcon className="self-center w-5 h-5" />
-                          <div className="self-center">+353 89 249 0255</div>
+                          <div className="self-center">
+                            {settings.contact.phoneNumber}
+                          </div>
                         </a>
                       </Link>
                     </motion.div>
@@ -268,11 +270,11 @@ export default function ContactUs() {
                         once: true,
                       }}
                     >
-                      <Link href="mailto:hello@sacredchank.com">
+                      <Link href={"mailto:" + settings.contact.email}>
                         <a className="flex gap-2">
                           <MailIcon className="self-center w-5 h-5" />
                           <div className="self-center">
-                            hello@sacredchank.com
+                            {settings.contact.email}
                           </div>
                         </a>
                       </Link>
@@ -290,7 +292,9 @@ export default function ContactUs() {
                       }}
                     >
                       <LocationIcon className="self-center w-5 h-5" />
-                      <div className="self-center">92 Glenoaks Cl</div>
+                      <div className="self-center">
+                        {settings.contact.location.address}
+                      </div>
                     </motion.div>
                   </div>
 
@@ -306,10 +310,7 @@ export default function ContactUs() {
                         once: true,
                       }}
                       onClick={() => {
-                        window.open(
-                          "https://www.facebook.com/NRI-Kannada-Balaga-111255714079808/?ti=as",
-                          "_blank"
-                        );
+                        window.open(settings.socialMedia.facebook, "_blank");
                       }}
                     >
                       <FacebookIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
@@ -326,10 +327,7 @@ export default function ContactUs() {
                         once: true,
                       }}
                       onClick={() => {
-                        window.open(
-                          "https://www.instagram.com/p/CKPin5UloX9/?igshid=1nh3ipb0rt6sa",
-                          "_blank"
-                        );
+                        window.open(settings.socialMedia.instagram, "_blank");
                       }}
                     >
                       <InstagramIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
@@ -346,7 +344,7 @@ export default function ContactUs() {
                         once: true,
                       }}
                       onClick={() => {
-                        window.open("https://twitter.com/BalagaNri", "_blank");
+                        window.open(settings.socialMedia.twitter, "_blank");
                       }}
                     >
                       <TwitterIcon className="w-4 h-4 text-white duration-500 cursor-pointer sm:w-6 sm:h-6 hover:text-white" />
@@ -637,7 +635,7 @@ export default function ContactUs() {
               </div>
             </motion.div>
           </main>
-          <Footer className="mt-8" />
+          <Footer className="mt-8" socialMedia={settings.socialMedia} />
         </div>
       </div>
       <LoadingDialog showDialog={loadingDialog} />
@@ -649,4 +647,14 @@ export default function ContactUs() {
       />
     </>
   );
+}
+export async function getServerSideProps(context) {
+  const settings = await fetch(process.env.BASE_API_URL + "settings")
+    .then((res) => res.json())
+    .then((json) => json.settings);
+  return {
+    props: {
+      settings,
+    },
+  };
 }

@@ -24,7 +24,7 @@ import Metatag from "../components/Metatag";
 import { motion } from "framer-motion";
 import Constants from "../helpers/Constants";
 
-export default function Index() {
+export default function NewsAndEvents({ settings }) {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = () => {
@@ -198,8 +198,18 @@ export default function Index() {
             </div>
           </div>
         </main>
-        <Footer className="mt-8" />
+        <Footer className="mt-8" socialMedia={settings.socialMedia} />
       </div>
     </>
   );
+}
+export async function getServerSideProps(context) {
+  const settings = await fetch(process.env.BASE_API_URL + "settings")
+    .then((res) => res.json())
+    .then((json) => json.settings);
+  return {
+    props: {
+      settings,
+    },
+  };
 }

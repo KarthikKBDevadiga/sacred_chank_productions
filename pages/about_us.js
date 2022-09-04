@@ -23,7 +23,7 @@ import { motion } from "framer-motion";
 import classNames from "../utils/classNames";
 import { Parallax } from "react-parallax";
 
-export default function AboutUs() {
+export default function AboutUs({ settings }) {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = () => {
@@ -115,8 +115,18 @@ export default function AboutUs() {
             </motion.div>
           </div>
         </main>
-        <Footer className="mt-8" />
+        <Footer className="mt-8" socialMedia={settings.socialMedia} />
       </div>
     </>
   );
+}
+export async function getServerSideProps(context) {
+  const settings = await fetch(process.env.BASE_API_URL + "settings")
+    .then((res) => res.json())
+    .then((json) => json.settings);
+  return {
+    props: {
+      settings,
+    },
+  };
 }

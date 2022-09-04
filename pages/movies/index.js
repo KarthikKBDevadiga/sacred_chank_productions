@@ -31,7 +31,7 @@ import InstagramIcon from "../../icons/InstagramIcon";
 import BookTicketButton from "../../components/BookTicketButton";
 import Movie from "../../components/item/Movie";
 
-export default function MoviesList({ movies }) {
+export default function MoviesList({ movies, settings }) {
   // const movie = Constants.MOVIE;
   const [scrolled, setScrolled] = useState(false);
 
@@ -134,7 +134,7 @@ export default function MoviesList({ movies }) {
               </div>
             </div>
           </main>
-          <Footer className="mt-4" />
+          <Footer className="mt-4" socialMedia={settings.socialMedia} />
         </div>
       </div>
       <YoutubeDialog
@@ -151,10 +151,13 @@ export async function getServerSideProps(context) {
   const movies = await fetch(process.env.BASE_API_URL + "movies")
     .then((res) => res.json())
     .then((json) => json.movies);
-
+  const settings = await fetch(process.env.BASE_API_URL + "settings")
+    .then((res) => res.json())
+    .then((json) => json.settings);
   return {
     props: {
       movies,
+      settings,
     },
   };
 }

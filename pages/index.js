@@ -39,7 +39,7 @@ const AdaptiveHeight = (slider) => {
   slider.on("slideChanged", updateHeight);
 };
 
-export default function Index({ data }) {
+export default function Index({ data, settings }) {
   const [scrolled, setScrolled] = useState(false);
   const [openVideoDialog, setOpenVideoDialog] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState();
@@ -476,7 +476,7 @@ export default function Index({ data }) {
             </div>
           </main>
 
-          <Footer />
+          <Footer socialMedia={settings.socialMedia} />
         </div>
         {/* Navbar */}
       </div>
@@ -493,5 +493,10 @@ export async function getServerSideProps(context) {
     .then((res) => res.json())
     .then((json) => json);
 
-  return { props: { data } };
+  const settings = await fetch(process.env.BASE_API_URL + "settings")
+    .then((res) => res.json())
+    .then((json) => json.settings);
+
+  console.log(settings);
+  return { props: { data, settings } };
 }
