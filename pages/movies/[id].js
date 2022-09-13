@@ -557,9 +557,8 @@ export default function MovieInd({ movie, settings }) {
                     </>
                   )}
                 </div>
-                <div>
+                {/* <div>
                   <div className="flex flex-col overflow-hidden bg-gray-700 rounded-md shadow-md">
-                    {/* <div className="p-4 mx-auto text-3xl">News</div> */}
                     <div className="flex w-full gap-4 px-4 pt-4 pb-2 mx-auto">
                       <motion.div
                         viewport={{ once: true }}
@@ -631,7 +630,7 @@ export default function MovieInd({ movie, settings }) {
                       View All
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </main>
