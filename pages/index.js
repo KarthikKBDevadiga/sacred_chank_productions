@@ -464,10 +464,10 @@ export default function Index({ data, settings }) {
                       movie={movie}
                       className="col-span-1"
                       trailer={() => {
-                        setYoutubeUrl(
-                          "https://www.youtube.com/watch?v=fnsWt4H619o"
-                        );
-                        setOpenVideoDialog(true);
+                        if (movie.trailer) {
+                          setYoutubeUrl(movie.trailer);
+                          setOpenVideoDialog(true);
+                        }
                       }}
                     />
                   </motion.div>
