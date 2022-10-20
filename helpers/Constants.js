@@ -472,27 +472,10 @@ const Constants = {
   NEWS: [
     {
       image:
-        "https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg",
+        "https://sacred-chank-productions.s3.amazonaws.com/films/images/KantaraPortrait1663073983874.jpg",
       title:
-        "ಜೇನಿನ ಧ್ವನಿಯ ಗಾಯಕ ಶ್ರೀ ರಾಜೇಶ್ ಕೃಷ್ಣನ್ ಅವರಿಗೆ ಜನ್ಮದಿನದ ಶುಭಾಶಯಗಳು..",
-    },
-    {
-      image:
-        "https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg",
-      title:
-        "ಜೇನಿನ ಧ್ವನಿಯ ಗಾಯಕ ಶ್ರೀ ರಾಜೇಶ್ ಕೃಷ್ಣನ್ ಅವರಿಗೆ ಜನ್ಮದಿನದ ಶುಭಾಶಯಗಳು..",
-    },
-    {
-      image:
-        "https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg",
-      title:
-        "ಜೇನಿನ ಧ್ವನಿಯ ಗಾಯಕ ಶ್ರೀ ರಾಜೇಶ್ ಕೃಷ್ಣನ್ ಅವರಿಗೆ ಜನ್ಮದಿನದ ಶುಭಾಶಯಗಳು..",
-    },
-    {
-      image:
-        "https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg",
-      title:
-        "ಜೇನಿನ ಧ್ವನಿಯ ಗಾಯಕ ಶ್ರೀ ರಾಜೇಶ್ ಕೃಷ್ಣನ್ ಅವರಿಗೆ ಜನ್ಮದಿನದ ಶುಭಾಶಯಗಳು..",
+        'IRELAND: "KANTARA" release in 5 major cities in Ireland by the great "Indo-irish" Distributer "Ishwar Shegunashi" founder of Sacred chank productions',
+      href: "https://www.indiansdaily.com/2022/10/KANTHARA-by-Ishwar-Shegunashi-founder-of-Sacred-chank-productions-Ireland.html",
     },
   ],
 

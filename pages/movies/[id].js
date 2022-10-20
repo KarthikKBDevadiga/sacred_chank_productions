@@ -44,8 +44,10 @@ import {
 } from "next-share";
 import TwitterIcon from "../../icons/TwitterIcon";
 import { Parallax } from "react-parallax";
+import { useRouter } from "next/router";
 
 export default function MovieInd({ movie, settings }) {
+  const router = useRouter();
   // const movie = Constants.MOVIE;
   const [scrolled, setScrolled] = useState(false);
 
@@ -557,7 +559,7 @@ export default function MovieInd({ movie, settings }) {
                     </>
                   )}
                 </div>
-                {/* <div>
+                <div>
                   <div className="flex flex-col overflow-hidden bg-gray-700 rounded-md shadow-md">
                     <div className="flex w-full gap-4 px-4 pt-4 pb-2 mx-auto">
                       <motion.div
@@ -610,18 +612,18 @@ export default function MovieInd({ movie, settings }) {
                             delay: 0.1 * index,
                             once: true,
                           }}
+                          onClick={() => {
+                            window.open(news.href, "_blank");
+                          }}
                         >
                           <div className="flex-shrink-0 mr-4">
                             <img
                               className="object-cover w-24 h-24 rounded-md"
-                              src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
+                              src={news.image}
                             />
                           </div>
                           <div className="text-white ">
-                            <h4 className="text-base">
-                              ಜೇನಿನ ಧ್ವನಿಯ ಗಾಯಕ ಶ್ರೀ ರಾಜೇಶ್ ಕೃಷ್ಣನ್ ಅವರಿಗೆ
-                              ಜನ್ಮದಿನದ ಶುಭಾಶಯಗಳು..
-                            </h4>
+                            <h4 className="text-base">{news.title}</h4>
                           </div>
                         </motion.div>
                       );
@@ -630,7 +632,7 @@ export default function MovieInd({ movie, settings }) {
                       View All
                     </div>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
           </main>

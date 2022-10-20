@@ -83,11 +83,11 @@ export default function NewsAndEvents({ settings }) {
                 >
                   <img
                     className="w-full rounded-md"
-                    src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
+                    src="https://sacred-chank-productions.s3.amazonaws.com/films/images/KantaraLandscape1663074188693.jpeg"
                   />
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                   className="p-4 mx-auto mt-4 text-white bg-gray-800 rounded-md md:mt-4 "
                   initial={{ opacity: 0, y: 200 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -156,7 +156,7 @@ export default function NewsAndEvents({ settings }) {
                       ಎಂದಿಗೂ ಮರೆಯಲಾಗದ ಖುಷಿ.
                     </p>
                   </div>
-                </motion.div>
+                </motion.div> */}
               </section>
               <section className="lg:col-start-3 lg:col-span-1">
                 <div className="flex flex-col overflow-hidden bg-gray-700 rounded-md gap-">
@@ -174,18 +174,18 @@ export default function NewsAndEvents({ settings }) {
                           delay: 0.1 * index,
                           once: true,
                         }}
+                        onClick={() => {
+                          window.open(news.href, "_blank");
+                        }}
                       >
                         <div className="flex-shrink-0 mr-4">
                           <img
                             className="object-cover w-24 h-24 rounded-md"
-                            src="https://mykinoplex.com/assets/images/ucm/banner/banner1657267451.jpg"
+                            src={news.image}
                           />
                         </div>
                         <div className="text-white ">
-                          <h4 className="text-base">
-                            ಜೇನಿನ ಧ್ವನಿಯ ಗಾಯಕ ಶ್ರೀ ರಾಜೇಶ್ ಕೃಷ್ಣನ್ ಅವರಿಗೆ
-                            ಜನ್ಮದಿನದ ಶುಭಾಶಯಗಳು..
-                          </h4>
+                          <h4 className="text-base">{news.title}</h4>
                         </div>
                       </motion.div>
                     );
