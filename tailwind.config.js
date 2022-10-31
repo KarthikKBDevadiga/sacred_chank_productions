@@ -15,10 +15,16 @@ module.exports = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        screen: {
+          "0%": { color: "white" },
+          "50%": { color: "grey" },
+          "100%": { color: "white" },
+        },
       },
       animation: {
         wiggle: "wiggle 3s ease-in-out infinite",
         rotate: "rotate 1.5s linear infinite",
+        screen: "screen 1s linear infinite",
       },
     },
   },

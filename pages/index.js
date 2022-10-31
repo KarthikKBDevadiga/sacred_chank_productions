@@ -99,7 +99,79 @@ export default function Index({ data, settings }) {
             >
               <div className="absolute w-full">
                 <div ref={sliderRef} className="keen-slider">
-                  <div className="keen-slider__slide">
+                  {data.upcoming.map((m) => {
+                    console.log(m);
+                    return (
+                      <div className="keen-slider__slide">
+                        <div className="relative top-0 w-full h-screen overflow-hidden">
+                          <div className="absolute w-full h-full">
+                            <img
+                              className="hidden object-cover w-full h-full sm:block"
+                              src={m.poster.landscape}
+                            />
+                            <img
+                              className="object-cover w-full h-full sm:hidden"
+                              src={m.poster.portrait}
+                            />
+                          </div>
+                          <div
+                            className="absolute w-full h-full bg-gradient-to-r from-black to-transparent"
+                            // initial={{ opacity: 0, scaleX: 0 }}
+                            // whileInView={{ opacity: 1, scaleX: 1 }}
+                            // transition={{
+                            //   ease: "easeOut",
+                            //   duration: 0.5,
+                            //   delay: 0.5,
+                            // }}
+                          />
+                          <div className="absolute flex h-full">
+                            <div className="self-center px-4 font-light sm:px-16 md:px-20">
+                              {/* <div className="text-sm text-white sm:text-xl md:text-3xl">
+                                Rom-Com
+                              </div> */}
+                              <motion.div
+                                className="mt-4 text-white"
+                                initial={{ opacity: 0, x: 200 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{
+                                  ease: "easeOut",
+                                  duration: 0.5,
+                                  delay: 0.5,
+                                }}
+                              >
+                                <span className="text-3xl sm:text-4xl md:text-6xl ">
+                                  {m.title}
+                                </span>
+                                <span className="self-end text-sm text-gray-300 sm:text-xl md:text-3xl">
+                                  ({m.releaseDate})
+                                </span>
+                              </motion.div>
+                              <div className="flex gap-2 mt-2 text-xs text-white md:text-sm">
+                                <div className="px-3 py-1 border border-white rounded-md">
+                                  {m.languages[0]}
+                                </div>
+
+                                <div className="px-3 py-1 border border-white rounded-md">
+                                  UA
+                                </div>
+                              </div>
+                              <div
+                                className="flex gap-2 py-2 pl-2 pr-4 mt-4 text-white duration-500 bg-black bg-opacity-25 rounded-md cursor-pointer w-max hover:bg-opacity-100"
+                                onClick={() => {
+                                  setYoutubeUrl(m.trailer);
+                                  setOpenVideoDialog(true);
+                                }}
+                              >
+                                <PlayIcon className="self-center w-8 h-8" />
+                                <div className="self-center">WATCH TRAILER</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {/* <div className="keen-slider__slide">
                     <div className="relative top-0 w-full h-screen overflow-hidden">
                       <div className="absolute w-full h-full">
                         <img
@@ -287,7 +359,7 @@ export default function Index({ data, settings }) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="absolute h-full left-4">
