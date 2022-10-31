@@ -99,10 +99,10 @@ export default function Index({ data, settings }) {
             >
               <div className="absolute w-full">
                 <div ref={sliderRef} className="keen-slider">
-                  {data.upcoming.map((m) => {
+                  {data.upcoming.map((m, index) => {
                     console.log(m);
                     return (
-                      <div className="keen-slider__slide">
+                      <div className="keen-slider__slide" key={index}>
                         <div className="relative top-0 w-full h-screen overflow-hidden">
                           <div className="absolute w-full h-full">
                             <img
