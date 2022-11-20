@@ -625,6 +625,805 @@ const Constants = {
       ],
     },
   ],
+  TICKET_INFO: [
+    {
+      title: "GOLD",
+      price: 15,
+      rows: [
+        {
+          name: "A",
+          items: [
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: false,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              isAvailable: true,
+              number: "9",
+            },
+            {
+              type: "seat",
+              number: "10",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "11",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "12",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "13",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "14",
+              isAvailable: true,
+            },
+
+            {
+              type: "seat",
+              number: "15",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "16",
+              isAvailable: true,
+            },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "B",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              isAvailable: true,
+              number: "9",
+            },
+            {
+              type: "seat",
+              number: "10",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "11",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "12",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "C",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              isAvailable: true,
+              number: "9",
+            },
+            {
+              type: "seat",
+              number: "10",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "11",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "12",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+          ],
+          rowType: "seat",
+        },
+      ],
+    },
+    {
+      price: 12,
+      title: "SILVER",
+      rows: [
+        {
+          name: "D",
+          items: [
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: false,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              isAvailable: true,
+              number: "9",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "E",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "F",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "G",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "H",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+      ],
+    },
+    {
+      price: 10,
+      title: "SPECIAL",
+      rows: [
+        {
+          name: "I",
+          items: [
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: false,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              isAvailable: true,
+              number: "9",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "J",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "K",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+        {
+          name: "K",
+          items: [
+            {
+              type: "space",
+            },
+            {
+              type: "seat",
+              number: "1",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "2",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "3",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "4",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "5",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "6",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "7",
+              isAvailable: true,
+            },
+            {
+              type: "seat",
+              number: "8",
+              isAvailable: true,
+            },
+            {
+              type: "space",
+            },
+            {
+              type: "space",
+            },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+            { type: "space" },
+          ],
+          rowType: "seat",
+        },
+      ],
+    },
+  ],
 };
 
 export default Constants;

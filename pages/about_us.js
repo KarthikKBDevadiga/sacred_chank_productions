@@ -64,6 +64,9 @@ export default function AboutUs({ settings }) {
               src="https://png.pngtree.com/thumb_back/fh260/back_pic/03/54/58/35579acf3576e9d.jpg"
             />
           </div> */}
+          <video className="w-full" autoPlay loop="true" controls="controls">
+            <source src="./video.mov" type="video/mp4" />
+          </video>
           <div className="h-96">
             <Parallax
               blur={{ min: -2, max: 2 }}
