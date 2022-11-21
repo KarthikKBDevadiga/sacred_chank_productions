@@ -5,8 +5,12 @@ import Header from "../../components/Header";
 import Metatag from "../../components/Metatag";
 import Constants from "../../helpers/Constants";
 import classNames from "../../utils/classNames";
+import { motion } from "framer-motion";
+import { emailValidator } from "../../helpers/validator";
 
 const Ticket = () => {
+  const [email, setEmail] = useState();
+  const [emailError, setEmailError] = useState("sa");
   const [loadingDialog, setLoadingDialog] = useState(false);
   const [selectedSeats, setSelectedSeats] = useState([]);
 
@@ -27,13 +31,16 @@ const Ticket = () => {
     setTotalPrice(total);
   }, [selectedSeats]);
   const buyNow = () => {
+    let isValid = true;
+    isValid = emailValidator(email, setEmailError, "Email") && isValid;
     if (totalPrice == 0) return;
     setLoadingDialog(true);
     const body = {
+      email: "asg",
       name: "Gandhada Gudi",
       amount: totalPrice * 100,
     };
-    fetch(process.env.BASE_API_URL + "stripe/checkout", {
+    fetch(process.env.BASE_API_URL + "ticket/checkout", {
       method: "POST",
       body: JSON.stringify(body),
       headers: { "Content-Type": "application/json" },
@@ -187,6 +194,55 @@ const Ticket = () => {
                     Select Seats
                   </div>
                 )}
+              </div>
+              <div className="h-[1px] bg-slate-300 rounded-sm"></div>
+              <div className="flex flex-wrap gap-2 p-4 text-base text-white">
+                <motion.div
+                  className={classNames("relative w-full  col-span-2")}
+                  viewport={{ once: true }}
+                  initial={{ opacity: 0, x: 200 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    ease: "easeOut",
+                    duration: 0.5,
+                    delay: 0.5,
+                    once: true,
+                  }}
+                >
+                  <input
+                    onFocus={() => {
+                      setEmailError();
+                    }}
+                    className={classNames(
+                      "w-full py-2 pl-3 text-sm text-white duration-200 bg-transparent border-2  rounded-md outline-none focus:border-2 placeholder:text-transparent peer ",
+                      emailError
+                        ? "border-red-700 focus:border-red-500"
+                        : "border-gray-500 focus:border-gray-100"
+                    )}
+                    name={"email"}
+                    id={"email"}
+                    type="email"
+                    placeholder="Email"
+                  />
+                  <label
+                    htmlFor={"email"}
+                    className={classNames(
+                      "absolute block px-2 text-xs  duration-200 bg-gray-700  -top-2 left-4",
+                      " peer-focus:-top-2 peer-focus:left-4 peer-focus:bg-gray-700 peer-focus:text-xs ",
+                      "peer-placeholder-shown:top-2 peer-placeholder-shown:left-2 peer-placeholder-shown:text-base peer-placeholder-shown:bg-transparent",
+                      emailError
+                        ? "text-red-700 peer-focus:text-red-500"
+                        : " text-gray-500 peer-focus:text-white "
+                    )}
+                  >
+                    Email
+                  </label>
+                  {emailError && (
+                    <div className="absolute px-2 text-xs text-red-700 bg-gray-700 -bottom-1.5 right-4 peer-focus:text-red-500">
+                      {emailError}
+                    </div>
+                  )}
+                </motion.div>
               </div>
               <div className="h-[1px] bg-slate-300 rounded-sm"></div>
               <div className="flex justify-between gap-2 p-4 text-base text-white">
