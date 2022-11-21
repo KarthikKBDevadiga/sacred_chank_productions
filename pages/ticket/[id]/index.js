@@ -7,7 +7,7 @@ import { saveAs } from "file-saver";
 import { userAgent } from "next/server";
 import { useRouter } from "next/router";
 
-const status = ({ ticketId }) => {
+export default function Ticket({ ticketId }) {
   const router = useRouter();
   const [data, setData] = useState();
 
@@ -57,7 +57,7 @@ const status = ({ ticketId }) => {
       </div>
     </div>
   );
-};
+}
 export async function getServerSideProps(context) {
   return {
     props: {
@@ -65,4 +65,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-export default status;
