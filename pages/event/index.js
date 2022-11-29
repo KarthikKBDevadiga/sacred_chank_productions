@@ -100,7 +100,8 @@ export default function MovieInd({ events, settings }) {
             className="fixed bottom-0 left-0 right-0 z-50 h-px origin-top-left bg-white"
           />
           <main className="w-full min-h-screen overflow-hidden -z-10">
-            <div className="relative p-4 mt-24 xl:mx-auto max-w-7xl">
+            <div className="w-full h-48 bg-slate-700"></div>
+            <div className="relative p-4 xl:mx-auto max-w-7xl">
               {events?.length > 0 && (
                 <div className="grid grid-cols-1 mt-4 overflow-hidden text-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {events.map((event, index) => {
