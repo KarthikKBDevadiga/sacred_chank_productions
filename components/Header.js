@@ -18,7 +18,7 @@ const navigation = [
   {
     id: "news_and_events",
     name: "News & Events",
-    href: "/news_and_events",
+    href: "/event",
     current: false,
   },
   { id: "partners", name: "Partners", href: "#", current: false },
